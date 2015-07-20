@@ -1,29 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="AirDefenceViewClassDiagram">
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.5, 8.5" name="AirDefenceViewClassDiagram">
   <logicalClassDesignerModelMoniker Id="5596dde3-b0a0-4dfe-ba26-832095e8bd1e" />
   <nestedChildShapes>
-    <packageShape Id="5dd27511-1f97-43b9-9014-fc8703ed8d95" absoluteBounds="1.5, 1, 7.75, 3.125" customColor="255, 249, 230" hideQualifiedName="false">
+    <packageShape Id="5dd27511-1f97-43b9-9014-fc8703ed8d95" absoluteBounds="1.5, 1, 9.75, 6.5" customColor="255, 249, 230" hideQualifiedName="false">
       <packageMoniker Id="a658fec0-7243-43ff-8ef1-ca41e6e811c8" LastKnownName="gameView.js" />
       <nestedChildShapes>
-        <classShape Id="ce73b0c4-7457-416a-b39e-8219244738ed" absoluteBounds="3, 1.875, 1.5, 1.5429687152306237" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+        <classShape Id="ce73b0c4-7457-416a-b39e-8219244738ed" absoluteBounds="3.25, 4.875, 1.5, 1.5429687152306237" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
           <classMoniker Id="9c310853-0dc5-442f-a5e2-92dac2e2cced" LastKnownName="GameFieldView" />
           <nestedChildShapes>
-            <AttributeElementListCompartment Id="66fad14d-c0fa-4a5b-a043-67218b6b04a8" absoluteBounds="3.0150000000000006, 2.2650000000000006, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-            <OperationElementListCompartment Id="adca679f-43b3-49c2-91f9-f1ea868adfd4" absoluteBounds="3.0150000000000006, 2.4761718675494198, 1.4700000000000002, 0.84179684768120444" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+            <AttributeElementListCompartment Id="66fad14d-c0fa-4a5b-a043-67218b6b04a8" absoluteBounds="3.2650000000000006, 5.2650000000000006, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+            <OperationElementListCompartment Id="adca679f-43b3-49c2-91f9-f1ea868adfd4" absoluteBounds="3.2650000000000006, 5.47617186754942, 1.4700000000000002, 0.84179684768120444" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
           </nestedChildShapes>
         </classShape>
-        <classShape Id="56952d60-efe9-4396-ab16-a72b4f028648" absoluteBounds="4.875, 1.875, 1.5, 1.2226562251647315" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+        <classShape Id="56952d60-efe9-4396-ab16-a72b4f028648" absoluteBounds="5.125, 4.875, 1.5, 1.2226562251647315" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
           <classMoniker Id="dc232ad9-b0f7-469c-981f-acca524d103b" LastKnownName="PlayersFieldView" />
           <nestedChildShapes>
-            <AttributeElementListCompartment Id="d77a6980-fbef-4628-b769-9d5af5928d8b" absoluteBounds="4.8900000000000006, 2.2650000000000006, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-            <OperationElementListCompartment Id="20621afd-6991-4390-9916-3989549099cb" absoluteBounds="4.8900000000000006, 2.4761718675494198, 1.4700000000000002, 0.52148435761531187" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+            <AttributeElementListCompartment Id="d77a6980-fbef-4628-b769-9d5af5928d8b" absoluteBounds="5.1400000000000006, 5.2650000000000006, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+            <OperationElementListCompartment Id="20621afd-6991-4390-9916-3989549099cb" absoluteBounds="5.1400000000000006, 5.47617186754942, 1.4700000000000002, 0.52148435761531187" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
           </nestedChildShapes>
         </classShape>
-        <classShape Id="1101455d-3353-42c1-a1bd-d259a5e86478" absoluteBounds="6.75, 1.875, 1.75, 1.5429687152306237" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+        <classShape Id="1101455d-3353-42c1-a1bd-d259a5e86478" absoluteBounds="7, 4.875, 1.75, 1.5429687152306237" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
           <classMoniker Id="26b58736-1165-41d9-b695-157007fa17de" LastKnownName="ControlFieldView" />
           <nestedChildShapes>
-            <AttributeElementListCompartment Id="2916b0a9-605f-4f47-9d91-1eeffc67078a" absoluteBounds="6.7650000000000006, 2.2650000000000006, 1.7200000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
-            <OperationElementListCompartment Id="35314d7c-c6a7-4761-892d-87dd1c6d0afc" absoluteBounds="6.7650000000000006, 2.4761718675494198, 1.7200000000000002, 0.84179684768120444" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+            <AttributeElementListCompartment Id="2916b0a9-605f-4f47-9d91-1eeffc67078a" absoluteBounds="7.0150000000000006, 5.2650000000000006, 1.7200000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+            <OperationElementListCompartment Id="35314d7c-c6a7-4761-892d-87dd1c6d0afc" absoluteBounds="7.0150000000000006, 5.47617186754942, 1.7200000000000002, 0.84179684768120444" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+          </nestedChildShapes>
+        </classShape>
+        <classShape Id="ec72bb15-c4eb-46c0-ad0f-669841968336" absoluteBounds="4.625, 2.125, 2.75, 1.5429687152306246" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+          <classMoniker Id="5d3c17bd-272c-4fbc-8362-31323c35a5be" LastKnownName="GameView" />
+          <nestedChildShapes>
+            <AttributeElementListCompartment Id="0dfbc9fc-9916-4ef7-ad01-9cbf81098e41" absoluteBounds="4.64, 2.515, 2.7199999999999998, 0.68164060264825821" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+            <OperationElementListCompartment Id="b1d85f0b-ece4-40e5-8d80-c1ea133ced5f" absoluteBounds="4.64, 3.2066406026482586, 2.7199999999999998, 0.36132811258236575" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
           </nestedChildShapes>
         </classShape>
       </nestedChildShapes>

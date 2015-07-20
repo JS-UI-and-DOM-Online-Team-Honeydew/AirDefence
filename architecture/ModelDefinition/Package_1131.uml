@@ -202,26 +202,6 @@
               LastKnownLocation="Package_1131.uml" />
           </generalization>
         </generalsInternal>
-        <ownedAttributesInternal>
-          <property
-            Id="c2707336-e99a-47bb-b984-161b867a6d7b"
-            name="isIntercepted"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
-                LastKnownName="Boolean"
-                LastKnownLocation="AirDefence.uml" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -241,12 +221,22 @@
               LastKnownLocation="Package_1131.uml" />
           </generalization>
         </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="c613c1c1-9b76-41bb-8579-e819949100ca"
+            name="Drop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
         Id="24772990-af91-4f04-afc7-6baf3a8544dd"
-        name="Landspace"
+        name="LandscapeItem"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -313,7 +303,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="24772990-af91-4f04-afc7-6baf3a8544dd"
-              LastKnownName="Landspace"
+              LastKnownName="LandscapeItem"
               LastKnownLocation="Package_1131.uml" />
           </generalization>
         </generalsInternal>
@@ -332,7 +322,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="24772990-af91-4f04-afc7-6baf3a8544dd"
-              LastKnownName="Landspace"
+              LastKnownName="LandscapeItem"
               LastKnownLocation="Package_1131.uml" />
           </generalization>
         </generalsInternal>
@@ -351,7 +341,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="24772990-af91-4f04-afc7-6baf3a8544dd"
-              LastKnownName="Landspace"
+              LastKnownName="LandscapeItem"
               LastKnownLocation="Package_1131.uml" />
           </generalization>
         </generalsInternal>
@@ -370,7 +360,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="24772990-af91-4f04-afc7-6baf3a8544dd"
-              LastKnownName="Landspace"
+              LastKnownName="LandscapeItem"
               LastKnownLocation="Package_1131.uml" />
           </generalization>
         </generalsInternal>
@@ -489,6 +479,24 @@
               <primitiveTypeMoniker
                 Id="220a3521-e091-4221-bae9-3ef9018e845c"
                 LastKnownName="Integer"
+                LastKnownLocation="AirDefence.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="cd14377a-0738-4595-acfe-4d199b4123fd"
+            name="isTarget"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <primitiveTypeMoniker
+                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                LastKnownName="Boolean"
                 LastKnownLocation="AirDefence.uml" />
             </type_NamedElement>
           </property>

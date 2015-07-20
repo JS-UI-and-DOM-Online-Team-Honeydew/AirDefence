@@ -157,5 +157,85 @@
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7799146d-7e1b-40f8-af6f-259f79d94843"
+        name="GameView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="61ec5b43-bdf9-4857-b40f-2187a80e93dc"
+            name="gameField"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="5c8d24ee-2511-4969-9b44-9119e67e9729"
+                LastKnownName="GameFieldView"
+                LastKnownLocation="Package_1133.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="36112c33-9dfa-4140-87b2-96ddd8207cf6"
+            name="playersList"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="a53c0803-344b-47aa-9986-52696493996a"
+                LastKnownName="PlayersFieldView"
+                LastKnownLocation="Package_1133.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="c91844e5-a971-4505-8005-6e99f89d4311"
+            name="controlList"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="5c13b0a0-5ad7-48d4-b337-caf63d51c410"
+                LastKnownName="ControlFiledView"
+                LastKnownLocation="Package_1133.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="58c188d2-a207-4da3-ba45-499a0dc769b0"
+            name="Init"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="5c13b0a0-5ad7-48d4-b337-caf63d51c410"
+        name="ControlFiledView" />
+    </packageHasNamedElement>
   </packagedElements>
 </package>

@@ -9,16 +9,19 @@
             <class Id="1714bad9-345b-4f9f-8af8-bb58c000cd43" name="Game" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="d1b385f5-4fd7-4d3b-ac1c-52163d1d68ec" />
               <ownedAttributesInternal>
-                <property Id="d8bae1ca-1b49-49ce-b19b-f24a13ff4b19" name="scoreboard" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="1c169d64-10de-47ed-86ac-a8664dededf9" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="8b840417-eb9f-46a0-8916-5696dba89b49" LastKnownName="Scoreboard" />
-                  </type_NamedElement>
-                </property>
                 <property Id="fb6913f6-3778-49ff-a321-a0612d986138" name="game" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="3194fc46-6bbd-45a6-8cb7-f736c138f67c" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="35af2898-b074-4d5d-bb60-b879be1a3b59" LastKnownName="GameModel" />
+                  </type_NamedElement>
+                </property>
+                <property Id="f5261732-d9c8-4cf2-a567-d75f961851b7" name="isGamePaused" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2a1f1932-bdc0-4513-b285-6aceea1b61ae" />
+                </property>
+                <property Id="183e342f-a465-46d6-b0c4-90fb2b0c8bb0" name="view" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9aab1dff-7826-4eb3-b632-be096ebb727f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="0bc76707-5bc0-4ed6-bef3-c0aee5f73d7d" LastKnownName="GameView" />
                   </type_NamedElement>
                 </property>
               </ownedAttributesInternal>
@@ -26,14 +29,17 @@
                 <operation Id="4aa1d67c-5192-48e2-924b-8c57996268e0" name="Init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="e9d4f5d2-b253-43f0-a0a8-b592153aa83a" />
                 </operation>
-                <operation Id="b53cd53f-27b7-4b08-a0fc-7bc6537dd77d" name="OnNewGame" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="b53cd53f-27b7-4b08-a0fc-7bc6537dd77d" name="OnNewGameEvent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="4076ccaa-a697-43fb-91c5-c65912765fb7" />
                 </operation>
-                <operation Id="846e968e-334c-4997-ba17-1cfdecdc6d51" name="OnPauseResume" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="846e968e-334c-4997-ba17-1cfdecdc6d51" name="OnPauseResumeEvent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="e2dda3ad-b736-4e66-a013-7f063f78f256" />
                 </operation>
-                <operation Id="6c8a1eab-f9ac-4294-b768-7cfdc4e88c8a" name="OnUpdateFrame" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="f6ffb441-07e4-4ffe-b4fc-fa86e36de0f6" />
+                <operation Id="d0c3c405-8fa5-490a-be22-f142eb75689b" name="Main" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="6779532e-b313-44e8-99ca-9db4d3f799b5" />
+                </operation>
+                <operation Id="a7283075-a0c2-452c-8993-803ca4223ce4" name="OnUserClickEvent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="54235fd1-90a2-4847-9fae-fbb11896b163" />
                 </operation>
               </ownedOperationsInternal>
             </class>
@@ -48,19 +54,30 @@
           <packageHasNamedElement>
             <class Id="c9b37e25-befb-424f-a6d3-2ab755e6b927" name="Globals" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="ae1ec256-14a2-472b-889b-3c189319c890" />
+              <ownedAttributesInternal>
+                <property Id="6a56f411-2eae-4a59-a54e-02539eac8e55" name="GameWidth" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9c330055-f42d-4e8d-a30d-538c5c5cee6f" />
+                </property>
+                <property Id="711c2513-5019-4aec-8d70-0f67e8a9a646" name="GameHeight" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e31da4d3-69da-4bca-a507-b12fac3684c7" />
+                </property>
+                <property Id="d244b654-44c7-4d58-8ee0-a103fb0ded35" name="NumberEnemies" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a0eda76e-a059-4b0d-92ca-83044b44ea1e" />
+                </property>
+              </ownedAttributesInternal>
             </class>
           </packageHasNamedElement>
         </packagedElements>
       </package>
     </logicalClassDesignerModelHasPackages>
     <packageHasNamedElement>
-      <referencedType Id="8b840417-eb9f-46a0-8916-5696dba89b49" name="Scoreboard" isAbstract="false" isLeaf="false" cachedFullName="Scoreboard">
-        <elementDefinition Id="463b6a18-f32c-46bd-a7af-b41f1b3c0a21" />
+      <referencedType Id="35af2898-b074-4d5d-bb60-b879be1a3b59" name="GameModel" isAbstract="false" isLeaf="false" cachedFullName="GameModel">
+        <elementDefinition Id="8c11e76a-bfb5-416d-8462-315d406433dc" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="35af2898-b074-4d5d-bb60-b879be1a3b59" name="GameModel" isAbstract="false" isLeaf="false" cachedFullName="GameModel">
-        <elementDefinition Id="8c11e76a-bfb5-416d-8462-315d406433dc" />
+      <referencedType Id="0bc76707-5bc0-4ed6-bef3-c0aee5f73d7d" name="GameView" isAbstract="false" isLeaf="false" cachedFullName="GameView">
+        <elementDefinition Id="98444f11-3fba-4ba0-8b7f-69f4108911fe" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

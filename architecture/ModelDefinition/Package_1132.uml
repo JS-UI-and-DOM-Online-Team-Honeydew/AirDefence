@@ -143,7 +143,7 @@
             </type_NamedElement>
           </property>
           <property
-            Id="7aa4a3ca-1e0f-4777-b11c-1ca9a26e77ed"
+            Id="e419a1aa-7c20-43ad-8f24-142cd3dded59"
             name="currentPlayer"
             isLeaf="false"
             isStatic="false"
@@ -154,10 +154,28 @@
             aggregation="None"
             isComposite="false">
             <type_NamedElement>
-              <classMoniker
-                Id="4366be95-3619-4757-8093-28c4075f2754"
+              <undefinedTypeMoniker
+                Id="9c982ec1-e849-4b11-a04a-6712246832e1"
                 LastKnownName="Player"
-                LastKnownLocation="Package_1130.uml" />
+                LastKnownLocation="Package_1146.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="6cf664c1-1500-48fe-90d3-c80648487dda"
+            name="scoreboard"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="463b6a18-f32c-46bd-a7af-b41f1b3c0a21"
+                LastKnownName="Scoreboard"
+                LastKnownLocation="Package_1146.uml" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -165,6 +183,14 @@
           <operation
             Id="ddfbb5be-99fd-4ed6-abc8-a466b1e3b7da"
             name="Init"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="4c5c8b08-ae15-472d-9747-a14ad6cc976a"
+            name="CheckTargets"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"

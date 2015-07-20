@@ -13,24 +13,6 @@
         isActiveClass="false">
         <ownedAttributesInternal>
           <property
-            Id="1c169d64-10de-47ed-86ac-a8664dededf9"
-            name="scoreboard"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="463b6a18-f32c-46bd-a7af-b41f1b3c0a21"
-                LastKnownName="Scoreboard"
-                LastKnownLocation="Package_1146.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="3194fc46-6bbd-45a6-8cb7-f736c138f67c"
             name="game"
             isLeaf="false"
@@ -48,6 +30,35 @@
                 LastKnownLocation="Package_1146.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="2a1f1932-bdc0-4513-b285-6aceea1b61ae"
+            name="isGamePaused"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="9aab1dff-7826-4eb3-b632-be096ebb727f"
+            name="view"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="98444f11-3fba-4ba0-8b7f-69f4108911fe"
+                LastKnownName="GameView"
+                LastKnownLocation="Package_1146.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -60,7 +71,7 @@
             isQuery="false" />
           <operation
             Id="4076ccaa-a697-43fb-91c5-c65912765fb7"
-            name="OnNewGame"
+            name="OnNewGameEvent"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -68,15 +79,23 @@
             isQuery="false" />
           <operation
             Id="e2dda3ad-b736-4e66-a013-7f063f78f256"
-            name="OnPauseResume"
+            name="OnPauseResumeEvent"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="f6ffb441-07e4-4ffe-b4fc-fa86e36de0f6"
-            name="OnUpdateFrame"
+            Id="6779532e-b313-44e8-99ca-9db4d3f799b5"
+            name="Main"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="54235fd1-90a2-4847-9fae-fbb11896b163"
+            name="OnUserClickEvent"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -99,6 +118,16 @@
       <undefinedType
         Id="8c11e76a-bfb5-416d-8462-315d406433dc"
         name="GameModel" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="9c982ec1-e849-4b11-a04a-6712246832e1"
+        name="Player" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="98444f11-3fba-4ba0-8b7f-69f4108911fe"
+        name="GameView" />
     </packageHasNamedElement>
   </packagedElements>
 </package>

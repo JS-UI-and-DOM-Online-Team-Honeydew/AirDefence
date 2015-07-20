@@ -78,6 +78,9 @@
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
+                <operation Id="6985911d-c5ab-4d19-8585-b0ae9db91bae" name="GetTopPlayers" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="1fdb3ac5-ce1a-4c4d-b342-bcb6ff7c0823" />
+                </operation>
               </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
@@ -182,14 +185,6 @@
                   <elementDefinition Id="839fd6dd-d6f3-43be-a5b5-e9a838c6c822" />
                 </generalization>
               </generalsInternal>
-              <ownedAttributesInternal>
-                <property Id="b9365e48-4164-4dc6-b1ad-1a61d21f1413" name="isIntercepted" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="c2707336-e99a-47bb-b984-161b867a6d7b" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="f1763e9d-1f0a-4251-97a7-4ed5680b5004" LastKnownName="Boolean" />
-                  </type_NamedElement>
-                </property>
-              </ownedAttributesInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
@@ -201,10 +196,15 @@
                   <elementDefinition Id="bd25b9b6-44e9-4803-bad0-77503b2cdcae" />
                 </generalization>
               </generalsInternal>
+              <ownedOperationsInternal>
+                <operation Id="c9a05cf5-11db-42ef-a35e-f8d515d37843" name="Drop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="c613c1c1-9b76-41bb-8579-e819949100ca" />
+                </operation>
+              </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
-            <class Id="3d083e39-88c8-4191-8612-bd16bf9463ce" name="Landspace" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="3d083e39-88c8-4191-8612-bd16bf9463ce" name="LandscapeItem" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="24772990-af91-4f04-afc7-6baf3a8544dd" />
               <generalsInternal>
                 <generalization Id="20e804f8-5314-4e09-8b88-2236f8ab40fc" isSubstitutable="false">
@@ -241,7 +241,7 @@
               <elementDefinition Id="6615a50c-bb74-40be-9d9c-1d6985cb764b" />
               <generalsInternal>
                 <generalization Id="e4eda4e8-d79a-4d33-8543-f4934f3d5d5f" isSubstitutable="false">
-                  <classMoniker Id="3d083e39-88c8-4191-8612-bd16bf9463ce" LastKnownName="Landspace" />
+                  <classMoniker Id="3d083e39-88c8-4191-8612-bd16bf9463ce" LastKnownName="LandscapeItem" />
                   <elementDefinition Id="cbb8a74b-9df6-4cb3-ad7f-ab4294177bdb" />
                 </generalization>
               </generalsInternal>
@@ -252,7 +252,7 @@
               <elementDefinition Id="6318cd28-cef8-4925-ae3e-8ef88f328379" />
               <generalsInternal>
                 <generalization Id="ecd243a8-f145-445c-b8be-7ace1e71fcec" isSubstitutable="false">
-                  <classMoniker Id="3d083e39-88c8-4191-8612-bd16bf9463ce" LastKnownName="Landspace" />
+                  <classMoniker Id="3d083e39-88c8-4191-8612-bd16bf9463ce" LastKnownName="LandscapeItem" />
                   <elementDefinition Id="646ebbfb-c92c-4dc7-bcc1-0c97c994083a" />
                 </generalization>
               </generalsInternal>
@@ -263,7 +263,7 @@
               <elementDefinition Id="f0ae96a6-f708-4e19-958e-9133ffddeda5" />
               <generalsInternal>
                 <generalization Id="c0ef4661-f555-46fd-8b67-7753618f6a43" isSubstitutable="false">
-                  <classMoniker Id="3d083e39-88c8-4191-8612-bd16bf9463ce" LastKnownName="Landspace" />
+                  <classMoniker Id="3d083e39-88c8-4191-8612-bd16bf9463ce" LastKnownName="LandscapeItem" />
                   <elementDefinition Id="0c030de1-d796-4949-9730-dabca679cd93" />
                 </generalization>
               </generalsInternal>
@@ -274,7 +274,7 @@
               <elementDefinition Id="303ecf94-ec25-4cd6-8d42-689ed8f97a69" />
               <generalsInternal>
                 <generalization Id="963e6664-22ad-49ec-aff8-584da0824152" isSubstitutable="false">
-                  <classMoniker Id="3d083e39-88c8-4191-8612-bd16bf9463ce" LastKnownName="Landspace" />
+                  <classMoniker Id="3d083e39-88c8-4191-8612-bd16bf9463ce" LastKnownName="LandscapeItem" />
                   <elementDefinition Id="5e967030-8dee-4879-9d93-fb8710dcf121" />
                 </generalization>
               </generalsInternal>
@@ -318,6 +318,12 @@
                   <elementDefinition Id="21fd8009-3685-4338-a3cc-8d7a12023624" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="710570d7-4e6a-45ac-bdc1-fb9e7939dfc6" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </property>
+                <property Id="2bad26a8-0948-4109-a5fd-d462e461810d" name="isTarget" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="cd14377a-0738-4595-acfe-4d199b4123fd" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d4854748-feed-4051-9d77-73294488cb29" LastKnownName="Boolean" />
                   </type_NamedElement>
                 </property>
               </ownedAttributesInternal>
@@ -417,16 +423,25 @@
                     <referencedTypeMoniker Id="33e27337-9245-4b45-a593-9bf0fd8f7f1c" LastKnownName="LaserBeam" />
                   </type_NamedElement>
                 </property>
-                <property Id="94f1d651-42b4-4652-9137-9e1a86a4b040" name="currentPlayer" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="7aa4a3ca-1e0f-4777-b11c-1ca9a26e77ed" />
+                <property Id="2735d524-248d-45fa-b54b-a27b499e14fd" name="currentPlayer" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e419a1aa-7c20-43ad-8f24-142cd3dded59" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="8bfb7085-5c7b-438f-aa3b-210f2d6ec0da" LastKnownName="Player" />
+                    <referencedTypeMoniker Id="7cc2be5e-a979-4ed8-9b87-82ef419b2fba" LastKnownName="Player" />
+                  </type_NamedElement>
+                </property>
+                <property Id="a61f5eef-c71b-4c2a-9a2b-d3ec0ed67a5c" name="scoreboard" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6cf664c1-1500-48fe-90d3-c80648487dda" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="d3ef5320-6234-4d82-8241-1495f677c6ad" LastKnownName="Scoreboard" />
                   </type_NamedElement>
                 </property>
               </ownedAttributesInternal>
               <ownedOperationsInternal>
                 <operation Id="3d7d4acb-7d2d-4e71-b981-91b6e3f89648" name="Init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="ddfbb5be-99fd-4ed6-abc8-a466b1e3b7da" />
+                </operation>
+                <operation Id="d9d0fb1a-b506-4b9c-a5df-a9abd5dcf5a4" name="CheckTargets" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="4c5c8b08-ae15-472d-9747-a14ad6cc976a" />
                 </operation>
               </ownedOperationsInternal>
             </class>
@@ -435,7 +450,17 @@
       </package>
     </logicalClassDesignerModelHasPackages>
     <packageHasNamedElement>
-      <referencedType Id="f1763e9d-1f0a-4251-97a7-4ed5680b5004" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
+      <referencedType Id="7cc2be5e-a979-4ed8-9b87-82ef419b2fba" name="Player" isAbstract="false" isLeaf="false" cachedFullName="Player">
+        <elementDefinition Id="9c982ec1-e849-4b11-a04a-6712246832e1" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d3ef5320-6234-4d82-8241-1495f677c6ad" name="Scoreboard" isAbstract="false" isLeaf="false" cachedFullName="Scoreboard">
+        <elementDefinition Id="463b6a18-f32c-46bd-a7af-b41f1b3c0a21" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="d4854748-feed-4051-9d77-73294488cb29" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
         <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
       </referencedType>
     </packageHasNamedElement>
