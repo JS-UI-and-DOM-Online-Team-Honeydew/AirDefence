@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="5596dde3-b0a0-4dfe-ba26-832095e8bd1e" name="AirDefenceViewClassDiagram" linkedPackageId="43ddd9a0-781a-42d2-b7b4-ce5cd7a19897" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="5596dde3-b0a0-4dfe-ba26-832095e8bd1e" name="AirDefenceViewClassDiagram" linkedPackageId="43ddd9a0-781a-42d2-b7b4-ce5cd7a19897" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="a658fec0-7243-43ff-8ef1-ca41e6e811c8" name="gameView.js">
@@ -33,8 +33,8 @@
                   <elementDefinition Id="fce4e2e2-b0de-4d91-b685-f8caba7e3a59" />
                   <ownedParameters>
                     <operationHasOwnedParameters>
-                      <parameter Id="d06c2957-d79a-49b4-b556-f5da3f35f6e1" name="laser" direction="In" isUnique="false">
-                        <elementDefinition Id="356059cf-0d9e-433b-8fb9-38ead25722a7" />
+                      <parameter Id="485c87ab-f41f-4d86-9f77-93d9572872fa" name="beam" direction="In" isUnique="false">
+                        <elementDefinition Id="251c241a-fca3-4081-b871-9fdbb1032197" />
                       </parameter>
                     </operationHasOwnedParameters>
                   </ownedParameters>

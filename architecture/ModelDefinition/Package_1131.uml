@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="ab41876a-69bc-491f-a6c6-866e7ebbaba6"
   name="gameObjectsModel.js" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -7,7 +7,7 @@
     <packageHasNamedElement>
       <class
         Id="a264146e-9d0c-4d30-bb60-2c7ce16ba52d"
-        name="LaserBeam"
+        name="LaserRay"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -168,7 +168,7 @@
             isQuery="false" />
           <operation
             Id="915fa496-dd48-4738-90f5-65c399b693d1"
-            name="Operate"
+            name="Update"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -221,16 +221,6 @@
               LastKnownLocation="Package_1131.uml" />
           </generalization>
         </generalsInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="c613c1c1-9b76-41bb-8579-e819949100ca"
-            name="Drop"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -504,7 +494,7 @@
         <ownedOperationsInternal>
           <operation
             Id="6e91093b-f540-4913-b129-dc3836c6ec10"
-            name="Operate"
+            name="Update"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"

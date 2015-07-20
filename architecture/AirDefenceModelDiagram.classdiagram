@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="2c8e9e08-5495-43c2-af6f-d4380c05fc99" name="AirDefenceClassDiagram" linkedPackageId="a4172081-4833-45f9-8236-28d5057323e5" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="2c8e9e08-5495-43c2-af6f-d4380c05fc99" name="AirDefenceClassDiagram" linkedPackageId="a4172081-4833-45f9-8236-28d5057323e5" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <packageHasNamedElement>
       <referencedType Id="710570d7-4e6a-45ac-bdc1-fb9e7939dfc6" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
@@ -32,7 +32,7 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="33e27337-9245-4b45-a593-9bf0fd8f7f1c" name="LaserBeam" isAbstract="false" isLeaf="false" cachedFullName="AirDefence::gameObjectsModel.js::LaserBeam">
+      <referencedType Id="33e27337-9245-4b45-a593-9bf0fd8f7f1c" name="LaserRay" isAbstract="false" isLeaf="false" cachedFullName="AirDefence::gameObjectsModel.js::LaserRay">
         <elementDefinition Id="a264146e-9d0c-4d30-bb60-2c7ce16ba52d" />
       </referencedType>
     </packageHasNamedElement>
@@ -111,7 +111,7 @@
         <elementDefinition Id="ab41876a-69bc-491f-a6c6-866e7ebbaba6" />
         <packagedElements>
           <packageHasNamedElement>
-            <class Id="26ae818b-01a7-4af1-b045-1802fed17c8a" name="LaserBeam" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="26ae818b-01a7-4af1-b045-1802fed17c8a" name="LaserRay" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="a264146e-9d0c-4d30-bb60-2c7ce16ba52d" />
               <ownedAttributesInternal>
                 <property Id="241edeb1-0a18-488a-a84e-585432da67f0" name="position" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -167,7 +167,7 @@
                 <operation Id="4d2d0e11-9732-4773-af8b-9540e239b876" name="Init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="e19b6e9f-1f73-4753-9d94-1fb1d2989d98" />
                 </operation>
-                <operation Id="93d2378b-e0a5-4c88-8e03-538f8d0aba6d" name="Operate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="93d2378b-e0a5-4c88-8e03-538f8d0aba6d" name="Update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="915fa496-dd48-4738-90f5-65c399b693d1" />
                 </operation>
                 <operation Id="62964fa0-827b-429e-a57e-a863e7760871" name="GetCurrentData" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -196,11 +196,6 @@
                   <elementDefinition Id="bd25b9b6-44e9-4803-bad0-77503b2cdcae" />
                 </generalization>
               </generalsInternal>
-              <ownedOperationsInternal>
-                <operation Id="c9a05cf5-11db-42ef-a35e-f8d515d37843" name="Drop" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="c613c1c1-9b76-41bb-8579-e819949100ca" />
-                </operation>
-              </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>
           <packageHasNamedElement>
@@ -210,72 +205,6 @@
                 <generalization Id="20e804f8-5314-4e09-8b88-2236f8ab40fc" isSubstitutable="false">
                   <classMoniker Id="b9c1b66e-677a-4aae-a487-0e1c3db230fd" LastKnownName="GameObject" />
                   <elementDefinition Id="a08538d2-0522-4b33-b1a2-34a8819fcd57" />
-                </generalization>
-              </generalsInternal>
-            </class>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
-            <class Id="4b060be0-8e48-4a38-bad0-8ec9678910ea" name="Plane" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="184561a9-d936-4d5c-a251-6d3a320da325" />
-              <generalsInternal>
-                <generalization Id="15faa786-29e5-4f5f-8ad9-db3e5534bdc7" isSubstitutable="false">
-                  <classMoniker Id="dae07bc8-4057-4de1-bcc3-b6f7e2167d5b" LastKnownName="Enemy" />
-                  <elementDefinition Id="ec9fe752-8932-46d5-8adb-e2b282e2b7c4" />
-                </generalization>
-              </generalsInternal>
-            </class>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
-            <class Id="5f7af44a-277a-4c26-9e52-27565620db93" name="Chopper" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="de6f2c44-8337-455a-9e44-46ff034b9866" />
-              <generalsInternal>
-                <generalization Id="7a0a4ffd-d286-4886-8890-b779e5f40928" isSubstitutable="false">
-                  <classMoniker Id="dae07bc8-4057-4de1-bcc3-b6f7e2167d5b" LastKnownName="Enemy" />
-                  <elementDefinition Id="ec25903c-e97e-462f-91eb-6ef3e58905ee" />
-                </generalization>
-              </generalsInternal>
-            </class>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
-            <class Id="90cc2e4f-14dc-4699-9c41-b447a4bf9b9a" name="Cloud" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="6615a50c-bb74-40be-9d9c-1d6985cb764b" />
-              <generalsInternal>
-                <generalization Id="e4eda4e8-d79a-4d33-8543-f4934f3d5d5f" isSubstitutable="false">
-                  <classMoniker Id="3d083e39-88c8-4191-8612-bd16bf9463ce" LastKnownName="LandscapeItem" />
-                  <elementDefinition Id="cbb8a74b-9df6-4cb3-ad7f-ab4294177bdb" />
-                </generalization>
-              </generalsInternal>
-            </class>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
-            <class Id="4644c490-0148-4234-8be5-36055c1a5279" name="Sun" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="6318cd28-cef8-4925-ae3e-8ef88f328379" />
-              <generalsInternal>
-                <generalization Id="ecd243a8-f145-445c-b8be-7ace1e71fcec" isSubstitutable="false">
-                  <classMoniker Id="3d083e39-88c8-4191-8612-bd16bf9463ce" LastKnownName="LandscapeItem" />
-                  <elementDefinition Id="646ebbfb-c92c-4dc7-bcc1-0c97c994083a" />
-                </generalization>
-              </generalsInternal>
-            </class>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
-            <class Id="453fab15-26ad-43fb-818b-ccedbf312126" name="Tree" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="f0ae96a6-f708-4e19-958e-9133ffddeda5" />
-              <generalsInternal>
-                <generalization Id="c0ef4661-f555-46fd-8b67-7753618f6a43" isSubstitutable="false">
-                  <classMoniker Id="3d083e39-88c8-4191-8612-bd16bf9463ce" LastKnownName="LandscapeItem" />
-                  <elementDefinition Id="0c030de1-d796-4949-9730-dabca679cd93" />
-                </generalization>
-              </generalsInternal>
-            </class>
-          </packageHasNamedElement>
-          <packageHasNamedElement>
-            <class Id="9cb98dd6-1b92-427c-8712-979276647745" name="Radar" isAbstract="false" isLeaf="false" isActiveClass="false">
-              <elementDefinition Id="303ecf94-ec25-4cd6-8d42-689ed8f97a69" />
-              <generalsInternal>
-                <generalization Id="963e6664-22ad-49ec-aff8-584da0824152" isSubstitutable="false">
-                  <classMoniker Id="3d083e39-88c8-4191-8612-bd16bf9463ce" LastKnownName="LandscapeItem" />
-                  <elementDefinition Id="5e967030-8dee-4879-9d93-fb8710dcf121" />
                 </generalization>
               </generalsInternal>
             </class>
@@ -328,7 +257,7 @@
                 </property>
               </ownedAttributesInternal>
               <ownedOperationsInternal>
-                <operation Id="752c3f95-8063-4b8d-a5f8-27ded16b186c" name="Operate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="752c3f95-8063-4b8d-a5f8-27ded16b186c" name="Update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <elementDefinition Id="6e91093b-f540-4913-b129-dc3836c6ec10" />
                 </operation>
                 <operation Id="68b42d52-fcac-40cc-a7be-4946c627053b" name="Init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -420,7 +349,7 @@
                 <property Id="f21abb1f-2d4a-4d9b-8e6d-6fe839fae7d0" name="laser" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="e63595f8-733b-40d3-9cf4-7efd2c280561" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="33e27337-9245-4b45-a593-9bf0fd8f7f1c" LastKnownName="LaserBeam" />
+                    <referencedTypeMoniker Id="33e27337-9245-4b45-a593-9bf0fd8f7f1c" LastKnownName="LaserRay" />
                   </type_NamedElement>
                 </property>
                 <property Id="2735d524-248d-45fa-b54b-a27b499e14fd" name="currentPlayer" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
