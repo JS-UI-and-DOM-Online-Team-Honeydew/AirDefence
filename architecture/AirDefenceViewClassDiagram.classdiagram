@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="5596dde3-b0a0-4dfe-ba26-832095e8bd1e" name="AirDefenceViewClassDiagram" linkedPackageId="43ddd9a0-781a-42d2-b7b4-ce5cd7a19897" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="a3e8b227-b858-4dfa-b591-bde461073e67">
+      <profileInstance Id="6a1c2277-0a63-439e-88b4-5cb2eb322227" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="ceaa328a-8901-4d58-8ffd-27aad551f24f">
+      <profileInstance Id="70e5bb3d-f26e-4380-99a2-a55c118dbfb5" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="a658fec0-7243-43ff-8ef1-ca41e6e811c8" name="gameView.js">
+        <elementDefinition Id="fa068cf1-3665-497c-997a-777ea463848a" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="9c310853-0dc5-442f-a5e2-92dac2e2cced" name="GameFieldView" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="5c8d24ee-2511-4969-9b44-9119e67e9729" />
+              <ownedOperationsInternal>
+                <operation Id="873182fb-e962-49bc-8c98-a4acd652faa7" name="Init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="0590dd11-a1a3-4e1c-9430-d2b2a29f062e" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="8c9edf83-eef2-4a38-929e-c06c38fd9188" name="background" direction="In" isUnique="false">
+                        <elementDefinition Id="3d21781e-8f11-4dd9-90d4-056a53b87d6b" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="0ee2b47f-ca88-4ae1-9d65-237acd8f3bc9" name="Draw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="ec316f96-580d-49f0-97a3-c1f19d5a4bae" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="edbdc674-1468-4129-b3a7-f5e773e7cbf4" name="objects" direction="In" isUnique="false">
+                        <elementDefinition Id="3a955303-120d-4c67-b945-a071144c2bb7" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="a6f49b4f-f8ad-4f76-b081-a7e11e3ef71b" name="Draw" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="fce4e2e2-b0de-4d91-b685-f8caba7e3a59" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="d06c2957-d79a-49b4-b556-f5da3f35f6e1" name="laser" direction="In" isUnique="false">
+                        <elementDefinition Id="356059cf-0d9e-433b-8fb9-38ead25722a7" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="0d62b2f2-1529-487e-9851-553a44909585" name="ClickCallback" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="34b69c2d-be56-4891-a2dc-ed440e1300b8" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="dc232ad9-b0f7-469c-981f-acca524d103b" name="PlayersFieldView" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="a53c0803-344b-47aa-9986-52696493996a" />
+              <ownedOperationsInternal>
+                <operation Id="ae04605e-a4f1-4fd7-a6a3-e7dc5e167ed0" name="Init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="367d9e5a-b3b7-4677-9f53-7ca6f3cd09df" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="fbb4603d-92cb-4311-a504-ef4932d0577c" name="players" direction="In" isUnique="false">
+                        <elementDefinition Id="0460e87c-5769-4289-ba5b-60626d888d27" />
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
+                <operation Id="e0c52904-1e9f-4918-b973-e0d1b4b87159" name="Update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="9726bf30-b30c-4a56-812e-d605c46ec9d7" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="26b58736-1165-41d9-b695-157007fa17de" name="ControlFieldView" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="6c1a4524-5ddd-4eeb-b3b4-1c4143571af1" />
+              <ownedOperationsInternal>
+                <operation Id="420be340-51a7-473f-ae47-6b45b9fec21e" name="NewGameCallback" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="625b203b-c4a6-48af-ac93-39a1930b5451" />
+                </operation>
+                <operation Id="391299ec-10ab-44bf-9cfc-6e6be01eeb7f" name="PauseGameCallback" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="ef98d8ff-e40c-4aa4-9dd0-f9c74ee16b9f" />
+                </operation>
+                <operation Id="06078ee2-c58b-426d-b06f-fb7db301f75e" name="Init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="3f91c20f-93eb-490d-903a-55cd92eb778c" />
+                </operation>
+                <operation Id="18cba3b8-9935-49f0-8e19-9244d8ee7684" name="NewPlayerCallback" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="5330b4cd-0164-4176-b93c-b152aa877411" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+  </packagedElements>
+  <package Id="43ddd9a0-781a-42d2-b7b4-ce5cd7a19897" name="AirDefence">
+    <elementDefinition Id="b1e0155a-e965-4c8e-8e9e-0592520c6a2a" />
+  </package>
+</logicalClassDesignerModel>

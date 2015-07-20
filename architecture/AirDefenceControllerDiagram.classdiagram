@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="b40ac8ef-db58-4ff8-9097-e016fcc0f775" name="AirDefenceControllerDiagram" linkedPackageId="7bffa2a8-dc6d-4fd3-9bf0-f719c075a12c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="c4d9128a-024c-4ed9-b852-4e389b37c0f2" name="gameController.js">
+        <elementDefinition Id="9eb6b0b5-89ab-41fb-98e3-78bdbdbecbe0" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="1714bad9-345b-4f9f-8af8-bb58c000cd43" name="Game" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="d1b385f5-4fd7-4d3b-ac1c-52163d1d68ec" />
+              <ownedAttributesInternal>
+                <property Id="d8bae1ca-1b49-49ce-b19b-f24a13ff4b19" name="scoreboard" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1c169d64-10de-47ed-86ac-a8664dededf9" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8b840417-eb9f-46a0-8916-5696dba89b49" LastKnownName="Scoreboard" />
+                  </type_NamedElement>
+                </property>
+                <property Id="fb6913f6-3778-49ff-a321-a0612d986138" name="game" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3194fc46-6bbd-45a6-8cb7-f736c138f67c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="35af2898-b074-4d5d-bb60-b879be1a3b59" LastKnownName="GameModel" />
+                  </type_NamedElement>
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="4aa1d67c-5192-48e2-924b-8c57996268e0" name="Init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="e9d4f5d2-b253-43f0-a0a8-b592153aa83a" />
+                </operation>
+                <operation Id="b53cd53f-27b7-4b08-a0fc-7bc6537dd77d" name="OnNewGame" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="4076ccaa-a697-43fb-91c5-c65912765fb7" />
+                </operation>
+                <operation Id="846e968e-334c-4997-ba17-1cfdecdc6d51" name="OnPauseResume" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="e2dda3ad-b736-4e66-a013-7f063f78f256" />
+                </operation>
+                <operation Id="6c8a1eab-f9ac-4294-b768-7cfdc4e88c8a" name="OnUpdateFrame" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="f6ffb441-07e4-4ffe-b4fc-fa86e36de0f6" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="8092f753-aae9-4eb6-88f0-0716635f6695" name="configuration.js">
+        <elementDefinition Id="5e633004-2756-43ad-abd3-56ebbff3f445" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="c9b37e25-befb-424f-a6d3-2ab755e6b927" name="Globals" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="ae1ec256-14a2-472b-889b-3c189319c890" />
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="8b840417-eb9f-46a0-8916-5696dba89b49" name="Scoreboard" isAbstract="false" isLeaf="false" cachedFullName="Scoreboard">
+        <elementDefinition Id="463b6a18-f32c-46bd-a7af-b41f1b3c0a21" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="35af2898-b074-4d5d-bb60-b879be1a3b59" name="GameModel" isAbstract="false" isLeaf="false" cachedFullName="GameModel">
+        <elementDefinition Id="8c11e76a-bfb5-416d-8462-315d406433dc" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="7bffa2a8-dc6d-4fd3-9bf0-f719c075a12c" name="AirDefence">
+    <elementDefinition Id="b1e0155a-e965-4c8e-8e9e-0592520c6a2a" />
+    <profileInstances>
+      <packageHasProfileInstances Id="5253ae34-29fc-44b6-bded-725a4902de10">
+        <profileInstance Id="8e351c12-5fd8-4f4a-b670-05635590f2ba" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="7aa44892-be57-4786-a2e3-6cace65076e1">
+        <profileInstance Id="d6efddd0-0907-4f71-acb0-dae26436b4b6" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

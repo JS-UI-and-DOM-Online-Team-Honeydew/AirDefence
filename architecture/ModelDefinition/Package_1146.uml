@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="9eb6b0b5-89ab-41fb-98e3-78bdbdbecbe0"
+  name="gameController.js" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="d1b385f5-4fd7-4d3b-ac1c-52163d1d68ec"
+        name="Game"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="1c169d64-10de-47ed-86ac-a8664dededf9"
+            name="scoreboard"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="463b6a18-f32c-46bd-a7af-b41f1b3c0a21"
+                LastKnownName="Scoreboard"
+                LastKnownLocation="Package_1146.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3194fc46-6bbd-45a6-8cb7-f736c138f67c"
+            name="game"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="8c11e76a-bfb5-416d-8462-315d406433dc"
+                LastKnownName="GameModel"
+                LastKnownLocation="Package_1146.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="e9d4f5d2-b253-43f0-a0a8-b592153aa83a"
+            name="Init"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="4076ccaa-a697-43fb-91c5-c65912765fb7"
+            name="OnNewGame"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e2dda3ad-b736-4e66-a013-7f063f78f256"
+            name="OnPauseResume"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="f6ffb441-07e4-4ffe-b4fc-fa86e36de0f6"
+            name="OnUpdateFrame"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="463b6a18-f32c-46bd-a7af-b41f1b3c0a21"
+        name="Scoreboard" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="64290dc3-d4df-4a10-ad74-4bfb2496ab40"
+        name="Gamemodel" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="8c11e76a-bfb5-416d-8462-315d406433dc"
+        name="GameModel" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

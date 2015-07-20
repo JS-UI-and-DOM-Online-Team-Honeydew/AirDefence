@@ -1,0 +1,924 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="b1e0155a-e965-4c8e-8e9e-0592520c6a2a"
+  name="AirDefence" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="3fd3a797-4487-4ce9-86d0-b7543cd1f063"
+        LastKnownName="scoreModel.js"
+        LastKnownLocation="Package_1130.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ab41876a-69bc-491f-a6c6-866e7ebbaba6"
+        LastKnownName="gameObjectsModel.js"
+        LastKnownLocation="Package_1131.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="2e30459d-7087-4b5e-b8c5-bd23700f3a7b"
+        LastKnownName="gameModel.js"
+        LastKnownLocation="Package_1132.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="fa068cf1-3665-497c-997a-777ea463848a"
+        LastKnownName="gameView.js"
+        LastKnownLocation="Package_1133.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="5118635a-e47c-40c3-8512-a45b0a164920"
+        name="GameSequence"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="79dc77c0-2d01-4d97-86a7-8c111befc4bd"
+            name="BehaviorExecutionSpecification6">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="bc0415fd-27ff-4bda-95fd-eb144d50a811"
+                LastKnownName="Controller"
+                LastKnownLocation="AirDefence.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="7a1e2e97-4991-48ab-8ae3-3b9a7d9b8f69"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="AirDefence.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="cb07bb5a-5b40-43af-a9f8-850ab0849ad5"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="AirDefence.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="2eac86e5-4c11-4938-a264-002a023f1e85"
+                LastKnownName="MessageOccurrenceSpecification14"
+                LastKnownLocation="AirDefence.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="cb07bb5a-5b40-43af-a9f8-850ab0849ad5"
+            name="ExecutionOccurrenceSpecification11">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="881d1152-77e1-4891-85ac-167d9dda4225"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="AirDefence.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="bc0415fd-27ff-4bda-95fd-eb144d50a811"
+                LastKnownName="Controller"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2eac86e5-4c11-4938-a264-002a023f1e85"
+            name="MessageOccurrenceSpecification14">
+            <covered>
+              <lifelineMoniker
+                Id="bc0415fd-27ff-4bda-95fd-eb144d50a811"
+                LastKnownName="Controller"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="bf3ee5be-3514-4269-868d-4a1ad32e942b"
+            name="MessageOccurrenceSpecification13">
+            <covered>
+              <lifelineMoniker
+                Id="8ceaa884-d078-4461-a892-db14792e4266"
+                LastKnownName="Game start"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="7a1e2e97-4991-48ab-8ae3-3b9a7d9b8f69"
+            name="ExecutionOccurrenceSpecification12">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="5949c382-07f2-490f-b705-55288766661f"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="AirDefence.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="bc0415fd-27ff-4bda-95fd-eb144d50a811"
+                LastKnownName="Controller"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="3dcea5cc-661a-4c5c-83d3-4cda363ec04f"
+            name="BehaviorExecutionSpecification2">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="72faeac0-2f4c-4d0b-8bf7-71e441ebf4fb"
+                LastKnownName="Model"
+                LastKnownLocation="AirDefence.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="829b88d0-efd1-4f33-99de-beced2e24a4d"
+                LastKnownName="ExecutionOccurrenceSpecification4"
+                LastKnownLocation="AirDefence.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="314525aa-d71e-428b-80f2-ea57e2cd8a5c"
+                LastKnownName="ExecutionOccurrenceSpecification3"
+                LastKnownLocation="AirDefence.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="71420a35-4ccd-4ff8-887b-c40fbf5e230a"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="AirDefence.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="314525aa-d71e-428b-80f2-ea57e2cd8a5c"
+            name="ExecutionOccurrenceSpecification3">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="97481fb0-b62c-4d6c-b76c-f2b39e5ae2bb"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="AirDefence.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="72faeac0-2f4c-4d0b-8bf7-71e441ebf4fb"
+                LastKnownName="Model"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="465682a0-fe92-4c1c-9641-fb0ecccf8f00"
+            name="MessageOccurrenceSpecification5">
+            <covered>
+              <lifelineMoniker
+                Id="bc0415fd-27ff-4bda-95fd-eb144d50a811"
+                LastKnownName="Controller"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="71420a35-4ccd-4ff8-887b-c40fbf5e230a"
+            name="MessageOccurrenceSpecification6">
+            <covered>
+              <lifelineMoniker
+                Id="72faeac0-2f4c-4d0b-8bf7-71e441ebf4fb"
+                LastKnownName="Model"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="829b88d0-efd1-4f33-99de-beced2e24a4d"
+            name="ExecutionOccurrenceSpecification4">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="ad091313-2e8d-4e09-b433-4e4d25f9191c"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="AirDefence.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="72faeac0-2f4c-4d0b-8bf7-71e441ebf4fb"
+                LastKnownName="Model"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="aff17dfb-9fef-40dc-920d-7af0c1885224"
+            name="BehaviorExecutionSpecification3">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="72faeac0-2f4c-4d0b-8bf7-71e441ebf4fb"
+                LastKnownName="Model"
+                LastKnownLocation="AirDefence.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="da23b6e0-06c0-4976-ad1a-024306037e4f"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="AirDefence.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="55f1eb4a-b052-4fb0-8308-26da39bb99ce"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="AirDefence.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="12123bac-7497-4b17-a176-4fa7cfc5dba8"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="AirDefence.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="55f1eb4a-b052-4fb0-8308-26da39bb99ce"
+            name="ExecutionOccurrenceSpecification5">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="13583cf0-3ca1-46ec-82e7-a498846fcfd2"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="AirDefence.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="72faeac0-2f4c-4d0b-8bf7-71e441ebf4fb"
+                LastKnownName="Model"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="12123bac-7497-4b17-a176-4fa7cfc5dba8"
+            name="MessageOccurrenceSpecification8">
+            <covered>
+              <lifelineMoniker
+                Id="72faeac0-2f4c-4d0b-8bf7-71e441ebf4fb"
+                LastKnownName="Model"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="17c6d73d-81b2-446f-9182-9d05fe8cd58c"
+            name="MessageOccurrenceSpecification7">
+            <covered>
+              <lifelineMoniker
+                Id="bc0415fd-27ff-4bda-95fd-eb144d50a811"
+                LastKnownName="Controller"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="da23b6e0-06c0-4976-ad1a-024306037e4f"
+            name="ExecutionOccurrenceSpecification6">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="572cd9ee-4f9b-4c7c-8916-804ff292b219"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="AirDefence.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="72faeac0-2f4c-4d0b-8bf7-71e441ebf4fb"
+                LastKnownName="Model"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="43d3c8e4-9777-431b-98db-3ee405e010af"
+            name="BehaviorExecutionSpecification8">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="11351e69-626a-4172-8cce-834fb58a1a89"
+                LastKnownName="View"
+                LastKnownLocation="AirDefence.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="8e732b3e-ca10-445c-bb25-82b0f045fb74"
+                LastKnownName="ExecutionOccurrenceSpecification16"
+                LastKnownLocation="AirDefence.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="28b4ded6-7af9-42d2-bf35-569dfaddb0cf"
+                LastKnownName="ExecutionOccurrenceSpecification15"
+                LastKnownLocation="AirDefence.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="bbd7c26e-8308-4c03-8afd-d6a0754c858a"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="AirDefence.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="28b4ded6-7af9-42d2-bf35-569dfaddb0cf"
+            name="ExecutionOccurrenceSpecification15">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="0b2d009e-8f3a-4935-bd04-8026ef5c31c1"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="AirDefence.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="11351e69-626a-4172-8cce-834fb58a1a89"
+                LastKnownName="View"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="fcaa4bd5-e982-4199-adba-28545176833c"
+            name="MessageOccurrenceSpecification19">
+            <covered>
+              <lifelineMoniker
+                Id="bc0415fd-27ff-4bda-95fd-eb144d50a811"
+                LastKnownName="Controller"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="bbd7c26e-8308-4c03-8afd-d6a0754c858a"
+            name="MessageOccurrenceSpecification20">
+            <covered>
+              <lifelineMoniker
+                Id="11351e69-626a-4172-8cce-834fb58a1a89"
+                LastKnownName="View"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="8e732b3e-ca10-445c-bb25-82b0f045fb74"
+            name="ExecutionOccurrenceSpecification16">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="8928ccc1-7728-41b3-aff4-548ba265af7b"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="AirDefence.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="11351e69-626a-4172-8cce-834fb58a1a89"
+                LastKnownName="View"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="5275268e-d2da-4fba-b3f2-147c2fb1996c"
+            name="BehaviorExecutionSpecification7">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="11351e69-626a-4172-8cce-834fb58a1a89"
+                LastKnownName="View"
+                LastKnownLocation="AirDefence.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="06fae5ec-4021-4c33-850d-72abbb32d5ff"
+                LastKnownName="ExecutionOccurrenceSpecification14"
+                LastKnownLocation="AirDefence.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="efa3cfd5-3c92-4fdd-b771-09b9069345f5"
+                LastKnownName="ExecutionOccurrenceSpecification13"
+                LastKnownLocation="AirDefence.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="812fad1f-443b-4e4f-8f04-c0da7665d427"
+                LastKnownName="MessageOccurrenceSpecification16"
+                LastKnownLocation="AirDefence.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="9befc94f-7140-41cd-b795-6e15ef2286fe"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="AirDefence.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="efa3cfd5-3c92-4fdd-b771-09b9069345f5"
+            name="ExecutionOccurrenceSpecification13">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="75110037-eb9c-45d1-afd0-a8cdc09a60ec"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="AirDefence.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="11351e69-626a-4172-8cce-834fb58a1a89"
+                LastKnownName="View"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="42b5ce30-835e-4042-b197-25777c8e8c9e"
+            name="MessageOccurrenceSpecification15">
+            <covered>
+              <lifelineMoniker
+                Id="bc0415fd-27ff-4bda-95fd-eb144d50a811"
+                LastKnownName="Controller"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="812fad1f-443b-4e4f-8f04-c0da7665d427"
+            name="MessageOccurrenceSpecification16">
+            <covered>
+              <lifelineMoniker
+                Id="11351e69-626a-4172-8cce-834fb58a1a89"
+                LastKnownName="View"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9befc94f-7140-41cd-b795-6e15ef2286fe"
+            name="MessageOccurrenceSpecification17">
+            <covered>
+              <lifelineMoniker
+                Id="11351e69-626a-4172-8cce-834fb58a1a89"
+                LastKnownName="View"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9c77c6ce-4e0b-42ce-b764-5eb4419b5cb4"
+            name="MessageOccurrenceSpecification18">
+            <covered>
+              <lifelineMoniker
+                Id="bc0415fd-27ff-4bda-95fd-eb144d50a811"
+                LastKnownName="Controller"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="06fae5ec-4021-4c33-850d-72abbb32d5ff"
+            name="ExecutionOccurrenceSpecification14">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="ffddf2d1-4dec-4c73-b61d-ef5f6b1e1577"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="AirDefence.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="11351e69-626a-4172-8cce-834fb58a1a89"
+                LastKnownName="View"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="a15c1116-ebaf-4e8c-8523-067852e5b240"
+            name="BehaviorExecutionSpecification9">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="bc0415fd-27ff-4bda-95fd-eb144d50a811"
+                LastKnownName="Controller"
+                LastKnownLocation="AirDefence.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="52096516-5f1b-4d16-bf4f-4c7e92abe15a"
+                LastKnownName="ExecutionOccurrenceSpecification18"
+                LastKnownLocation="AirDefence.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="8754a0b4-c31c-47cd-81d7-cfcce2183906"
+                LastKnownName="ExecutionOccurrenceSpecification17"
+                LastKnownLocation="AirDefence.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="2f7b4bda-d721-4c51-bfe3-9642edff9e44"
+                LastKnownName="MessageOccurrenceSpecification22"
+                LastKnownLocation="AirDefence.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="8754a0b4-c31c-47cd-81d7-cfcce2183906"
+            name="ExecutionOccurrenceSpecification17">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="315b2d38-05b0-4ca2-bd52-1d590a926faf"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="AirDefence.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="bc0415fd-27ff-4bda-95fd-eb144d50a811"
+                LastKnownName="Controller"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="a3fc05e6-4e13-483f-aab2-b30cebc4325b"
+            name="MessageOccurrenceSpecification21">
+            <covered>
+              <lifelineMoniker
+                Id="11351e69-626a-4172-8cce-834fb58a1a89"
+                LastKnownName="View"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="2f7b4bda-d721-4c51-bfe3-9642edff9e44"
+            name="MessageOccurrenceSpecification22">
+            <covered>
+              <lifelineMoniker
+                Id="bc0415fd-27ff-4bda-95fd-eb144d50a811"
+                LastKnownName="Controller"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="52096516-5f1b-4d16-bf4f-4c7e92abe15a"
+            name="ExecutionOccurrenceSpecification18">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="552547fe-e3ee-419d-8848-9cf949a21b08"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="AirDefence.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="bc0415fd-27ff-4bda-95fd-eb144d50a811"
+                LastKnownName="Controller"
+                LastKnownLocation="AirDefence.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="8ceaa884-d078-4461-a892-db14792e4266"
+            name="Game start"
+            isActor="false"
+            lifelineDisplayName="Game start">
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="bf3ee5be-3514-4269-868d-4a1ad32e942b"
+                LastKnownName="MessageOccurrenceSpecification13"
+                LastKnownLocation="AirDefence.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="bc0415fd-27ff-4bda-95fd-eb144d50a811"
+            name="Controller"
+            isActor="false"
+            lifelineDisplayName="Controller">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="cb07bb5a-5b40-43af-a9f8-850ab0849ad5"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="AirDefence.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="7a1e2e97-4991-48ab-8ae3-3b9a7d9b8f69"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="AirDefence.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="465682a0-fe92-4c1c-9641-fb0ecccf8f00"
+                LastKnownName="MessageOccurrenceSpecification5"
+                LastKnownLocation="AirDefence.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="17c6d73d-81b2-446f-9182-9d05fe8cd58c"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="AirDefence.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="fcaa4bd5-e982-4199-adba-28545176833c"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="AirDefence.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="42b5ce30-835e-4042-b197-25777c8e8c9e"
+                LastKnownName="MessageOccurrenceSpecification15"
+                LastKnownLocation="AirDefence.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="9c77c6ce-4e0b-42ce-b764-5eb4419b5cb4"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="AirDefence.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="8754a0b4-c31c-47cd-81d7-cfcce2183906"
+                LastKnownName="ExecutionOccurrenceSpecification17"
+                LastKnownLocation="AirDefence.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="52096516-5f1b-4d16-bf4f-4c7e92abe15a"
+                LastKnownName="ExecutionOccurrenceSpecification18"
+                LastKnownLocation="AirDefence.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="72faeac0-2f4c-4d0b-8bf7-71e441ebf4fb"
+            name="Model"
+            isActor="false"
+            lifelineDisplayName="Model">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="314525aa-d71e-428b-80f2-ea57e2cd8a5c"
+                LastKnownName="ExecutionOccurrenceSpecification3"
+                LastKnownLocation="AirDefence.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="829b88d0-efd1-4f33-99de-beced2e24a4d"
+                LastKnownName="ExecutionOccurrenceSpecification4"
+                LastKnownLocation="AirDefence.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="55f1eb4a-b052-4fb0-8308-26da39bb99ce"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="AirDefence.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="da23b6e0-06c0-4976-ad1a-024306037e4f"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="AirDefence.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="11351e69-626a-4172-8cce-834fb58a1a89"
+            name="View"
+            isActor="false"
+            lifelineDisplayName="View">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="28b4ded6-7af9-42d2-bf35-569dfaddb0cf"
+                LastKnownName="ExecutionOccurrenceSpecification15"
+                LastKnownLocation="AirDefence.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="8e732b3e-ca10-445c-bb25-82b0f045fb74"
+                LastKnownName="ExecutionOccurrenceSpecification16"
+                LastKnownLocation="AirDefence.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="efa3cfd5-3c92-4fdd-b771-09b9069345f5"
+                LastKnownName="ExecutionOccurrenceSpecification13"
+                LastKnownLocation="AirDefence.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="06fae5ec-4021-4c33-850d-72abbb32d5ff"
+                LastKnownName="ExecutionOccurrenceSpecification14"
+                LastKnownLocation="AirDefence.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="a3fc05e6-4e13-483f-aab2-b30cebc4325b"
+                LastKnownName="MessageOccurrenceSpecification21"
+                LastKnownLocation="AirDefence.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="3eb07d66-e8ba-419f-a05f-58d407dca729"
+            name="Initialize game controller"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="bf3ee5be-3514-4269-868d-4a1ad32e942b"
+                LastKnownName="MessageOccurrenceSpecification13"
+                LastKnownLocation="AirDefence.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="2eac86e5-4c11-4938-a264-002a023f1e85"
+                LastKnownName="MessageOccurrenceSpecification14"
+                LastKnownLocation="AirDefence.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="fe741ac0-34fd-4151-b417-f94e034343a7"
+            name="Init game objects (based on configuration)"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="465682a0-fe92-4c1c-9641-fb0ecccf8f00"
+                LastKnownName="MessageOccurrenceSpecification5"
+                LastKnownLocation="AirDefence.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="71420a35-4ccd-4ff8-887b-c40fbf5e230a"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="AirDefence.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="c73a3f88-c0b2-49bf-8ed2-9d62eeafcc1e"
+            name="Init laser (based on configuration)"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="17c6d73d-81b2-446f-9182-9d05fe8cd58c"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="AirDefence.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="12123bac-7497-4b17-a176-4fa7cfc5dba8"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="AirDefence.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="4051c463-6a9b-4627-921b-ee19b16e78fa"
+            name="Init views (background + objects)"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="fcaa4bd5-e982-4199-adba-28545176833c"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="AirDefence.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="bbd7c26e-8308-4c03-8afd-d6a0754c858a"
+                LastKnownName="MessageOccurrenceSpecification20"
+                LastKnownLocation="AirDefence.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="da0affb4-8c5a-46a4-b339-149dc2d256c1"
+            name="Request user"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="42b5ce30-835e-4042-b197-25777c8e8c9e"
+                LastKnownName="MessageOccurrenceSpecification15"
+                LastKnownLocation="AirDefence.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="812fad1f-443b-4e4f-8f04-c0da7665d427"
+                LastKnownName="MessageOccurrenceSpecification16"
+                LastKnownLocation="AirDefence.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="5545ad8b-88f7-49ba-a0d0-0d3bdfac855a"
+            name="return user"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="9befc94f-7140-41cd-b795-6e15ef2286fe"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="AirDefence.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="9c77c6ce-4e0b-42ce-b764-5eb4419b5cb4"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="AirDefence.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="b87d9b7e-a9ca-4486-b3d1-8e98b7732474"
+            name="Start button pressed"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="a3fc05e6-4e13-483f-aab2-b30cebc4325b"
+                LastKnownName="MessageOccurrenceSpecification21"
+                LastKnownLocation="AirDefence.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="2f7b4bda-d721-4c51-bfe3-9642edff9e44"
+                LastKnownName="MessageOccurrenceSpecification22"
+                LastKnownLocation="AirDefence.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="97481fb0-b62c-4d6c-b76c-f2b39e5ae2bb"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="ad091313-2e8d-4e09-b433-4e4d25f9191c"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="13583cf0-3ca1-46ec-82e7-a498846fcfd2"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="572cd9ee-4f9b-4c7c-8916-804ff292b219"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="9eb6b0b5-89ab-41fb-98e3-78bdbdbecbe0"
+        LastKnownName="gameController.js"
+        LastKnownLocation="Package_1146.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="5e633004-2756-43ad-abd3-56ebbff3f445"
+        LastKnownName="configuration.js"
+        LastKnownLocation="Package_1212.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="881d1152-77e1-4891-85ac-167d9dda4225"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="5949c382-07f2-490f-b705-55288766661f"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="75110037-eb9c-45d1-afd0-a8cdc09a60ec"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="ffddf2d1-4dec-4c73-b61d-ef5f6b1e1577"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="0b2d009e-8f3a-4935-bd04-8026ef5c31c1"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="8928ccc1-7728-41b3-aff4-548ba265af7b"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="315b2d38-05b0-4ca2-bd52-1d590a926faf"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="552547fe-e3ee-419d-8848-9cf949a21b08"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
