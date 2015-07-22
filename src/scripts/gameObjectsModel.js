@@ -37,6 +37,7 @@ function gameObjectsModel() {
                     this.speed = speed;
                     this.zindex = zindex;
                     this.isTarget = isTarget;
+                    this.direction = direction;
                     return this;
                 }
             },
@@ -46,6 +47,7 @@ function gameObjectsModel() {
                 },
                 set: function (value) {
                     // TODO: Add validators.............
+                    this._position = {};
                     this._position.x = value.x;
                     this._position.y = value.y;
                 }
@@ -56,6 +58,7 @@ function gameObjectsModel() {
                 },
                 set: function (value) {
                     // TODO: Add validators.............
+                    this._size = {};
                     this._size.width = value.width;
                     this._size.height = value.height;
                 }
@@ -84,6 +87,7 @@ function gameObjectsModel() {
                 },
                 set: function (value) {
                     // TODO: Add validators.............
+                    this._direction = {};
                     this._direction.x = value.x;
                     this._direction.y = value.y;
                 }
@@ -109,10 +113,16 @@ function gameObjectsModel() {
             update: {
                 value: function () {
                     // TODO: update all coordinates and other data based on current speed, direction, ect...
+                    this.position.x += this.direction.x * this.speed;
+                    this.position.y += this.direction.y * this.speed;
                 }
             },
             getUpdatedPosition: {
                 value: function () {
+                    // return {
+                    //     x: this.position.x,
+                    //     y: this.position.y
+                    // }
                     // TODO: return new position, size, other data, ect ...
                 }
             }

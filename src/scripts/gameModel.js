@@ -7,14 +7,14 @@ function gameModel() {
 
     // result from the function
     gameModelInternal = {
-        positionStruct: function (x, y) {
+        position: function (x, y) {
             return Object.create(positionStruct).init(x, y);
         },
-        sizeStruct: function (width, height) {
-            return Object.create(sizeStruct).init(position, size, image, speed, direction, zindex);
+        size: function (width, height) {
+            return Object.create(sizeStruct).init(width, height);
         },
         gameMdl: function (currentPlayer, gameObjects, gameLaser) {
-            return Object.create(gameMdl).init(position, size, image, speed, direction, zindex);
+            return Object.create(gameMdl).init(currentPlayer, gameObjects, gameLaser);
         }
     };
 

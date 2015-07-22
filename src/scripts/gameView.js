@@ -8,8 +8,8 @@ function gameView() {
 
     // result from the function
     gameViewInternal = {
-        fieldView: function (backgroundImage) {
-            return Object.create(gameFieldView).init(backgroundImage);
+        fieldView: function (width, height, backgroundImage) {
+            return Object.create(gameFieldView).init(width, height, backgroundImage);
         },
         playersView: function (players) {
             return Object.create(playersFieldView).init(players);
@@ -23,10 +23,19 @@ function gameView() {
     gameFieldView = (function () {
         var gameFieldViewInternal = Object.create({});
 
+        function resetView(context, width, height, backgroundImage) {
+            var baseImage = new Image();
+            baseImage.src = backgroundImage;
+            context.clearRect(0, 0, width, height);
+            context.drawImage(baseImage, 0, 0, width, height);
+        }
+
         Object.defineProperties(gameFieldViewInternal, {
             init: {
-                value: function (backgroundImage) {
+                value: function (width, height, backgroundImage) {
                     this.backgroundImage = backgroundImage;
+                    this.width = width;
+                    this.height = height;
                     // TODO: Initialize the canvas in the page
                     // first create canvas element on HTML page and display the backgound on it
                     // the game objects will be drawed later using Draw function
@@ -34,24 +43,15 @@ function gameView() {
 
                     var mycanvas = document.createElement("canvas");
                     mycanvas.id = "mycanvas";
-                    mycanvas.height = globals.gameHeight;
-                    mycanvas.width = globals.gameWidth;
+                    mycanvas.width = this.width;
+                    mycanvas.height = this.height;
                     document.body.appendChild(mycanvas);
 
-                    var context = document.getElementById('mycanvas').getContext('2d'),
-                        path = new Path2D();
+                    var context = document.getElementById('mycanvas').getContext('2d');
+                    this.canvas = mycanvas;
 
-                    context.arc(75, 75, 50, 0, Math.PI * 2, true);
-                    path.moveTo(110, 75);
-                    path.arc(75, 75, 35, 0, Math.PI, false);
-                    path.moveTo(65, 65);
-                    path.arc(60, 65, 5, 0, Math.PI * 2, true);
-                    path.moveTo(95, 65);
-                    path.arc(90, 65, 5, 0, Math.PI * 2, true);
-                    context.stroke(path);
+                    resetView(context, width, height, backgroundImage);
 
-                    context.font = '20pt Arial';
-                    context.fillText('Works', 30, 155);
                     return this;
                 }
             },
@@ -65,18 +65,39 @@ function gameView() {
                 }
             },
             draw: {
-                value: function (value) {
+                value: function (objects) {
                     // TODO: check input value parameter
                     // if value is array of gameObjects, draw those objects in the view
                     // if value is array beam, draw this beam in the view
                     // else throw an error, not valid parameter
+                    var baseImage = new Image(),
+                        context = this.canvas.getContext('2d');
+
+                    // clear canvas
+                    resetView(context, this.width, this.height, this.backgroundImage);
+
+                    for (var i = 0; i < objects.length; i++) {
+                        baseImage.src = objects[i].image;
+                        context.drawImage(baseImage, objects[i].position.x, objects[i].position.y,
+                            objects[i].size.width, objects[i].size.height);
+                    }
                 }
             },
             registerClickCallback: {
-                value: function (value) {
+                value: function (callback) {
                     // TODO: create click event on the canvas field
                     // return a function as result, which will execute when click occures
                     // note: some key, for ex. space may also execute this callback
+                    // Add event listener for `click` events.
+                    this.canvas.addEventListener('click', function (event) {
+                        var x = event.pageX,
+                            y = event.pageY;
+
+                        if (callback !== undefined) {
+                            callback(x, y);
+                        }
+
+                    }, false);
                 }
             }
         });

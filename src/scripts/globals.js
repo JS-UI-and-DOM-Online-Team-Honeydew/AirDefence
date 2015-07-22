@@ -6,8 +6,9 @@ var globals,
 
     // any global variables in the game to be defined here
     globals = {
-        gameHeight: 400,
-        gameWidth: 200,
+        gameHeight: 600,
+        gameWidth: 800,
+        gameBackground: './images/dark_blue.jpg',
         numberEnemies: 1,
         OTHER_CONSTANTS: 0
     };
