@@ -1,4 +1,11 @@
 /* TODO: add some styles here */
-body {
-    background-color: white;
+#mycanvas {
+    padding: 20px;
+    border: 1px solid black;
+}
+
+#control-form {
+    padding: 20px;
+    border: 1px solid black;
+    display: inline-block;
 }

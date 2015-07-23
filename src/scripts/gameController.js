@@ -7,6 +7,7 @@
         scoreMdl = scoreModel(),
         gameObjectsMdl = gameObjectsModel(),
         gameFieldView = view.fieldView(globals.gameWidth, globals.gameHeight, globals.gameBackground),
+        gameControlView = view.controlsView(),
         gameObjects = [];
 
     function clickEvent(x, y) {
@@ -14,20 +15,23 @@
         // have click operations (or key press)
     }
 
-    // function newGameEvent() {
-    //     // new game button pressed
-    // }
-    //
-    // function pauseResumeEvent() {
-    //     // pause/resume button pressed
-    // }
-    //
-    // function newPlayerEvent() {
-    //     // new player button pressed
-    // }
+    function newGameEvent() {
+        alert('New Game');
+    }
+
+    function pauseResumeEvent() {
+        alert('Pause/Resume Game');
+    }
+
+    function exitGameEvent() {
+        alert('Exit Game');
+    }
 
     // callbacks
     gameFieldView.registerClickCallback(clickEvent);
+    gameControlView.registerNewGameCallback(newGameEvent);
+    gameControlView.registerExitCallback(pauseResumeEvent);
+    gameControlView.registerPauseGameCallback(exitGameEvent);
 
     // spaceship 1
     gameObjects.push(gameObjectsMdl.enemy(position(100, 100),

@@ -134,27 +134,67 @@ function gameView() {
         Object.defineProperties(controlFieldViewInternal, {
             init: {
                 value: function () {
-                    // TODO: Create HTML form here
-                    // Maybe width and height to be given as parameters?!!? or buttons ??
+                    var formField = document.createElement('form'),
+                        buttonNewGame = document.createElement('input'),
+                        buttonPauseGame = document.createElement('input'),
+                        buttonExitGame = document.createElement('input');
+
+                    formField.id = 'control-form';
+
+                    buttonNewGame.class = 'control-buttons';
+                    buttonNewGame.type = 'button';
+                    buttonNewGame.name = 'new-game';
+                    buttonNewGame.value = 'New Game';
+
+                    buttonPauseGame.class = 'control-buttons';
+                    buttonPauseGame.type = 'button';
+                    buttonPauseGame.name = 'pause-game';
+                    buttonPauseGame.value = 'Pause Game';
+
+                    buttonExitGame.class = 'control-buttons';
+                    buttonExitGame.type = 'button';
+                    buttonExitGame.name = 'exit-game';
+                    buttonExitGame.value = 'Exit Game';
+
+                    formField.appendChild(buttonNewGame);
+                    formField.appendChild(buttonPauseGame);
+                    formField.appendChild(buttonExitGame);
+
+                    this.buttonNewGame = buttonNewGame;
+                    this.buttonPauseGame = buttonPauseGame;
+                    this.buttonExitGame = buttonExitGame;
+
+                    document.body.appendChild(document.createElement('br'));
+                    document.body.appendChild(formField);
+
                     return this;
                 }
             },
             registerNewGameCallback: {
-                value: function (value) {
-                    // TODO: send event to controller for the game
-                    // to return a function, that will be executed
+                value: function (callback) {
+                    this.buttonNewGame.addEventListener('click', function (event) {
+                        if (callback !== undefined) {
+                            callback();
+                        }
+                    }, false);
                 }
             },
-            registerNewPlayerCallback: {
-                value: function (value) {
-                    // TODO: send event to controller for the player
-                    // to return a function, that will be executed
+            registerExitCallback: {
+                value: function (callback) {
+                    this.buttonPauseGame.addEventListener('click', function (event) {
+                        if (callback !== undefined) {
+                            callback();
+                        }
+                    }, false);
                 }
             },
             registerPauseGameCallback: {
-                value: function (value) {
-                    // TODO: send event to controller for the pause/resume
-                    // to return a function, that will be executed
+                value: function (callback) {
+                    this.buttonExitGame.addEventListener('click', function (event) {
+                        if (callback !== undefined) {
+                            callback();
+                        }
+                    }, false);
                 }
             }
         });
