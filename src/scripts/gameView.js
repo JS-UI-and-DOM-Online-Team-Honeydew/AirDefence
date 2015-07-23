@@ -55,12 +55,39 @@ function gameView() {
                     return this;
                 }
             },
+            width : {
+                get : function (){
+                    return this._width;
+                },
+                set : function (value){
+                    validators.checkUndefinedAndThrow(value);
+                    if (!validators.isPositiveInteger(value)){
+                        throw new Error('Width must be a positive number!');
+                    }
+                    this._width = value;
+                }
+            },
+            height : {
+                get : function (){
+                    return this._height;
+                },
+                set : function (value){
+                    validators.checkUndefinedAndThrow(value);
+                    if (!validators.isPositiveInteger(value)){
+                        throw new Error('Height must be a positive number!');
+                    }
+                    this._height = value;
+                }
+            },
             backgroundImage: {
                 get: function () {
                     return this._backgroundImage;
                 },
                 set: function (value) {
-                    // TODO: Add validators.............
+                    validators.checkUndefinedAndThrow(value);
+                    if (!validators.isString(value)){
+                        throw new TypeError('BackgroundImage must be a string!');
+                    }
                     this._backgroundImage = value;
                 }
             },
