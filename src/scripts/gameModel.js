@@ -19,38 +19,7 @@ function gameModel() {
     };
 
     // Position class, represents point with x and y coordinates
-    positionStruct = (function () {
-        var positionInternal = Object.create({});
-
-        Object.defineProperties(positionInternal, {
-            init: {
-                value: function (x, y) {
-                    this.x = x;
-                    this.y = y;
-                    return this;
-                }
-            },
-            x: {
-                get: function () {
-                    return this._x;
-                },
-                set: function (value) {
-                    // TODO: Add validators.............
-                    this._x = value;
-                }
-            },
-            y: {
-                get: function () {
-                    return this._y;
-                },
-                set: function (value) {
-                    // TODO: Add validators.............
-                    this._y = value;
-                }
-            }
-        });
-        return positionInternal;
-    }());
+    
 
     // Size class, represents shape with width and height coordinates
     sizeStruct = (function () {

@@ -6,7 +6,6 @@
         // register models objects
         scoreMdl = scoreModel(),
         gameObjectsMdl = gameObjectsModel(),
-        gameMdl = gameModel(),
         gameFieldView = view.fieldView(globals.gameWidth, globals.gameHeight, globals.gameBackground),
         gameObjects = [];
 
@@ -31,19 +30,19 @@
     gameFieldView.registerClickCallback(clickEvent);
 
     // spaceship 1
-    gameObjects.push(gameObjectsMdl.enemy(gameMdl.position(100, 100),
-        gameMdl.size(100, 100),
+    gameObjects.push(gameObjectsMdl.enemy(position(100, 100),
+        size(100, 100),
         'images/spaceship.gif',
         2,
-        gameMdl.position(1, 0),
+        direction.right,
         0));
 
     // spaceship 2
-    gameObjects.push(gameObjectsMdl.enemy(gameMdl.position(100, 200),
-        gameMdl.size(100, 100),
+    gameObjects.push(gameObjectsMdl.enemy(position(100, 200),
+        size(100, 100),
         'images/spaceship.gif',
         1,
-        gameMdl.position(1, 1),
+        direction.downRight,
         0));
 
     // start animation with the objects defined above

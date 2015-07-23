@@ -1,5 +1,8 @@
 var globals,
-    validators;
+    validators,
+    position,
+    size,
+    direction;
 
 (function () {
     'use strict';
@@ -12,6 +15,33 @@ var globals,
         numberEnemies: 1,
         OTHER_CONSTANTS: 0
     };
+
+    direction = {
+        left: {x:-1, y:0},
+        right: {x:+1, y:0},
+        up: {x:0, y:-1},
+        down: {x:0, y:+1},
+        upLeft: {x:-1, y:-1},
+        downLeft: {x:-1, y:+1},
+        upRight: {x:+1, y:-1},
+        downRight: {x:+1, y:+1}
+    }
+
+    position = function (x,y){
+        //Add validators
+        return {
+            x: x,
+            y: y
+        };
+    };
+    
+    size = function (width, height){
+        //Add validators
+        return {
+            width: width,
+            height: height
+        };
+    };    
 
     // any validation functions in the game to be defined here
     validators = {
