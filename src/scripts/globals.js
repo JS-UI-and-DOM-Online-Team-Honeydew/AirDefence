@@ -2,10 +2,38 @@ var globals,
     validators,
     position,
     size,
-    direction;
+    direction,
+    images;
 
 (function () {
     'use strict';
+
+    //here are all images and their validation 
+    images = {
+        spaceship: function(){
+            var spaceshipImg = new Image();
+            spaceshipImg.src = 'images/spaceship.gif';
+            if (!spaceshipImg.complete) {
+                return spaceshipImg.src;
+            } else {
+                return this.defalt();
+            }
+        },
+        background: function(){
+            var backgroundImg = new Image();
+            backgroundImg.src = 'images/dark_blue.jpg';
+            if (!backgroundImg.complete) {
+                return backgroundImg.src;
+            } else {
+                return this.defalt();
+            }
+        },
+        defalt: function(){
+            var defaltImg = new Image();
+            defaltImg.src = 'images/ivaylo_defalt.jpg';
+            return defaltImg.src
+        }
+    };
 
     // any global variables in the game to be defined here
     globals = {
@@ -25,7 +53,7 @@ var globals,
         downLeft: {x:-1, y:+1},
         upRight: {x:+1, y:-1},
         downRight: {x:+1, y:+1}
-    }
+    };
 
     position = function (x,y){
         //Add validators
@@ -90,6 +118,24 @@ var globals,
         isObject: function (value) {
             this.checkUndefinedAndThrow(value);
             return (typeof value === 'object');
+        },
+        //Position
+        checkPositionAndThrow: function(value) {
+            this.checkUndefinedAndThrow(value.x);
+            this.checkUndefinedAndThrow(value.y);
+
+            if(!this.isObject(value)){
+                throw new Error (value + 'must be object');
+            }
+        },
+        //Size
+        checkSizeAndThrow: function(value) {
+            this.checkUndefinedAndThrow(value.width);
+            this.checkUndefinedAndThrow(value.height);
+            
+            if(!this.isObject(value)){
+                throw new Error (value + 'must be object');
+            }
         }
     };
 }());

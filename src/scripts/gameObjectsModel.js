@@ -68,7 +68,6 @@ function gameObjectsModel() {
                     return this._image;
                 },
                 set: function (value) {
-                    // TODO: Add validators.............
                     this._image = value;
                 }
             },
@@ -107,23 +106,14 @@ function gameObjectsModel() {
                 },
                 set: function (value) {
                     // TODO: Add validators.............
+                    validators.isBoolean(value);
                     this._isTarget = value;
                 }
             },
             update: {
                 value: function () {
-                    // TODO: update all coordinates and other data based on current speed, direction, ect...
-                    this.position.x += this.direction.x * this.speed;
-                    this.position.y += this.direction.y * this.speed;
-                }
-            },
-            getUpdatedPosition: {
-                value: function () {
-                    // return {
-                    //     x: this.position.x,
-                    //     y: this.position.y
-                    // }
-                    // TODO: return new position, size, other data, ect ...
+                    this.position.x += (this.direction.x * this.speed);
+                    this.position.y += (this.direction.y * this.speed);
                 }
             }
         });

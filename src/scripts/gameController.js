@@ -35,7 +35,7 @@
     // spaceship 1
     gameObjects.push(gameObjectsMdl.enemy(position(100, 100),
         size(100, 100),
-        'images/spaceship.gif',
+        images.spaceship(),
         2,
         direction.right,
         0));
@@ -43,7 +43,7 @@
     // spaceship 2
     gameObjects.push(gameObjectsMdl.enemy(position(100, 200),
         size(100, 100),
-        'images/spaceship.gif',
+        images.spaceship(),
         1,
         direction.downRight,
         0));
