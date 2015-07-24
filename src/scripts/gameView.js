@@ -30,6 +30,17 @@ function gameView() {
             context.drawImage(baseImage, 0, 0, width, height);
         }
 
+        function isMobile (){
+            if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/BlackBerry/i) ||
+                navigator.userAgent.match(/iPhone|iPad|iPod/i) || navigator.userAgent.match(/Opera Mini/i) ||
+                navigator.userAgent.match(/IEMobile/i)){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
         Object.defineProperties(gameFieldViewInternal, {
             init: {
                 value: function (width, height, backgroundImage) {
@@ -116,7 +127,12 @@ function gameView() {
                     // return a function as result, which will execute when click occures
                     // note: some key, for ex. space may also execute this callback
                     // Add event listener for `click` events.
-                    this.canvas.addEventListener('click', callback, false);
+                    if (isMobile()){
+                        this.canvas.addEventListener('touchmove', callback, false);
+                    }
+                    else {
+                        this.canvas.addEventListener('click', callback, false);
+                    }
                 }
             }
         });
