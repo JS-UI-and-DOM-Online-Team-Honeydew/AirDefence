@@ -8,40 +8,14 @@ var globals,
 (function () {
     'use strict';
 
-    //here are all images and their validation 
-    images = {
-        spaceship: function(){
-            var spaceshipImg = new Image();
-            spaceshipImg.src = 'images/spaceship.gif';
-            if (!spaceshipImg.complete) {
-                return spaceshipImg.src;
-            } else {
-                return this.defalt();
-            }
-        },
-        background: function(){
-            var backgroundImg = new Image();
-            backgroundImg.src = 'images/dark_blue.jpg';
-            if (!backgroundImg.complete) {
-                return backgroundImg.src;
-            } else {
-                return this.defalt();
-            }
-        },
-        defalt: function(){
-            var defaltImg = new Image();
-            defaltImg.src = 'images/ivaylo_defalt.jpg';
-            return defaltImg.src
-        }
-    };
-
     // any global variables in the game to be defined here
     globals = {
         gameHeight: 600,
         gameWidth: 800,
         gameBackground: './images/dark_blue.jpg',
         numberEnemies: 1,
-        OTHER_CONSTANTS: 0
+        OTHER_CONSTANTS: 0,
+        defaltImg:'images/ivaylo_defalt.jpg'
     };
 
     direction = {
@@ -135,6 +109,16 @@ var globals,
             
             if(!this.isObject(value)){
                 throw new Error (value + 'must be object');
+            }
+        },
+        //Image
+        checkImageAndChange: function(img_url){
+            var img = new Image();
+            img.src = img_url;
+            if (!img.complete) {
+                return img.src;
+            } else {
+                return globals.defaltImg;
             }
         }
     };
