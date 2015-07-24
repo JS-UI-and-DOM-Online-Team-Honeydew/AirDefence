@@ -115,7 +115,7 @@ var globals,
         checkImageAndChange: function(img_url){
             var img = new Image();
             img.src = img_url;
-            if (!img.complete) {
+            if (img.complete) {
                 return img.src;
             } else {
                 return globals.defaltImg;

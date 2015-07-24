@@ -68,7 +68,7 @@ function gameObjectsModel() {
                     return this._image;
                 },
                 set: function (value) {
-                    this._image = value;
+                    this._image = validators.checkImageAndChange(value);
                 }
             },
             speed: {
