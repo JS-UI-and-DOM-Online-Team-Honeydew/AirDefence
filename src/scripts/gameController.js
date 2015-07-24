@@ -10,9 +10,8 @@
         gameControlView = view.controlsView(),
         gameObjects = [];
 
-    function clickEvent(x, y) {
-        alert(x + ' ,' + y);
-        // have click operations (or key press)
+    function clickEvent() {
+        alert('clicked!');        
     }
 
     function newGameEvent() {

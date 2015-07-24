@@ -55,25 +55,25 @@ function gameView() {
                     return this;
                 }
             },
-            width : {
-                get : function (){
+            width: {
+                get: function () {
                     return this._width;
                 },
-                set : function (value){
+                set: function (value) {
                     validators.checkUndefinedAndThrow(value);
-                    if (!validators.isPositiveInteger(value)){
+                    if (!validators.isPositiveInteger(value)) {
                         throw new Error('Width must be a positive number!');
                     }
                     this._width = value;
                 }
             },
-            height : {
-                get : function (){
+            height: {
+                get: function () {
                     return this._height;
                 },
-                set : function (value){
+                set: function (value) {
                     validators.checkUndefinedAndThrow(value);
-                    if (!validators.isPositiveInteger(value)){
+                    if (!validators.isPositiveInteger(value)) {
                         throw new Error('Height must be a positive number!');
                     }
                     this._height = value;
@@ -85,7 +85,7 @@ function gameView() {
                 },
                 set: function (value) {
                     validators.checkUndefinedAndThrow(value);
-                    if (!validators.isString(value)){
+                    if (!validators.isString(value)) {
                         throw new TypeError('BackgroundImage must be a string!');
                     }
                     this._backgroundImage = value;
@@ -116,15 +116,7 @@ function gameView() {
                     // return a function as result, which will execute when click occures
                     // note: some key, for ex. space may also execute this callback
                     // Add event listener for `click` events.
-                    this.canvas.addEventListener('click', function (event) {
-                        var x = event.pageX,
-                            y = event.pageY;
-
-                        if (callback !== undefined) {
-                            callback(x, y);
-                        }
-
-                    }, false);
+                    this.canvas.addEventListener('click', callback, false);
                 }
             }
         });
@@ -199,29 +191,17 @@ function gameView() {
             },
             registerNewGameCallback: {
                 value: function (callback) {
-                    this.buttonNewGame.addEventListener('click', function (event) {
-                        if (callback !== undefined) {
-                            callback();
-                        }
-                    }, false);
+                    this.buttonNewGame.addEventListener('click', callback, false);
                 }
             },
             registerExitCallback: {
                 value: function (callback) {
-                    this.buttonPauseGame.addEventListener('click', function (event) {
-                        if (callback !== undefined) {
-                            callback();
-                        }
-                    }, false);
+                    this.buttonPauseGame.addEventListener('click', callback, false);
                 }
             },
             registerPauseGameCallback: {
                 value: function (callback) {
-                    this.buttonExitGame.addEventListener('click', function (event) {
-                        if (callback !== undefined) {
-                            callback();
-                        }
-                    }, false);
+                    this.buttonExitGame.addEventListener('click', callback, false);
                 }
             }
         });
