@@ -123,16 +123,24 @@ function gameView() {
             },
             registerClickCallback: {
                 value: function (callback) {
-                    // TODO: create click event on the canvas field
-                    // return a function as result, which will execute when click occures
-                    // note: some key, for ex. space may also execute this callback
-                    // Add event listener for `click` events.
-                    if (isMobile()){
-                        this.canvas.addEventListener('touchmove', callback, false);
+                    this.canvas.addEventListener('click', callback, false);
+                }
+            },
+            registerKeyDownCallback: {
+                value: function (key, callback){
+                    validators.checkUndefinedAndThrow(key);
+                    validators.checkUndefinedAndThrow(callback);
+                    if (validators.isString(key)){
+                        throw new TypeError('Key must be a string.');
                     }
-                    else {
-                        this.canvas.addEventListener('click', callback, false);
+                    if (validators.isFunction(callback)){
+                        throw new TypeError('Callback must be a Function.');
                     }
+                    window.addEventListener('keydown', function (e) {
+                        if (String.fromCharCode(e.keyCode).toUpperCase() === key.toUpperCase()){
+                            callback();
+                        }
+                    },false);
                 }
             }
         });
