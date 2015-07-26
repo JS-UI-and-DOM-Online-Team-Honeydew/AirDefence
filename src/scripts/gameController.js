@@ -35,7 +35,7 @@
         if(!gameRadarRay.target){
             gameObjects.forEach(function(obj){
                 if(obj.isTarget){
-                    if (gameRadarRay.angle < trigonometry.angleToTarget(gameRadarRay, obj ) + 3 && //TODO: deltas to be moved
+                    if (gameRadarRay.angle < trigonometry.angleToTarget(gameRadarRay, obj ) + 3 && //TODO: deltas to be moved out + linking to real ray view
 					   gameRadarRay.angle > trigonometry.angleToTarget(gameRadarRay, obj ) - 3){
                            gameRadarRay.target = obj;
                            console.log('locked');
@@ -49,7 +49,8 @@
         else{
             if (gameRadarRay.range > trigonometry.distanceBetween(gameRadarRay, gameRadarRay.target) - gameRadarRay.target.size.width &&
 		    gameRadarRay.range < trigonometry.distanceBetween(gameRadarRay, gameRadarRay.target) + gameRadarRay.target.size.width){
-                alert('Target locked');
+                // alert('Target locked');
+                destroyTarget(gameRadarRay);
             } else {
                 gameRadarRay.target = undefined;
                 gameRadarRay.range = 6;
@@ -65,16 +66,20 @@
     gameControlView.registerExitCallback(pauseResumeEvent);
     gameControlView.registerPauseGameCallback(exitGameEvent);
 
-    // spaceship 1
-    // gameObjects.push(gameObjectsMdl.enemy(position(100, 100),
-    //     size(100, 100),
-    //     'images/spaceship.gif',
-    //     2,
-    //     direction.right,
-    //     0));
-
-    // target 1
-
+    function destroyTarget(ray){
+        var index = gameObjects.indexOf(ray.target);
+        gameObjects.splice(index, 1);
+        ray.target = undefined;
+        ray.range = 6;
+        //new target to be randomized TODO:
+        gameObjects.push(gameObjectsMdl.enemy(position(globals.gameWidth, globals.gameHeight / 2),
+            size(100, 100),
+            'images/spaceship.png',
+            2, //speed
+            direction.left,
+            0));
+    }
+    
     // background_tree
     var testTree = gameObjectsMdl.landscapeItem(position(globals.gameWidth / 2, globals.gameHeight - 120),
         size(100, 100),
@@ -92,13 +97,13 @@
         0);
     gameObjects.push(testRadar);
 
-    var testTarget = gameObjectsMdl.enemy(position(globals.gameWidth, globals.gameHeight / 3),
-        size(100, 100),
-        'images/spaceship.png',
-        3.2, //speed
-        direction.left,
-        0);
-    gameObjects.push(testTarget);
+    // var testTarget = gameObjectsMdl.enemy(position(globals.gameWidth, globals.gameHeight / 3),
+    //     size(100, 100),
+    //     'images/spaceship.png',
+    //     3.2, //speed
+    //     direction.left,
+    //     0);
+    // gameObjects.push(testTarget);
 
     var testTarget2 = gameObjectsMdl.enemy(position(globals.gameWidth, globals.gameHeight / 2),
         size(100, 100),
@@ -110,7 +115,7 @@
 
     //Laser Ray (linked to the radar above)
     gameRadarRay = gameObjectsMdl.laserRay(45,
-        0.5, //angle speed
+        0.2, //angle speed
         1, //angle direction
         88, //max angle
         2, //min angle
