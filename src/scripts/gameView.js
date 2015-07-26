@@ -108,22 +108,45 @@ function gameView() {
                     // if value is array of gameObjects, draw those objects in the view
                     // if value is array beam, draw this beam in the view
                     // else throw an error, not valid parameter
-                    var baseImage = new Image(),
-                        context = this.canvas.getContext('2d');
+                    var context = this.canvas.getContext('2d');
 
                     // clear canvas
                     resetView(context, this.width, this.height, this.backgroundImage);
-
+                    //context.clearRect(0, 0, this.width, this.height);
+                    
                     for (var i = 0; i < objects.length; i++) {
-                        baseImage.src = objects[i].image;
-                        context.drawImage(baseImage, objects[i].position.x, objects[i].position.y,
-                            objects[i].size.width, objects[i].size.height);
+                        //Checks if object is radar ray
+                        //This is an ugly test implementation => feel free to change as needed
+                        if(objects[i].angle){
+                            context.beginPath();
+                            lineToAngle(objects[i].position.x, objects[i].position.y, 2000, objects[i].angle + 1, context);
+                            context.arc(objects[i].position.x, objects[i].position.y, 2000, trigonometry.toRad(360 - objects[i].angle - 1), trigonometry.toRad(360 - objects[i].angle + 2));
+                            context.closePath();
+                            context.fillStyle = 'rgba(100, 100, 100, 0.5)';
+                            context.fill(); //test draw
+                            //Range indicator:
+                            context.beginPath();
+                            // lineToAngle(objects[i].position.x, objects[i].position.y, objects[i].range, objects[i].angle + 1, context);
+                            for(var j = -6; j < 6; j += 2){
+                                context.arc(objects[i].position.x, objects[i].position.y, objects[i].range + j, trigonometry.toRad(360 - objects[i].angle - 1), trigonometry.toRad(360 - objects[i].angle + 2));
+                                context.closePath();
+                                context.strokeStyle = 'rgba(20, 20, 20, 0.8)';
+                                context.stroke(); //test draw  
+                            }
+                                  
+                        }else {
+                            //Every other sprite based object:
+                            context.drawImage(objects[i].image, objects[i].position.x - (objects[i].size.width / 2),
+                                objects[i].position.y - (objects[i].size.height / 2),
+                                objects[i].size.width, objects[i].size.height);
+                        }
+                        
                     }
                 }
             },
             registerClickCallback: {
                 value: function (callback) {
-                    this.canvas.addEventListener('click', callback, false);
+                    this.canvas.addEventListener('mousedown', callback, false);
                 }
             },
             registerKeyDownCallback: {
@@ -144,6 +167,13 @@ function gameView() {
                 }
             }
         });
+        
+        //helpers
+        function lineToAngle(x, y, length, angle, context){
+            angle = 0 - trigonometry.toRad(angle);
+            context.moveTo(x, y);
+            context.lineTo(x + length * Math.cos(angle), y + length * Math.sin(angle));
+        }
         return gameFieldViewInternal;
     }());
 

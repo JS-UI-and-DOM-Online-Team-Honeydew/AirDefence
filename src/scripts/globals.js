@@ -1,5 +1,6 @@
 var globals,
     validators,
+    trigonometry,
     position,
     size,
     direction,
@@ -88,6 +89,11 @@ var globals,
             this.checkUndefinedAndThrow(value);
             return Array.isArray(value);
         },
+        // Angle direction
+        isAngleDirection: function(value){
+            this.checkUndefinedAndThrow(value);
+            return (value == 1 || value == -1);
+        },
         // Object
         isObject: function (value) {
             this.checkUndefinedAndThrow(value);
@@ -113,18 +119,39 @@ var globals,
         },
         //Image
         checkImageAndChange: function(img_url){
-            var img = new Image();
-            img.src = img_url;
-            if (img.complete) {
-                return img.src;
-            } else {
-                return globals.defaltImg;
-            }
+            //currently not used - 
+            // var img = new Image();
+            // img.src = img_url;
+            // if (img.complete) {
+                return img_url;
+            // } else {
+            //     return globals.defaltImg;
+            // }
         },
         //Is a Function
         isFunction : function (functionToCheck) {
             var getType = {};
             return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
         }
+    };
+    trigonometry = {
+        //converts degrees to radians
+    	toRad: function (degrees){
+    		return 3.14/180 * degrees;
+    	},
+        //converts radians to degrees
+    	toDeg:function (radians){
+    		return 180/3.14 * radians;
+    	},
+        //calculates reverse angle from the target
+    	angleToTarget: function (radar, target){
+    		return this.toDeg(Math.atan((radar.position.y - target.position.y) / (target.position.x - radar.position.x)));
+    	},
+        // Distance between two game objects
+    	distanceBetween: function (obj1, obj2){
+    		var cat1 = Math.abs(obj2.position.x - obj1.position.x),
+        		cat2 = Math.abs(obj1.position.y - obj2.position.y);
+    		return Math.sqrt(cat1 * cat1 + cat2 * cat2);
+    	}
     };
 }());
