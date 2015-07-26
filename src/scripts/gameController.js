@@ -55,6 +55,18 @@
             if (gameRadarRay.range > trigonometry.distanceBetween(gameRadarRay, gameRadarRay.target) - gameRadarRay.target.size.width &&
 		    gameRadarRay.range < trigonometry.distanceBetween(gameRadarRay, gameRadarRay.target) + gameRadarRay.target.size.width){
                 // alert('Target locked');
+
+                // only for test
+                var testBomb = gameObjectsMdl.bomb(position(gameRadarRay.target.position.x - gameRadarRay.target.size.width / 2, gameRadarRay.target.position.y - gameRadarRay.target.size.height / 2),
+                    size(134, 134),
+                    'images/explosion.png',
+                    0, //speed
+                    direction.left,
+                    0,
+                    12);
+                gameObjects.push(testBomb);
+                // only for test
+
                 destroyTarget(gameRadarRay);
             } else {
                 gameRadarRay.target = undefined;

@@ -13,8 +13,8 @@ function gameObjectsModel() {
         enemy: function (position, size, image, speed, direction, zindex) {
             return Object.create(enemy).init(position, size, image, speed, direction, zindex);
         },
-        bomb: function (position, size, image, speed, direction, zindex) {
-            return Object.create(bomb).init(position, size, image, speed, direction, zindex);
+        bomb: function (position, size, image, speed, direction, zindex, numberOfFrames) {
+            return Object.create(bomb).init(position, size, image, speed, direction, zindex, numberOfFrames);
         },
         landscapeItem: function (position, size, image, speed, direction, zindex) {
             return Object.create(landscapeItem).init(position, size, image, speed, direction, zindex);
@@ -133,7 +133,7 @@ function gameObjectsModel() {
                     this.angleSpeed = angleSpeed; //degrees / frame
                     this.direction = direction; // -1 => down; +1 => up
                     this.maxAngle = maxAngle;
-                    this.minAngle = minAngle;                 
+                    this.minAngle = minAngle;
                     this.rangeSpeed = rangeSpeed; //  px / frame
                     this.range = 6; //px
                     this.target = undefined; // receives target object on successful lock
@@ -266,12 +266,12 @@ function gameObjectsModel() {
     		var cat1 = Math.abs(target.position.x - radar.position.x),
     		    cat2 = Math.abs(radar.position.y - target.position.y);
     		return Math.sqrt(cat1 * cat1 + cat2 * cat2);
-    	}  
+    	}
     	//calculates reverse angle from the target
     	function angleToTarget(radar, target){
     		return trigonometry.toDeg(Math.atan((radar.position.y - target.position.y) / (target.position.x - radar.position.x)));
     	}
-        
+
         return laserRayInternal;
     }());
 
@@ -296,7 +296,10 @@ function gameObjectsModel() {
 
         Object.defineProperties(bombInternal, {
             init: {
-                value: function (position, size, image, speed, direction, zindex) {
+                value: function (position, size, image, speed, direction, zindex, spriteData) {                    
+                    this.numberOfFrames = spriteData;
+                    this.frameIndex  = 0;
+                    size.width = size.width * this.numberOfFrames;
                     parent.init.call(this, position, size, image, speed, direction, zindex, false);
                     return this;
                 }
