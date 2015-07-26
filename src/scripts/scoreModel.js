@@ -6,8 +6,8 @@ function scoreModel() {
 
     // result from the function
     scoreModelInternal = {
-        player: function (name, score) {
-            return Object.create(player).init(name, score);
+        player: function (name) {
+            return Object.create(player).init(name);
         },
         scoreBoard: function () {
             return Object.create(scoreBoard).init();
