@@ -133,7 +133,11 @@ function scoreModel() {
             addScore: {
                 value: function (playerToAdd) {
                     //Adding one score to the current score of the player.
-                    playerToAdd.score += 1;
+                    var scoreToAdd = (configuration.laserSpeed.value * 5) +
+                                     (configuration.rangeSpeed.value / 2) -
+                                     (configuration.rayWidth.value / 10) +
+                                     (configuration.targetSpeed.value * 2);
+                    playerToAdd.score += scoreToAdd;
                 }
             },
             getTopPlayers: {

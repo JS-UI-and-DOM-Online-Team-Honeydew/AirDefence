@@ -27,7 +27,7 @@ var globals,
             value: 0.2, // Init value
             minValue: 0.1, // Minimum allowed value
             maxValue: 2, // Maximum allowed value
-            step: 0, // Change Step
+            step: 0.1, // Change Step
             scoreWeight: function() { // Formula to calculate the score
                 return (this.maxValue - this.minValue / 2) * this.value;
             }
@@ -47,6 +47,16 @@ var globals,
             value: 6,
             minValue: 4,
             maxValue: 20,
+            step: 1,
+            scoreWeight: function() {
+                return (this.maxValue - this.minValue / 2) * this.value;
+            }
+        },
+        targetSpeed: {
+            name: 'Target Speed',
+            value: 2,
+            minValue: 1,
+            maxValue: 5,
             step: 1,
             scoreWeight: function() {
                 return (this.maxValue - this.minValue / 2) * this.value;
