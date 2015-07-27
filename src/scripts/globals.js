@@ -60,13 +60,15 @@ var globals,
             target: new Image(),
             radar: new Image(),
             tree: new Image(),
+            explosion: new Image(),
             bomb: new Image(),
             newGame: new Image()           
         };
         imgResources.target.src = 'images/spaceship.png';
         imgResources.radar.src = 'images/radar.png';
         imgResources.tree.src = 'images/tree.png';
-        imgResources.bomb.src = 'images/explosion.png';
+        imgResources.explosion.src = 'images/explosion.png';
+        imgResources.bomb.src = 'images/bomb.png';
         imgResources.newGame.src = 'images/new_game.png';
        return imgResources; 
     }();

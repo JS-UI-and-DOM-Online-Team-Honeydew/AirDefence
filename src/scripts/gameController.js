@@ -35,9 +35,26 @@
         gameRadarRay = undefined;
     }
 
+    function gameOverCheck(){
+        gameObjects.forEach(function(obj){
+            if(obj.isTarget && gameRadarRay){
+                if(obj.position.x < gameRadarRay.position.x){
+                    // alert('Game over!');
+                    gameRadarRay = undefined;
+                    var bomb = gameObjectsMdl.landscapeItem(position(obj.position.x, obj.position.y),
+                        size(30, 20),
+                        imgResources.bomb,
+                        5, //speed
+                        direction.down,
+                        0);
+                    gameObjects.push(bomb);
+                }
+            }
+        });
+    }
+
     //implements successful lock
-    function lockChecker(){
-        
+    function lockChecker(){        
         //case 1: target angle is not yet locked:
         if(!gameRadarRay.target){
             gameObjects.forEach(function(obj){
@@ -60,7 +77,7 @@
                 // only for test
                 var testBomb = gameObjectsMdl.bomb(position(gameRadarRay.target.position.x, gameRadarRay.target.position.y),
                     size(gameRadarRay.target.size.width, gameRadarRay.target.size.width),
-                    imgResources.bomb,
+                    imgResources.explosion,
                     0, //speed
                     direction.left,
                     0,
@@ -164,6 +181,7 @@
                     gameRadarRay.update();
                 }
             }
+            gameOverCheck();
             gameFieldView.resetView();
             if (gameRadarRay) {
                 gameFieldView.draw(gameRadarRay);
