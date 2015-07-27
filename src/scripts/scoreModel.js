@@ -105,13 +105,18 @@ function scoreModel() {
                             break;
                         }
                         if(player.name == playersAndScores[everyPlayer].name){
+                            console.log(player.name +"exists!");
                             playerExists = true;
                             if(player.score > playersAndScores[everyPlayer].score){
+                            console.log("old score:"+playersAndScores[everyPlayer].score+"  new score:"+player.score);
+                                
                                  playersAndScores[everyPlayer].score = player.score;
                             }
                             break;
                         }
                     }
+                        
+                    
                     
                     //Addig player if it does not exists.
                     if(!playerExists && player.score > 0){
@@ -120,9 +125,9 @@ function scoreModel() {
                             "score":player.score
                         };
                         playersAndScores.push(newPlayer);
-                        localStorage.setItem("scoreboard",JSON.stringify(playersAndScores));
+                        
                     }
-                    
+                    localStorage.setItem("scoreboard",JSON.stringify(playersAndScores));
                 }
             },
             addScore: {
