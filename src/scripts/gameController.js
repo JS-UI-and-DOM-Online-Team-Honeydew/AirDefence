@@ -30,6 +30,7 @@
     }
 
     function exitGameEvent() {
+        view.playersView(scoreMdl.getTopPlayers);
         initGame();
         gameRadarRay = undefined;
     }

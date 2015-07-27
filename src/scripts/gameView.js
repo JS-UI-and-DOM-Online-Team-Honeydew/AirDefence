@@ -207,6 +207,59 @@ playersFieldView = (function() {
                 // Initialize the SVG in the page
                 // first create svg element on HTML page and display players in it
                 // Maybe width and height to be given as parameters?!!?
+
+// TODO------------------------------------------------------------------SVG
+                    //validators.checkUndefinedAndThrow(players);
+                    //validators.isString(players.name);
+                    //validators.isNumber(players.score);
+                    //validators.isPositiveInteger(players.score);
+
+                    var canvas,
+                        ctx,
+                        data,
+                        img,
+                        svg,
+                        url,
+                        DOMURL;
+
+                    canvas = document.getElementById('mycanvas');
+                    ctx = canvas.getContext('2d');
+
+
+                    data = '<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg">' +
+                        '<defs>' +
+                        '<filter id="svg_2_blur">' +
+                        '<feGaussianBlur stdDeviation="0.2" in="SourceGraphic"/>' +
+                        '</filter>' +
+                        '</defs>' +
+                        '<g>' +
+                        '<title>Layer 1</title>' +
+                        '<path id="svg_1" d="m103.78498,346.51004l0,-254.31254l0,0c0,-10.80495 14.57887,-19.5625 32.56248,-19.5625l390.75008,0c17.98395,0 32.56268,8.75755 32.56268,19.5625c0,10.80503 -14.57874,19.56249 -32.56268,19.56249l-32.56253,0l0,254.31261c0,10.8042 -14.57867,19.56244 -32.56256,19.56244l-390.74993,0l0,0c-17.98524,0 -32.56249,-8.75824 -32.56249,-19.56244c0,-10.80408 14.57726,-19.56256 32.56249,-19.56256l32.56247,0zm65.12496,-273.87504l0,0c17.98497,0 32.56247,8.75755 32.56247,19.5625c0,10.80503 -14.5775,19.56249 -32.56247,19.56249c-8.99126,0 -16.28362,-4.37959 -16.28362,-9.78288c0,-5.40168 7.29236,-9.77962 16.28362,-9.77962l32.56247,0m325.62512,19.56249l-358.18759,0m-65.12496,234.75005l0,0c8.99124,0 16.28014,4.3797 16.28014,9.78278c0,5.40198 -7.28889,9.77979 -16.28014,9.77979l32.56248,0m-32.56248,19.56244l0,0c17.9825,0 32.56248,-8.75824 32.56248,-19.56244l0,-19.56256" stroke-width="5" stroke="#000000" fill="#ff00ff"/>' +
+                        '<text stroke-linejoin="bevel" stroke-linecap="round" filter="url(#svg_2_blur)" font-weight="bold" stroke-dasharray="5,5" xml:space="preserve" text-anchor="middle" font-family="Cursive" font-size="39" id="svg_2" y="152" x="310" stroke="#000000" fill="#000000">Score Board</text>' +
+                        '<text font-weight="bold" xml:space="preserve" text-anchor="middle" font-family="Cursive" font-size="29" id="svg_3" y="221" x="181" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="5,5" stroke="#000000" fill="#000000">Name:</text>' +
+                        '<text font-weight="bold" xml:space="preserve" text-anchor="middle" font-family="Cursive" font-size="29" id="svg_4" y="275" x="177" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="5,5" stroke="#000000" fill="#000000">Score:</text>' +
+                        '<text font-weight="bold" xml:space="preserve" text-anchor="middle" font-family="Cursive" font-size="29" id="svg_4" y="221" x="300" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="5,5" stroke="#000000" fill="#000000">players</text>' +
+                        '</g>' +
+                        '</svg>';
+
+                    DOMURL = window.URL || window.webkitURL || window;
+
+                    img = new Image();
+                    svg = new Blob([data], {type: 'image/svg+xml;charset=utf-8'});
+                    url = DOMURL.createObjectURL(svg);
+
+                    img.onload = function () {
+                        alert('Open Console(F12). For debug to view ScoreBoard!');
+                        debugger;
+                        ctx.drawImage(img, 0, 0);
+                        DOMURL.revokeObjectURL(url);
+                    };
+
+                    img.src = url;
+
+
+                    //------------------------------------------------------------------SVG
+
                 return this;
             }
         },
@@ -246,7 +299,7 @@ controlFieldView = (function() {
                 buttonExitGame.class = 'control-buttons';
                 buttonExitGame.type = 'button';
                 buttonExitGame.name = 'exit-game';
-                buttonExitGame.value = 'Exit Game';
+                buttonExitGame.value = 'ScoreBoard and Exit Game';
 
                 formField.appendChild(buttonNewGame);
                 formField.appendChild(buttonPauseGame);
