@@ -12,7 +12,8 @@
         gamePaused = false,
         gameRadarRay,
         bomb,
-        gamePlayer;
+        gamePlayer,
+        gameScoreBoard = scoreMdl.scoreBoard().init();
 
     function clickEvent() {
         //alert('clicked!');
@@ -45,7 +46,7 @@
                     bomb = gameObjectsMdl.aeroBomb(position(obj.position.x, obj.position.y),
                         size(30, 20),
                         imgResources.bomb,
-                        5, //speed
+                        configuration.targetSpeed.value, //speed
                         direction.down,
                         0,
                         gameRadarRay);
@@ -93,6 +94,7 @@
                 // only for test
                 //console.log(gameObjects);
                 destroyTarget(gameRadarRay);
+                gameScoreBoard.addScore(gamePlayer);
             } else {
                 gameRadarRay.target = undefined;
                 gameRadarRay.range = 6;
@@ -142,7 +144,7 @@
         var testTarget2 = gameObjectsMdl.enemy(position(globals.gameWidth, globals.gameHeight / 2),
             size(100, 100),
             imgResources.target,
-            2, //speed
+            configuration.targetSpeed.value, //speed
             direction.left,
             0);
         gameObjects.push(testTarget2);
@@ -172,7 +174,7 @@
         gameObjects.push(gameObjectsMdl.enemy(position(globals.gameWidth, globals.gameHeight / 2),
             size(100, 100),
             imgResources.target,
-            2, //speed
+            configuration.targetSpeed.value, //speed
             direction.left,
             0));
     }
@@ -192,6 +194,9 @@
             gameFieldView.resetView();
             if (gameRadarRay) {
                 gameFieldView.draw(gameRadarRay);
+            }
+            if (gamePlayer) {
+                gameFieldView.draw(gamePlayer);
             }
             gameFieldView.draw(gameObjects);
         }

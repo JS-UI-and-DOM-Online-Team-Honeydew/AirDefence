@@ -137,6 +137,12 @@ function gameView() {
                                         objects[i].size.width, objects[i].size.height);
                                 }
                             }
+                        } else if (objects.name !== undefined && objects.score !== undefined){
+                            // player
+                            context.fillStyle = "white";
+                            context.font = "bold 20px Arial";
+                            context.fillText('Player: ' + objects.name, 25, 40);
+                            context.fillText('Score: ' + Math.round(objects.score,12), globals.gameWidth - 150, 40);
                         } else {
                             // laser ray
                             context.beginPath();
