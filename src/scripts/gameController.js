@@ -13,6 +13,7 @@
         gameRadarRay,
         bomb,
         gamePlayer,
+        isScoreBoardShown,
         gameScoreBoard = scoreMdl.scoreBoard().init();
 
     function clickEvent() {
