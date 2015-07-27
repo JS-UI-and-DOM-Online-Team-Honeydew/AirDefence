@@ -11,6 +11,7 @@
         gameObjects = [],
         gamePaused = false,
         gameRadarRay,
+        isScoreBoardShown,
         gamePlayer;
 
     function clickEvent() {
@@ -29,15 +30,21 @@
         gamePaused = !gamePaused;
     }
 
-    function exitGameEvent() {
-        endGameameEvent();
-        //view.playersView(scoreMdl.getTopPlayers);
-        initGame();
-        gameRadarRay = undefined;
+    function showScoreBoardEvent(){
+        scoreMdl.scoreBoard().save(gamePlayer);
+        gameFieldView.resetView();
+        view.playersView(scoreMdl.scoreBoard().getTopPlayers());
+        isScoreBoardShown = true;
     }
 
-    function endGameameEvent() {
-        view.playersView(scoreMdl.getTopPlayers);
+    function hideScoreBoardEvent(){
+        isScoreBoardShown = false;
+    }
+
+    function exitGameEvent() {
+        //view.playersView(scoreMdl.getTopPlayers);
+        //initGame();
+        gameRadarRay = undefined;
     }
 
     function gameOverCheck(){
@@ -160,6 +167,9 @@
     gameControlView.registerNewGameCallback(newGameEvent);
     gameControlView.registerExitCallback(pauseResumeEvent);
     gameControlView.registerPauseGameCallback(exitGameEvent);
+    gameControlView.registerScoreboardCallback(showScoreBoardEvent);
+    gameControlView.registerScoreboardExitCallback(hideScoreBoardEvent);
+
 
     function destroyTarget(ray){
         var index = gameObjects.indexOf(ray.target);
@@ -178,6 +188,9 @@
     // start animation with the objects defined above
     function animate(highResTimestamp) {
         requestAnimationFrame(animate);
+        if (isScoreBoardShown) {
+            return;
+        }
 
         if (!gamePaused) {
             for (var i = 0; i < gameObjects.length; i++) {

@@ -136,7 +136,7 @@ function scoreModel() {
                     playerToAdd.score += 1;
                 }
             },
-                getTopPlayers: {
+            getTopPlayers: {
                 value: function () {
                     var topPlayersAndScores;
                     parseCurrentPlayersAndScores();
