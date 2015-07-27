@@ -11,6 +11,7 @@
         gameObjects = [],
         gamePaused = false,
         gameRadarRay,
+        bomb,
         gamePlayer;
 
     function clickEvent() {
@@ -40,19 +41,25 @@
             if(obj.isTarget && gameRadarRay){
                 if(obj.position.x < gameRadarRay.position.x){
                     // alert('Game over!');
-                    gameRadarRay = undefined;
-                    var bomb = gameObjectsMdl.landscapeItem(position(obj.position.x, obj.position.y),
+                    
+                    bomb = gameObjectsMdl.aeroBomb(position(obj.position.x, obj.position.y),
                         size(30, 20),
                         imgResources.bomb,
                         5, //speed
                         direction.down,
-                        0);
+                        0,
+                        gameRadarRay);
                     gameObjects.push(bomb);
+                    gameRadarRay = undefined;
                 }
             }
         });
     }
-
+    
+    function radarExplosion(){
+        alert('boom');
+    }
+    
     //implements successful lock
     function lockChecker(){        
         //case 1: target angle is not yet locked:
@@ -75,14 +82,14 @@
                 // alert('Target locked');
 
                 // only for test
-                var testBomb = gameObjectsMdl.bomb(position(gameRadarRay.target.position.x, gameRadarRay.target.position.y),
+                var explosion = gameObjectsMdl.bomb(position(gameRadarRay.target.position.x, gameRadarRay.target.position.y),
                     size(gameRadarRay.target.size.width, gameRadarRay.target.size.width),
                     imgResources.explosion,
                     0, //speed
                     direction.left,
                     0,
                     12);
-                gameObjects.push(testBomb);
+                gameObjects.push(explosion);
                 // only for test
                 //console.log(gameObjects);
                 destroyTarget(gameRadarRay);

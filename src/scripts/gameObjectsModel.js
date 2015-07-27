@@ -6,6 +6,7 @@ function gameObjectsModel() {
         enemy,
         bomb,
         landscapeItem,
+        aeroBomb,
         laserRay;
 
     // result from the function
@@ -15,6 +16,9 @@ function gameObjectsModel() {
         },
         bomb: function (position, size, image, speed, direction, zindex, numberOfFrames) {
             return Object.create(bomb).init(position, size, image, speed, direction, zindex, numberOfFrames);
+        },
+        aeroBomb: function (position, size, image, speed, direction, zindex, radar) {
+            return Object.create(aeroBomb).init(position, size, image, speed, direction, zindex, radar);
         },
         landscapeItem: function (position, size, image, speed, direction, zindex) {
             return Object.create(landscapeItem).init(position, size, image, speed, direction, zindex);
@@ -324,6 +328,33 @@ function gameObjectsModel() {
         });
         return landscapeItemInternal;
     }(gameObject));
+    
+    // class, defining aero BOMB - TODO: to be extended if needed
+    aeroBomb = (function (parent) {
+        var aeroBombInternal = Object.create(parent);
 
+        Object.defineProperties(aeroBombInternal, {
+            init: {
+                value: function (position, size, image, speed, direction, zindex, radar) {
+                    this.radar = radar;
+                    parent.init.call(this, position, size, image, speed, direction, zindex, false);
+                    
+                    console.log(this.radar);
+                    return this;
+                }
+            },
+            update: {
+                value: function(){
+
+                    if(this.position.y > this.radar.position.y){
+                        alert('boom');
+                    };
+                    parent.update.call(this);                            
+                }
+            }
+        });
+        return aeroBombInternal;
+    }(gameObject));
+    
     return gameObjectsModelInternal;
 }
