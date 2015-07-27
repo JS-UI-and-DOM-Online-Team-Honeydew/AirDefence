@@ -4,7 +4,7 @@ var globals,
     position,
     size,
     direction,
-    images;
+    configuration;
 
 (function () {
     'use strict';
@@ -18,6 +18,30 @@ var globals,
         OTHER_CONSTANTS: 0,
         defaltImg:'images/ivaylo_defalt.jpg'
     };
+
+    // Game configuration data
+    configuration = {
+        laserSpeed: {
+            name: 'Laser Speed', // Name to be displayed in HTML control
+            value: 0.2, // Init value
+            minValue: 0.1, // Minimum allowed value
+            maxValue: 3, // Maximum allowed value
+            step: 0.1, // Change Step
+            scoreWeight: function() { // Formula to calculate the score
+                return (maxValue - minValue / 2) * value;
+            }
+        },
+        rangeSpeed: {
+            name: 'Laser Range Speed',
+            value: 2,
+            minValue: 1,
+            maxValue: 10,
+            step: 1,
+            scoreWeight: function() {
+                return (maxValue - minValue / 2) * value;
+            }
+        }
+    }
 
     direction = {
         left: {x:-1, y:0},
@@ -37,14 +61,14 @@ var globals,
             y: y
         };
     };
-    
+
     size = function (width, height){
         //Add validators
         return {
             width: width,
             height: height
         };
-    };    
+    };
 
     // any validation functions in the game to be defined here
     validators = {
@@ -112,14 +136,14 @@ var globals,
         checkSizeAndThrow: function(value) {
             this.checkUndefinedAndThrow(value.width);
             this.checkUndefinedAndThrow(value.height);
-            
+
             if(!this.isObject(value)){
                 throw new Error (value + 'must be object');
             }
         },
         //Image
         checkImageAndChange: function(img_url){
-            //currently not used - 
+            //currently not used -
             // var img = new Image();
             // img.src = img_url;
             // if (img.complete) {

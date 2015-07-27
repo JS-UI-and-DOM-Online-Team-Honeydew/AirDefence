@@ -310,6 +310,39 @@ controlFieldView = (function() {
                 this.buttonExitGame = buttonExitGame;
 
                 document.body.appendChild(document.createElement('br'));
+
+                for (var param in configuration) {
+                    if (configuration.hasOwnProperty(param)) {
+                        configuration[param].htmlControl = document.createElement('input');
+                        configuration[param].htmlControl.id = param.toString();
+                        configuration[param].htmlControl.type = 'range';
+                        configuration[param].htmlControl.min = configuration[param].minValue;
+                        configuration[param].htmlControl.max = configuration[param].maxValue;
+                        configuration[param].htmlControl.step = configuration[param].step;
+                        configuration[param].htmlControl.value = configuration[param].value;
+
+                        var label = document.createElement('label');
+                        label.id = param.toString() + '-label';
+                        label.innerHTML = configuration[param].name + ' ';
+
+                        var label1 = document.createElement('label');
+                        label1.for = param.toString();
+                        label1.id = param.toString() + '-label1';
+                        label1.innerHTML = ' ' + configuration[param].value;
+
+                        configuration[param].htmlControl.addEventListener('change', function(ev) {
+                            var l = document.getElementById(ev.target.id + '-label1');
+                            l.innerHTML = ' ' + ev.target.value;
+                            configuration[ev.target.id].value = parseFloat(ev.target.value);
+                        }, false);
+
+                        document.body.appendChild(label);
+                        document.body.appendChild(configuration[param].htmlControl);
+                        document.body.appendChild(label1);
+                        document.body.appendChild(document.createElement('br'));
+
+                    }
+                }
                 document.body.appendChild(formField);
 
                 return this;

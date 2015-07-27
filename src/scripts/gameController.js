@@ -126,11 +126,11 @@
 
         //Laser Ray (linked to the radar above)
         gameRadarRay = gameObjectsMdl.laserRay(45,
-            0.2, //angle speed
+            configuration.laserSpeed.value, //angle speed
             1, //angle direction
             88, //max angle
             2, //min angle
-            3, //range speed
+            configuration.rangeSpeed.value, //range speed
             testRadar);
     }
 
