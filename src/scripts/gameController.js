@@ -37,14 +37,14 @@
 
     //implements successful lock
     function lockChecker(){
+        
         //case 1: target angle is not yet locked:
         if(!gameRadarRay.target){
             gameObjects.forEach(function(obj){
                 if(obj.isTarget){
-                    if (gameRadarRay.angle < trigonometry.angleToTarget(gameRadarRay, obj ) + 3 && //TODO: deltas to be moved out + linking to real ray view
-					   gameRadarRay.angle > trigonometry.angleToTarget(gameRadarRay, obj ) - 3){
+                    if (gameRadarRay.angle < trigonometry.angleToTarget(gameRadarRay, obj ) + (configuration.rayWidth.value / 2) && //TODO: deltas to be moved out + linking to real ray view
+					   gameRadarRay.angle > trigonometry.angleToTarget(gameRadarRay, obj ) - (configuration.rayWidth.value / 2)){
                            gameRadarRay.target = obj;
-                           console.log('locked');
                            return;
                        }
 
@@ -53,8 +53,8 @@
         }
         //case 2: target angle is locked. Attempt to lock on range
         else{
-            if (gameRadarRay.range > trigonometry.distanceBetween(gameRadarRay, gameRadarRay.target) - gameRadarRay.target.size.width &&
-		    gameRadarRay.range < trigonometry.distanceBetween(gameRadarRay, gameRadarRay.target) + gameRadarRay.target.size.width){
+            if (gameRadarRay.range > trigonometry.distanceBetween(gameRadarRay, gameRadarRay.target) - (gameRadarRay.target.size.width / 2) &&
+		    gameRadarRay.range < trigonometry.distanceBetween(gameRadarRay, gameRadarRay.target) + (gameRadarRay.target.size.width / 2)){
                 // alert('Target locked');
 
                 // only for test
@@ -67,12 +67,11 @@
                     12);
                 gameObjects.push(testBomb);
                 // only for test
-
+                console.log(gameObjects);
                 destroyTarget(gameRadarRay);
             } else {
                 gameRadarRay.target = undefined;
                 gameRadarRay.range = 6;
-                console.log('MISS!');
             }
         }
 
@@ -125,7 +124,7 @@
         gameObjects.push(testTarget2);
 
         //Laser Ray (linked to the radar above)
-        gameRadarRay = gameObjectsMdl.laserRay(45,
+        gameRadarRay = gameObjectsMdl.laserRay(4,
             configuration.laserSpeed.value, //angle speed
             1, //angle direction
             88, //max angle

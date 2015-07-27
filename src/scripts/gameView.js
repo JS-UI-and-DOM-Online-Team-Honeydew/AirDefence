@@ -127,7 +127,8 @@ function gameView() {
                                                 objects[i].size.height);
                                         objects[i].frameIndex += 1;
                                     } else {
-                                        delete(objects[objects[i]]);
+                                        objects.splice(i, 1);
+                                        //delete(objects[objects[i]]);
                                     }
                                 } else {
                                     //Every other static picture based object:
@@ -139,8 +140,8 @@ function gameView() {
                         } else {
                             // laser ray
                             context.beginPath();
-                            lineToAngle(objects.position.x, objects.position.y, 2000, objects.angle + 1, context);
-                            context.arc(objects.position.x, objects.position.y, 2000, trigonometry.toRad(360 - objects.angle - 1), trigonometry.toRad(360 - objects.angle + 2));
+                            lineToAngle(objects.position.x, objects.position.y, 2000, objects.angle + (configuration.rayWidth.value / 2), context);
+                            context.arc(objects.position.x, objects.position.y, 2000, trigonometry.toRad(360 - objects.angle - (configuration.rayWidth.value / 2)), trigonometry.toRad(360 - objects.angle + configuration.rayWidth.value));
                             context.closePath();
                             context.fillStyle = 'rgba(100, 100, 100, 0.5)';
                             context.fill(); //test draw
@@ -148,7 +149,7 @@ function gameView() {
                             context.beginPath();
                             // lineToAngle(objects[i].position.x, objects[i].position.y, objects[i].range, objects[i].angle + 1, context);
                             for (var j = -6; j < 6; j += 2) {
-                                context.arc(objects.position.x, objects.position.y, objects.range + j, trigonometry.toRad(360 - objects.angle - 1), trigonometry.toRad(360 - objects.angle + 2));
+                                context.arc(objects.position.x, objects.position.y, objects.range + j, trigonometry.toRad(360 - objects.angle - (configuration.rayWidth.value / 2)), trigonometry.toRad(360 - objects.angle + configuration.rayWidth.value));
                                 context.closePath();
                                 context.strokeStyle = 'rgba(20, 20, 20, 0.8)';
                                 context.stroke(); //test draw

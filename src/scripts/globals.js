@@ -25,10 +25,10 @@ var globals,
             name: 'Laser Speed', // Name to be displayed in HTML control
             value: 0.2, // Init value
             minValue: 0.1, // Minimum allowed value
-            maxValue: 3, // Maximum allowed value
-            step: 0.1, // Change Step
+            maxValue: 2, // Maximum allowed value
+            step: 0, // Change Step
             scoreWeight: function() { // Formula to calculate the score
-                return (maxValue - minValue / 2) * value;
+                return (this.maxValue - this.minValue / 2) * this.value;
             }
         },
         rangeSpeed: {
@@ -38,7 +38,17 @@ var globals,
             maxValue: 10,
             step: 1,
             scoreWeight: function() {
-                return (maxValue - minValue / 2) * value;
+                return (this.maxValue - this.minValue / 2) * this.value;
+            }
+        },
+        rayWidth: {
+            name: 'Radar Ray Width',
+            value: 6,
+            minValue: 4,
+            maxValue: 20,
+            step: 1,
+            scoreWeight: function() {
+                return (this.maxValue - this.minValue / 2) * this.value;
             }
         }
     }

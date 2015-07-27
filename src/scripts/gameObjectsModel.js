@@ -31,9 +31,9 @@ function gameObjectsModel() {
         Object.defineProperties(gameObjectInternal, {
             init: {
                 value: function (position, size, image, speed, direction, zindex, isTarget) {
-                    this.position = position;
-                    this.size = size;
+                    this.position = position;            
                     this.image = image;
+                    this.size = size;
                     this.speed = speed;
                     this.zindex = zindex;
                     this.isTarget = isTarget;
@@ -130,11 +130,11 @@ function gameObjectsModel() {
             init: {
                 value: function (angle, angleSpeed, direction, maxAngle, minAngle, rangeSpeed, radar) {
                     this.angle = angle;
-                    this.angleSpeed = angleSpeed; //degrees / frame
+                    this.angleSpeed = configuration.laserSpeed.value; //degrees / frame
                     this.direction = direction; // -1 => down; +1 => up
                     this.maxAngle = maxAngle;
                     this.minAngle = minAngle;
-                    this.rangeSpeed = rangeSpeed; //  px / frame
+                    this.rangeSpeed = configuration.rangeSpeed.value; //  px / frame
                     this.range = 6; //px
                     this.target = undefined; // receives target object on successful lock
                     this.radar = radar;  //for linking the ray initial position with the radar
@@ -164,7 +164,7 @@ function gameObjectsModel() {
                 },
                 set: function (value) {
                     if(!validators.isAngleDirection(value)){
-                        throw new Error('LaserRay angle speed must be 1 or -1');
+                        throw new Error('LaserRay direction must be 1 or -1');
                     }
                     this._direction = value;
                 }
@@ -283,6 +283,10 @@ function gameObjectsModel() {
             init: {
                 value: function (position, size, image, speed, direction, zindex) {
                     parent.init.call(this, position, size, image, speed, direction, zindex, true);
+                    if(this.image.height){
+                         this.size.height = this.size.width * (this.image.height / this.image.width);
+                    }
+                   
                     return this;
                 }
             }
