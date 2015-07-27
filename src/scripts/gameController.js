@@ -58,16 +58,16 @@
                 // alert('Target locked');
 
                 // only for test
-                var testBomb = gameObjectsMdl.bomb(position(gameRadarRay.target.position.x - gameRadarRay.target.size.width / 2, gameRadarRay.target.position.y - gameRadarRay.target.size.height / 2),
-                    size(134, 134),
-                    'images/explosion.png',
+                var testBomb = gameObjectsMdl.bomb(position(gameRadarRay.target.position.x, gameRadarRay.target.position.y),
+                    size(gameRadarRay.target.size.width, gameRadarRay.target.size.width),
+                    imgResources.bomb,
                     0, //speed
                     direction.left,
                     0,
                     12);
                 gameObjects.push(testBomb);
                 // only for test
-                console.log(gameObjects);
+                //console.log(gameObjects);
                 destroyTarget(gameRadarRay);
             } else {
                 gameRadarRay.target = undefined;
@@ -81,7 +81,7 @@
         gameObjects = [];
         var initText = gameObjectsMdl.landscapeItem(position(globals.gameWidth / 2, globals.gameHeight / 2),
             size(globals.gameWidth, 100),
-            'images/new_game.png',
+            imgResources.newGame,
             0, //speed
             direction.left,
             0);
@@ -93,7 +93,7 @@
         // background_tree
         var testTree = gameObjectsMdl.landscapeItem(position(globals.gameWidth / 2, globals.gameHeight - 120),
             size(100, 100),
-            'images/tree.png',
+            imgResources.tree,
             0, //speed
             direction.left,
             0);
@@ -101,7 +101,7 @@
         //Radar (unmovable, simple object)
         var testRadar = gameObjectsMdl.landscapeItem(position(60, globals.gameHeight - 60),
             size(100, 100),
-            'images/radar.png',
+            imgResources.radar,
             0, //speed
             direction.left,
             0);
@@ -117,7 +117,7 @@
 
         var testTarget2 = gameObjectsMdl.enemy(position(globals.gameWidth, globals.gameHeight / 2),
             size(100, 100),
-            'images/spaceship.png',
+            imgResources.target,
             2, //speed
             direction.left,
             0);
@@ -147,7 +147,7 @@
         //new target to be randomized TODO:
         gameObjects.push(gameObjectsMdl.enemy(position(globals.gameWidth, globals.gameHeight / 2),
             size(100, 100),
-            'images/spaceship.png',
+            imgResources.target,
             2, //speed
             direction.left,
             0));

@@ -117,13 +117,13 @@ function gameView() {
                                         if (objects[i].frameIndex < objects[i].numberOfFrames) {
                                             context.drawImage(
                                                 objects[i].image,
-                                                objects[i].frameIndex * objects[i].size.width / objects[i].numberOfFrames,
+                                                objects[i].frameIndex * objects[i].image.width / objects[i].numberOfFrames,
                                                 0,
-                                                objects[i].size.width / objects[i].numberOfFrames,
-                                                objects[i].size.height,
-                                                objects[i].position.x,
-                                                objects[i].position.y,
-                                                objects[i].size.width / objects[i].numberOfFrames,
+                                                objects[i].image.width / objects[i].numberOfFrames,
+                                                objects[i].image.height,
+                                                objects[i].position.x - (objects[i].size.width / 2),
+                                                objects[i].position.y - (objects[i].size.height / 2),
+                                                objects[i].size.width,
                                                 objects[i].size.height);
                                         objects[i].frameIndex += 1;
                                     } else {

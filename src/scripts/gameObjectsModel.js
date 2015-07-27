@@ -68,9 +68,7 @@ function gameObjectsModel() {
                     return this._image;
                 },
                 set: function (value) {
-                    var img = new Image();
-                    img.src = value;
-                    this._image = img;//validators.checkImageAndChange(value);
+                    this._image = value;//validators.checkImageAndChange(value);
                 }
             },
             speed: {
@@ -303,7 +301,7 @@ function gameObjectsModel() {
                 value: function (position, size, image, speed, direction, zindex, spriteData) {                    
                     this.numberOfFrames = spriteData;
                     this.frameIndex  = 0;
-                    size.width = size.width * this.numberOfFrames;
+                    // size.width = size.width * this.numberOfFrames;
                     parent.init.call(this, position, size, image, speed, direction, zindex, false);
                     return this;
                 }

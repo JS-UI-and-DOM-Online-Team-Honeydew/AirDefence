@@ -4,6 +4,7 @@ var globals,
     position,
     size,
     direction,
+    imgResources,
     configuration;
 
 (function () {
@@ -52,6 +53,24 @@ var globals,
             }
         }
     }
+    
+    //Preloading img resources:
+    imgResources = function(){
+        var imgResources = {
+            target: new Image(),
+            radar: new Image(),
+            tree: new Image(),
+            bomb: new Image(),
+            newGame: new Image()           
+        };
+        imgResources.target.src = 'images/spaceship.png';
+        imgResources.radar.src = 'images/radar.png';
+        imgResources.tree.src = 'images/tree.png';
+        imgResources.bomb.src = 'images/explosion.png';
+        imgResources.newGame.src = 'images/new_game.png';
+       return imgResources; 
+    }();
+    
 
     direction = {
         left: {x:-1, y:0},
