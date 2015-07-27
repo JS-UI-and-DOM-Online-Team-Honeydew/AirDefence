@@ -64,22 +64,28 @@ function scoreModel() {
     scoreBoard = (function () {
         var scoreBoardInternal = Object.create({}),
             playersAndScores = [] ;
-
+            
+            
+            function parseCurrentPlayersAndScores(){
+                playersAndScores = JSON.parse(localStorage.getItem("scoreboard"));
+                    if(playersAndScores === null || typeof playersAndScores == "undefined"){
+                        playersAndScores = [];
+                    }
+            }
+            
         Object.defineProperties(scoreBoardInternal, {
             init: {
                 value: function () {
-                    // TODO: initialize players array (maybe get data from a file if available)
-                    playersAndScores = [];
-                    playersAndScores.push(JSON.parse(localStorage.getItem("scoreboard")));
-                    return playersAndScores;
+                    
+                    parseCurrentPlayersAndScores();
+                    return this;
                 }
             },
             load: {
                 value: function () {
-                    // TODO: load players JSON object from a file
-                    playersAndScores = [];
-                    playersAndScores.push(JSON.parse(localStorage.getItem("scoreboard")));
-                    return playersAndScores;
+                    
+                   parseCurrentPlayersAndScores();
+                   return playersAndScores;
                     
                 }
             },
@@ -88,12 +94,16 @@ function scoreModel() {
                     var newPlayer,
                         playerExists = false,
                         everyPlayer;
-                    // TODO: Save players JSON object to a file
+                        parseCurrentPlayersAndScores();
+                        
+                    
                     
                     // Checks if such a player exists, and if so checks if current score is more than last saved to update it.
-                    playersAndScores = [];
-                    playersAndScores.push(JSON.parse(localStorage.getItem("scoreboard")));
                     for (everyPlayer in playersAndScores){
+                        //Checks if there are any players in the array, if there are not it breaks;
+                        if(playersAndScores.length<1){
+                            break;
+                        }
                         if(player.name == playersAndScores[everyPlayer].name){
                             playerExists = true;
                             if(player.score > playersAndScores[everyPlayer].score){
@@ -104,7 +114,7 @@ function scoreModel() {
                     }
                     
                     //Addig player if it does not exists.
-                    if(!playerExists){
+                    if(!playerExists && player.score > 0){
                         newPlayer = {
                             "name":player.name,
                             "score":player.score
@@ -121,15 +131,16 @@ function scoreModel() {
                     playerToAdd.score += 1;
                 }
             },
-            getTopPlayers: {
-                value: function (n) {
-                    // Returning scores of players in ascending order.
-                    playersAndScores = [];
-                    playersAndScores.push(JSON.parse(localStorage.getItem("scoreboard")));
-                    playersAndScores.sort(function(a,b){
-                        return a.score - b.score;
+                getTopPlayers: {
+                value: function () {
+                    var topPlayersAndScores;
+                    parseCurrentPlayersAndScores();
+                    
+                    // Returning the players by score in ascending order.
+                    topPlayersAndScores = playersAndScores.sort(function(a,b){
+                        return b.score - a.score;
                     });
-                    return playersAndScores;
+                    return topPlayersAndScores;
                 }
             }
         });
