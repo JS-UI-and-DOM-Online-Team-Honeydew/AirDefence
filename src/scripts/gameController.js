@@ -30,9 +30,14 @@
     }
 
     function exitGameEvent() {
-        view.playersView(scoreMdl.getTopPlayers);
+        endGameameEvent();
+        //view.playersView(scoreMdl.getTopPlayers);
         initGame();
         gameRadarRay = undefined;
+    }
+
+    function endGameameEvent() {
+        view.playersView(scoreMdl.getTopPlayers);
     }
 
     function gameOverCheck(){
