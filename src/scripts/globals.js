@@ -14,7 +14,7 @@ var globals,
     globals = {
         gameHeight: 600,
         gameWidth: 800,
-        gameBackground: './images/dark_blue.jpg',
+        gameBackground: './images/background_space.jpg',
         numberEnemies: 1,
         OTHER_CONSTANTS: 0,
         defaltImg:'images/ivaylo_defalt.jpg'
@@ -63,24 +63,34 @@ var globals,
             }
         }
     }
-    
+
     //Preloading img resources:
     imgResources = function(){
         var imgResources = {
             target: new Image(),
             radar: new Image(),
-            tree: new Image(),
+            planet1: new Image(),
+            planet2: new Image(),
+            commet: new Image(),
+            shatle: new Image(),
+            galaxy: new Image(),
+            alien: new Image(),
             explosion: new Image(),
             bomb: new Image(),
-            newGame: new Image()           
+            newGame: new Image()
         };
         imgResources.target.src = 'images/spaceship.png';
         imgResources.radar.src = 'images/radar.png';
-        imgResources.tree.src = 'images/tree.png';
+        imgResources.shatle.src = 'images/shatle.png';
+        imgResources.galaxy.src = 'images/galaxy.png'
+        imgResources.planet1.src = 'images/planet1.png';
+        imgResources.planet2.src = 'images/planet2.png';
+        imgResources.commet.src = 'images/commet.png';
+        imgResources.alien.src = 'images/alien.png';
         imgResources.explosion.src = 'images/explosion.png';
         imgResources.bomb.src = 'images/bomb.png';
         imgResources.newGame.src = 'images/new_game.png';
-       return imgResources; 
+       return imgResources;
     }();
     
 

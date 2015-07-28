@@ -139,6 +139,8 @@
     }
 
     function initGameObjects() {
+        var rand;
+
         gameObjects = [];
         //Radar (unmovable, simple object)
         //IMPORTANT: DO NOT CREATE GAME OBJECTS BEFORE THE testRadar Obj!!!
@@ -149,16 +151,78 @@
             direction.left,
             0);
         gameObjects.push(testRadar);
-        // background_tree
-        var testTree = gameObjectsMdl.landscapeItem(position(globals.gameWidth / 2, globals.gameHeight - 120),
-            size(100, 100),
-            imgResources.tree,
+        // planet
+        rand = Math.random() * 4;
+        var planet1 = gameObjectsMdl.landscapeItem(position(globals.gameWidth / rand / 3, globals.gameHeight - rand * 120),
+            size(globals.gameWidth / rand / 2, globals.gameWidth / rand / 2),
+            imgResources.planet1,
             0, //speed
             direction.left,
             0);
-        gameObjects.push(testTree);
-        
-        
+        gameObjects.push(planet1);
+
+        rand = Math.random() * 4;
+        var planet2 = gameObjectsMdl.landscapeItem(position(globals.gameWidth / rand * 2, globals.gameHeight / rand * 2),
+            size(globals.gameWidth / rand / 2, globals.gameWidth / rand / 2),
+            imgResources.planet2,
+            0, //speed
+            direction.left,
+            0);
+        gameObjects.push(planet2);
+
+        rand = Math.random() * 4;
+        var galaxy = gameObjectsMdl.landscapeItem(position(globals.gameWidth - globals.gameWidth / rand / 2, globals.gameHeight / rand / 2),
+            size(globals.gameWidth / rand / 2, globals.gameWidth / rand / 2),
+            imgResources.galaxy,
+            0, //speed
+            direction.downLeft,
+            0);
+        gameObjects.push(galaxy);
+
+        rand = Math.random() * 2;
+        var shatle = gameObjectsMdl.landscapeItem(position(globals.gameWidth / rand, globals.gameHeight),
+            size(globals.gameWidth / 9, globals.gameWidth / 9),
+            imgResources.shatle,
+            rand / 4, //speed
+            direction.up,
+            0);
+        gameObjects.push(shatle);
+
+        rand = Math.random() * 2;
+        var commet1 = gameObjectsMdl.landscapeItem(position(globals.gameWidth / rand , 0),
+            size(globals.gameWidth / rand / 4, globals.gameWidth / rand / 4),
+            imgResources.commet,
+            rand / 2, //speed
+            direction.downLeft,
+            0);
+        gameObjects.push(commet1);
+
+        rand = Math.random() * 3;
+        var commet2 = gameObjectsMdl.landscapeItem(position(globals.gameWidth / rand, 0),
+            size(globals.gameWidth / rand / 4, globals.gameWidth / rand / 4),
+            imgResources.commet,
+            rand / 4, //speed
+            direction.downLeft,
+            0);
+        gameObjects.push(commet2);
+
+        rand = Math.random() * 4;
+        var alien1 = gameObjectsMdl.landscapeItem(position(0, globals.gameHeight / rand),
+            size(globals.gameWidth / rand / 4, globals.gameWidth / rand / 4),
+            imgResources.alien,
+            rand / 4, //speed
+            direction.right,
+            0);
+        gameObjects.push(alien1);
+
+        rand = Math.random() * 4;
+        var alien2 = gameObjectsMdl.landscapeItem(position(0, globals.gameHeight / rand),
+            size(globals.gameWidth / rand / 4, globals.gameWidth / rand / 4),
+            imgResources.alien,
+            rand / 4, //speed
+            direction.right,
+            0);
+        gameObjects.push(alien2);
 
         // var testTarget = gameObjectsMdl.enemy(position(globals.gameWidth, globals.gameHeight / 3),
         //     size(100, 100),
