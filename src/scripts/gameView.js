@@ -217,38 +217,31 @@ playersFieldView = (function () {
                 // Maybe width and height to be given as parameters?!!?
 
 // TODO------------------------------------------------------------------SVG
- var canvas,
+                    var canvas,
                     ctx,
                     data,
                     img,
                     svg,
                     url,
                     width,
-                    height,
                     scal,
                     DOMURL;
 
                 for (var i = 0; i < players.length; i += 1) {
                     validators.checkUndefinedAndThrow(players[i]);
+
+                    if (players[i].name === undefined && players[i].score === undefined) {
+                            throw  new Error('Player name or score is undefined');
+                        }
+
                     validators.isString(players[i].name);
                     validators.isNumber(players[i].score);
                     validators.isPositiveInteger(players[i].score);
-                }
+                } 
 
-                // if (objects.name !== undefined && objects.score !== undefined) {
-                //             // player
-                //             context.fillStyle = "white";
-                //             context.font = "bold 20px Arial";
-                //             context.fillText('Player: ' + objects.name, 25, 40);
-                //             context.fillText('Score: ' + Math.round(objects.score, 12), globals.gameWidth - 150, 40);
-                //         }
-
-
-                // width= 800;
-                // height=600;
-                // scal = 0.8;
-
-               
+                // For scale on different device                
+                width= mycanvas.width;
+                scal = width / globals.gameWidth;               
 
                 canvas = document.getElementById('mycanvas');
                 ctx = canvas.getContext('2d');
@@ -261,16 +254,17 @@ playersFieldView = (function () {
                     '</defs>' +
                     '<g>' +
                     '<title>Layer 1</title>' +
-                        /*'<path id="svg_1" d="m103.78498,346.51004l0,-254.31254l0,0c0,-10.80495 14.57887,-19.5625 32.56248,-19.5625l390.75008,0c17.98395,0 32.56268,8.75755 32.56268,19.5625c0,10.80503 -14.57874,19.56249 -32.56268,19.56249l-32.56253,0l0,254.31261c0,10.8042 -14.57867,19.56244 -32.56256,19.56244l-390.74993,0l0,0c-17.98524,0 -32.56249,-8.75824 -32.56249,-19.56244c0,-10.80408 14.57726,-19.56256 32.56249,-19.56256l32.56247,0zm65.12496,-273.87504l0,0c17.98497,0 32.56247,8.75755 32.56247,19.5625c0,10.80503 -14.5775,19.56249 -32.56247,19.56249c-8.99126,0 -16.28362,-4.37959 -16.28362,-9.78288c0,-5.40168 7.29236,-9.77962 16.28362,-9.77962l32.56247,0m325.62512,19.56249l-358.18759,0m-65.12496,234.75005l0,0c8.99124,0 16.28014,4.3797 16.28014,9.78278c0,5.40198 -7.28889,9.77979 -16.28014,9.77979l32.56248,0m-32.56248,19.56244l0,0c17.9825,0 32.56248,-8.75824 32.56248,-19.56244l0,-19.56256" stroke-width="5" stroke="#000000" fill="#ff00ff"/>' +*/
-                        /* '<path id="svg_1" d="m60.99002,416.62503l0,-385.12503l0,0c0,-16.36119 20.009,-29.625 44.6875,-29.625l536.25004,0c24.67822,0 44.68756,13.26381 44.68756,29.625c0,16.36119 -20.00934,29.62499 -44.68756,29.62499l-44.68774,0l0,385.12492c0,16.36133 -20.0033,29.62515 -44.68738,29.62515l-536.24989,0l0,0c-24.6785,0 -44.68751,-13.26382 -44.68751,-29.62515c0,-16.36118 20.009,-29.62488 44.68751,-29.62488l44.68748,0zm89.37496,-414.75003l0,0c24.6785,0 44.68742,13.26381 44.68742,29.625c0,16.36119 -20.00893,29.62499 -44.68742,29.62499c-12.3392,0 -22.34375,-6.63145 -22.34375,-14.81249c0,-8.18015 10.00455,-14.8125 22.34375,-14.8125l44.68742,0m446.87515,29.62499l-491.56258,0m-89.37496,355.50004l0,0c12.33923,0 22.34378,6.63248 22.34378,14.81244c0,8.18124 -10.00455,14.81244 -22.34378,14.81244l44.6875,0m-44.6875,29.62515l0,0c24.67849,0 44.6875,-13.26382 44.6875,-29.62515l0,-29.62488" stroke-linecap="null" stroke-linejoin="null" stroke-width="5" stroke="#000000" fill="#7fff00"/>' +*/
-                    '<path id="svg_1" d="m104.14001,503.82504l0,-435.50005l0,0c0,-18.50229 22.05193,-33.5 49.25001,-33.5l591.00006,0c27.20398,0 49.25006,14.99771 49.25006,33.5c0,18.50227 -22.04608,33.49999 -49.25006,33.49999l-49.25018,0l0,435.50008c0,18.50232 -22.05188,33.49994 -49.25,33.49994l-590.99984,0l0,0c-27.19812,0 -49.25,-14.99762 -49.25,-33.49994c0,-18.50232 22.05188,-33.50003 49.25,-33.50003zm147.74992,-469.00004l0,0c27.19814,0 49.24995,14.99771 49.24995,33.5c0,18.50227 -22.05182,33.49999 -49.24995,33.49999c-13.59906,0 -24.625,-7.49988 -24.625,-16.75c0,-9.2501 11.02594,-16.74999 24.625,-16.74999l49.24995,0m492.50015,33.49999l-541.75011,0m-98.49996,402.00005l0,0c13.59908,0 24.62508,7.49985 24.62508,16.75009c0,9.24994 -11.02601,16.74994 -24.62508,16.74994l49.25001,0m-49.25001,33.49994l0,0c27.19817,0 49.25001,-14.99762 49.25001,-33.49994l0,-33.50003" stroke-linecap="null" stroke-linejoin="null" stroke-width="5" stroke="#000000" fill="yellowgreen"/>' +
-                    // '<text stroke-linejoin="bevel" stroke-linecap="round" filter="url(#svg_2_blur)" font-weight="bold" stroke-dasharray="5,5" xml:space="preserve" text-anchor="middle" font-family="Cursive" font-size="39" id="svg_2" y="152" x="310" stroke="#000000" fill="#000000">Score Board</text>' +
-                    ' <text stroke-width="0" fill="#000000" stroke="#000000" x="310" y="152" id="svg_2" font-size="39" font-family="Cursive" text-anchor="middle" xml:space="preserve" font-weight="bold">Score Board</text>' +
-                    '<text stroke-width="0" fill="#000000" stroke="#000000" x="220" y="200" id="svg_3" font-size="29" font-family="Cursive" text-anchor="middle" xml:space="preserve" font-weight="bold">Name</text>' +
-                    '<text stroke-width="0" fill="#000000" stroke="#000000" x="540" y="200" id="svg_4" font-size="29" font-family="Cursive" text-anchor="middle" xml:space="preserve" font-weight="bold">Score</text>' +
-                    '<line id="svg_5" y2="220" x2="678" y1="220" x1="130" stroke-linecap="null" stroke-linejoin="null" stroke-width="5" stroke="#000000" fill="none"/>' +
-                    '<text stroke-width="0" fill="#000000" stroke="#000000" stroke-linejoin="null" stroke-linecap="null" x="181" y="275" id="svg_6" font-size="29" font-family="Cursive" text-anchor="middle" xml:space="preserve" font-weight="bold">' + players[0].name + '</text>' +
-                    '<text font-weight="bold" xml:space="preserve" text-anchor="middle" font-family="Cursive" font-size="29" id="svg_7" y="275" x="541" stroke-linecap="null" stroke-linejoin="null" stroke="#000000" fill="#000000" stroke-width="0">' + players[0].score + '</text>' +
+                    '<path id="svg_1" d="m104.14001,503.82504l0,-435.50005l0,0c0,-18.50229 22.05193,-33.5 49.25001,-33.5l591.00006,0c27.20398,0 49.25006,14.99771 49.25006,33.5c0,18.50227 -22.04608,33.49999 -49.25006,33.49999l-49.25018,0l0,435.50008c0,18.50232 -22.05188,33.49994 -49.25,33.49994l-590.99984,0l0,0c-27.19812,0 -49.25,-14.99762 -49.25,-33.49994c0,-18.50232 22.05188,-33.50003 49.25,-33.50003zm147.74992,-469.00004l0,0c27.19814,0 49.24995,14.99771 49.24995,33.5c0,18.50227 -22.05182,33.49999 -49.24995,33.49999c-13.59906,0 -24.625,-7.49988 -24.625,-16.75c0,-9.2501 11.02594,-16.74999 24.625,-16.74999l49.24995,0m492.50015,33.49999l-541.75011,0m-98.49996,402.00005l0,0c13.59908,0 24.62508,7.49985 24.62508,16.75009c0,9.24994 -11.02601,16.74994 -24.62508,16.74994l49.25001,0m-49.25001,33.49994l0,0c27.19817,0 49.25001,-14.99762 49.25001,-33.49994l0,-33.50003" stroke-linecap="null" stroke-linejoin="null" stroke-width="5" stroke="#000000" fill="yellowgreen" transform="scale('+ scal + ')"/>' +
+                    ' <text stroke-width="0" fill="#000000" stroke="#000000" x="380" y="152" id="svg_2" font-size="39" font-family="Cursive" text-anchor="middle" xml:space="preserve" font-weight="bold" transform="scale('+ scal + ')">Score Board</text>' +
+                    '<text stroke-width="0" fill="#000000" stroke="#000000" x="220" y="200" id="svg_3" font-size="29" font-family="Cursive" text-anchor="middle" xml:space="preserve" font-weight="bold" transform="scale('+ scal + ')">Name</text>' +
+                    '<text stroke-width="0" fill="#000000" stroke="#000000" x="540" y="200" id="svg_4" font-size="29" font-family="Cursive" text-anchor="middle" xml:space="preserve" font-weight="bold" transform="scale('+ scal + ')">Score</text>' +
+                    '<line id="svg_5" y2="220" x2="678" y1="220" x1="130" stroke-linecap="null" stroke-linejoin="null" stroke-width="5" stroke="#000000" fill="none" transform="scale('+ scal + ')"/>' +
+                    '<text stroke-width="0" fill="#000000" stroke="#000000" stroke-linejoin="null" stroke-linecap="null" x="181" y="275" id="svg_6" font-size="29" font-family="Cursive" text-anchor="middle" xml:space="preserve" font-weight="bold" transform="scale('+ scal + ')">' + players[0].name + '</text>' +
+                    '<text font-weight="bold" xml:space="preserve" text-anchor="middle" font-family="Cursive" font-size="29" id="svg_7" y="275" x="541" stroke-linecap="null" stroke-linejoin="null" stroke="#000000" fill="#000000" stroke-width="0" transform="scale('+ scal + ')">' + Math.round(players[0].score ) + '</text>' +
+                    '<text stroke-width="0" fill="#000000" stroke="#000000" stroke-linejoin="null" stroke-linecap="null" x="181" y="310" id="svg_8" font-size="29" font-family="Cursive" text-anchor="middle" xml:space="preserve" font-weight="bold" transform="scale('+ scal + ')">' + players[1].name + '</text>' +
+                    '<text font-weight="bold" xml:space="preserve" text-anchor="middle" font-family="Cursive" font-size="29" id="svg_9" y="310" x="541" stroke-linecap="null" stroke-linejoin="null" stroke="#000000" fill="#000000" stroke-width="0" transform="scale('+ scal + ')">' + Math.round(players[1].score ) + '</text>' +
+                    '<text stroke-width="0" fill="#000000" stroke="#000000" stroke-linejoin="null" stroke-linecap="null" x="181" y="345" id="svg_10" font-size="29" font-family="Cursive" text-anchor="middle" xml:space="preserve" font-weight="bold" transform="scale('+ scal + ')">' + players[2].name + '</text>' +
+                    '<text font-weight="bold" xml:space="preserve" text-anchor="middle" font-family="Cursive" font-size="29" id="svg_11" y="345" x="541" stroke-linecap="null" stroke-linejoin="null" stroke="#000000" fill="#000000" stroke-width="0" transform="scale('+ scal + ')">' + Math.round(players[2].score ) + '</text>' +
                     '</g>' +
                     '</svg>';
 
@@ -286,7 +280,6 @@ playersFieldView = (function () {
                 };
 
                 img.src = url;
-
 
                 //------------------------------------------------------------------SVG
 
