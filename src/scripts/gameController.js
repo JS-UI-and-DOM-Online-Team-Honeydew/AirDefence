@@ -76,11 +76,20 @@
                     0,
                     12);
                 gameObjects.push(explosion);
-            bomb = undefined;
+            gameObjects.splice(gameObjects.indexOf(bomb) ,1);
+            bomb = undefined;           
             gameObjects.splice(0, 1);
             setTimeout(function() {
                 gameOver();
             }, 500);
+        }
+    }
+    
+    function laserShootingCheck() {
+        if(gameRadarRay && gameRadarRay.shooting){
+            if(gameRadarRay.shootingLength === 0){
+                destroyTarget(gameRadarRay);
+            }
         }
     }
     
@@ -107,21 +116,9 @@
         else{
             if (gameRadarRay.range > trigonometry.distanceBetween(gameRadarRay, gameRadarRay.target) - (gameRadarRay.target.size.width / 2) &&
 		    gameRadarRay.range < trigonometry.distanceBetween(gameRadarRay, gameRadarRay.target) + (gameRadarRay.target.size.width / 2)){
-                // alert('Target locked');
-
-                // only for test
-                var explosion = gameObjectsMdl.bomb(position(gameRadarRay.target.position.x, gameRadarRay.target.position.y),
-                    size(gameRadarRay.target.size.width, gameRadarRay.target.size.width),
-                    imgResources.explosion,
-                    0, //speed
-                    direction.left,
-                    0,
-                    12);
-                gameObjects.push(explosion);
-                // only for test
-                //console.log(gameObjects);
-                destroyTarget(gameRadarRay);
-                gameScoreBoard.addScore(gamePlayer);
+                gameRadarRay.range = 6;
+                gameRadarRay.shooting = true;
+                
             } else {
                 gameRadarRay.target = undefined;
                 gameRadarRay.range = 6;
@@ -199,10 +196,17 @@
 
 
     function destroyTarget(ray){
+        var explosion = gameObjectsMdl.bomb(position(gameRadarRay.target.position.x, gameRadarRay.target.position.y),
+            size(gameRadarRay.target.size.width, gameRadarRay.target.size.width),
+            imgResources.explosion,
+            0, //speed
+            direction.left,
+            0,
+            12);
+        gameObjects.push(explosion);
         var index = gameObjects.indexOf(ray.target);
         gameObjects.splice(index, 1);
         ray.target = undefined;
-        ray.range = 6;
         //new target to be randomized TODO:
         gameObjects.push(gameObjectsMdl.enemy(position(globals.gameWidth, globals.gameHeight / 2),
             size(100, 100),
@@ -210,6 +214,9 @@
             configuration.targetSpeed.value, //speed
             direction.left,
             0));
+        gameScoreBoard.addScore(gamePlayer);
+        gameRadarRay.shooting = false;
+        gameRadarRay.shootingLength = 60;
     }
 
     // start animation with the objects defined above
@@ -226,6 +233,7 @@
                     gameRadarRay.update();
                 }
             }
+            laserShootingCheck();
             gameOverCheck();
             gameFieldView.resetView();
             if (gameRadarRay) {

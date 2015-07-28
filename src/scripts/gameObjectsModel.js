@@ -136,6 +136,8 @@ function gameObjectsModel() {
                     this.direction = direction; // -1 => down; +1 => up
                     this.maxAngle = maxAngle;
                     this.minAngle = minAngle;
+                    this.shooting = false;
+                    this.shootingLength = 60;
                     this.rangeSpeed = configuration.rangeSpeed.value; //  px / frame
                     this.range = 6; //px
                     this.target = undefined; // receives target object on successful lock
@@ -236,9 +238,12 @@ function gameObjectsModel() {
             },
             update: {
                 value: function () {
+                    if(this.shooting){
+                        this.shootingLength -= 1;
+                    }
                     // TODO: update all coordinates and other data based on current angle, direction, ect...
                     //Case1: target is not yet locked
-                    if(this.target === undefined){
+                    if(this.target === undefined || this.shooting){
                         //change of direction checker:
                         if(this.angle > this.maxAngle && this.direction === 1){
                             this.direction = -1;

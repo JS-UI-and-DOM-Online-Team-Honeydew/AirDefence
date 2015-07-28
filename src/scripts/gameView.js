@@ -160,6 +160,15 @@ function gameView() {
                                 context.strokeStyle = 'rgba(20, 20, 20, 0.8)';
                                 context.stroke(); //test draw
                             }
+                            // Laser Shooting:
+                            if(objects.shooting){
+                                context.beginPath();
+                                context.strokeStyle = 'red';
+                                context.moveTo(objects.position.x, objects.position.y);
+                                context.lineTo(objects.target.position.x, objects.target.position.y);
+                                context.stroke();
+                                context.closePath();
+                            }
                         }
                     }
             },
