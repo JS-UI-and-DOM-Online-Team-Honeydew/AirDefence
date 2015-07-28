@@ -364,3 +364,4 @@ function gameObjectsModel() {
 
     return gameObjectsModelInternal;
 }
+module.exports = gameObjectsModel;
