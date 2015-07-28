@@ -54,10 +54,25 @@
                 }
             }
         });
+        if(bomb && bomb.boom){
+            var explosion = gameObjectsMdl.bomb(position(bomb.position.x, bomb.position.y),
+                    size(400, 400),
+                    imgResources.explosion,
+                    0, //speed
+                    direction.left,
+                    0,
+                    12);
+                gameObjects.push(explosion);
+            bomb = undefined;
+            gameObjects.splice(0, 1);
+            setTimeout(function() {
+                gameOver();
+            }, 500);
+        }
     }
     
-    function radarExplosion(){
-        alert('boom');
+    function gameOver(){
+        alert('GAME OVER!');
     }
     
     //implements successful lock
@@ -114,6 +129,15 @@
 
     function initGameObjects() {
         gameObjects = [];
+        //Radar (unmovable, simple object)
+        //IMPORTANT: DO NOT CREATE GAME OBJECTS BEFORE THE testRadar Obj!!!
+        var testRadar = gameObjectsMdl.landscapeItem(position(60, globals.gameHeight - 60),
+            size(100, 100),
+            imgResources.radar,
+            0, //speed
+            direction.left,
+            0);
+        gameObjects.push(testRadar);
         // background_tree
         var testTree = gameObjectsMdl.landscapeItem(position(globals.gameWidth / 2, globals.gameHeight - 120),
             size(100, 100),
@@ -122,14 +146,8 @@
             direction.left,
             0);
         gameObjects.push(testTree);
-        //Radar (unmovable, simple object)
-        var testRadar = gameObjectsMdl.landscapeItem(position(60, globals.gameHeight - 60),
-            size(100, 100),
-            imgResources.radar,
-            0, //speed
-            direction.left,
-            0);
-        gameObjects.push(testRadar);
+        
+        
 
         // var testTarget = gameObjectsMdl.enemy(position(globals.gameWidth, globals.gameHeight / 3),
         //     size(100, 100),

@@ -337,6 +337,7 @@ function gameObjectsModel() {
             init: {
                 value: function (position, size, image, speed, direction, zindex, radar) {
                     this.radar = radar;
+                    this.boom = false;
                     parent.init.call(this, position, size, image, speed, direction, zindex, false);
                     
                     console.log(this.radar);
@@ -347,7 +348,8 @@ function gameObjectsModel() {
                 value: function(){
 
                     if(this.position.y > this.radar.position.y){
-                        alert('boom');
+                        this.boom = true;
+                        //alert('boom');
                     };
                     parent.update.call(this);                            
                 }
