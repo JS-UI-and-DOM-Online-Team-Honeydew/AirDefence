@@ -12,7 +12,9 @@
         gamePaused = false,
         gameRadarRay,
         bomb,
-        gamePlayer;
+        gamePlayer,
+        isScoreBoardShown,
+        gameScoreBoard = scoreMdl.scoreBoard().init();
 
     function clickEvent() {
         //alert('clicked!');
@@ -30,9 +32,20 @@
         gamePaused = !gamePaused;
     }
 
+    function showScoreBoardEvent(){
+        scoreMdl.scoreBoard().save(gamePlayer);
+        gameFieldView.resetView();
+        view.playersView(scoreMdl.scoreBoard().getTopPlayers());
+        isScoreBoardShown = true;
+    }
+
+    function hideScoreBoardEvent(){
+        isScoreBoardShown = false;
+    }
+
     function exitGameEvent() {
-        view.playersView(scoreMdl.getTopPlayers);
-        initGame();
+        //view.playersView(scoreMdl.getTopPlayers);
+        //initGame();
         gameRadarRay = undefined;
     }
 
@@ -45,7 +58,7 @@
                     bomb = gameObjectsMdl.aeroBomb(position(obj.position.x, obj.position.y),
                         size(30, 20),
                         imgResources.bomb,
-                        5, //speed
+                        configuration.targetSpeed.value, //speed
                         direction.down,
                         0,
                         gameRadarRay);
@@ -108,6 +121,7 @@
                 // only for test
                 //console.log(gameObjects);
                 destroyTarget(gameRadarRay);
+                gameScoreBoard.addScore(gamePlayer);
             } else {
                 gameRadarRay.target = undefined;
                 gameRadarRay.range = 6;
@@ -160,7 +174,7 @@
         var testTarget2 = gameObjectsMdl.enemy(position(globals.gameWidth, globals.gameHeight / 2),
             size(100, 100),
             imgResources.target,
-            2, //speed
+            configuration.targetSpeed.value, //speed
             direction.left,
             0);
         gameObjects.push(testTarget2);
@@ -180,6 +194,9 @@
     gameControlView.registerNewGameCallback(newGameEvent);
     gameControlView.registerExitCallback(pauseResumeEvent);
     gameControlView.registerPauseGameCallback(exitGameEvent);
+    gameControlView.registerScoreboardCallback(showScoreBoardEvent);
+    gameControlView.registerScoreboardExitCallback(hideScoreBoardEvent);
+
 
     function destroyTarget(ray){
         var index = gameObjects.indexOf(ray.target);
@@ -190,7 +207,7 @@
         gameObjects.push(gameObjectsMdl.enemy(position(globals.gameWidth, globals.gameHeight / 2),
             size(100, 100),
             imgResources.target,
-            2, //speed
+            configuration.targetSpeed.value, //speed
             direction.left,
             0));
     }
@@ -198,6 +215,9 @@
     // start animation with the objects defined above
     function animate(highResTimestamp) {
         requestAnimationFrame(animate);
+        if (isScoreBoardShown) {
+            return;
+        }
 
         if (!gamePaused) {
             for (var i = 0; i < gameObjects.length; i++) {
@@ -210,6 +230,9 @@
             gameFieldView.resetView();
             if (gameRadarRay) {
                 gameFieldView.draw(gameRadarRay);
+            }
+            if (gamePlayer) {
+                gameFieldView.draw(gamePlayer);
             }
             gameFieldView.draw(gameObjects);
         }

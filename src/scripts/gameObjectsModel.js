@@ -35,7 +35,7 @@ function gameObjectsModel() {
         Object.defineProperties(gameObjectInternal, {
             init: {
                 value: function (position, size, image, speed, direction, zindex, isTarget) {
-                    this.position = position;            
+                    this.position = position;
                     this.image = image;
                     this.size = size;
                     this.speed = speed;
@@ -288,7 +288,7 @@ function gameObjectsModel() {
                     if(this.image.height){
                          this.size.height = this.size.width * (this.image.height / this.image.width);
                     }
-                   
+
                     return this;
                 }
             }
@@ -302,7 +302,7 @@ function gameObjectsModel() {
 
         Object.defineProperties(bombInternal, {
             init: {
-                value: function (position, size, image, speed, direction, zindex, spriteData) {                    
+                value: function (position, size, image, speed, direction, zindex, spriteData) {
                     this.numberOfFrames = spriteData;
                     this.frameIndex  = 0;
                     // size.width = size.width * this.numberOfFrames;
@@ -328,7 +328,7 @@ function gameObjectsModel() {
         });
         return landscapeItemInternal;
     }(gameObject));
-    
+
     // class, defining aero BOMB - TODO: to be extended if needed
     aeroBomb = (function (parent) {
         var aeroBombInternal = Object.create(parent);
@@ -339,7 +339,7 @@ function gameObjectsModel() {
                     this.radar = radar;
                     this.boom = false;
                     parent.init.call(this, position, size, image, speed, direction, zindex, false);
-                    
+
                     console.log(this.radar);
                     return this;
                 }
@@ -349,14 +349,13 @@ function gameObjectsModel() {
 
                     if(this.position.y > this.radar.position.y){
                         this.boom = true;
-                        //alert('boom');
                     };
-                    parent.update.call(this);                            
+                    parent.update.call(this);
                 }
             }
         });
         return aeroBombInternal;
     }(gameObject));
-    
+
     return gameObjectsModelInternal;
 }
