@@ -261,6 +261,7 @@ function gameView() {
                         scal,
                         DOMURL,
                         i,
+                        len,
                         initY;
 
                     if (players.length === 0) {
@@ -299,7 +300,14 @@ function gameView() {
                     '<line id="svg_5" y2="220" x2="678" y1="220" x1="130" stroke-linecap="null" stroke-linejoin="null" stroke-width="5" stroke="#000000" fill="none" transform="scale(' + scal + ')"/>';
 
                     initY = 275;
-                    for (i = 0; i < players.length; i = +1) {
+                    
+                    if(players.length > 5){
+                        len = 5;
+                    } else {
+                        len = players.length;
+                    }
+                    
+                    for (i = 0; i < len; i = +1) {
                         data += '<text stroke-width="0" fill="#000000" stroke="#000000" stroke-linejoin="null" stroke-linecap="null" x="181" y="' + initY + '" id="svg_6" font-size="29" font-family="Cursive" text-anchor="middle" xml:space="preserve" font-weight="bold" transform="scale(' + scal + ')">' + players[i].name + '</text>' +
                         '<text font-weight="bold" xml:space="preserve" text-anchor="middle" font-family="Cursive" font-size="29" id="svg_7" y="' + initY + '" x="541" stroke-linecap="null" stroke-linejoin="null" stroke="#000000" fill="#000000" stroke-width="0" transform="scale(' + scal + ')">' + Math.round(players[i].score) + '</text>';
                         initY += 35;
