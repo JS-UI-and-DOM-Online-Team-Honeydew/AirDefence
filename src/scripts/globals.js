@@ -24,28 +24,28 @@ var globals,
     configuration = {
         laserSpeed: {
             name: 'Laser Speed', // Name to be displayed in HTML control
-            value: 0.2, // Init value
-            minValue: 0.1, // Minimum allowed value
-            maxValue: 2, // Maximum allowed value
-            step: 0.1, // Change Step
+            value: 0.1, // Init value
+            minValue: 0.05, // Minimum allowed value
+            maxValue: 0.5, // Maximum allowed value
+            step: 0.05, // Change Step
             scoreWeight: function() { // Formula to calculate the score
                 return (this.maxValue - this.minValue / 2) * this.value;
             }
         },
         rangeSpeed: {
             name: 'Laser Range Speed',
-            value: 2,
-            minValue: 1,
-            maxValue: 10,
-            step: 1,
+            value: 1,
+            minValue: 0.5,
+            maxValue: 5,
+            step: 0.5,
             scoreWeight: function() {
                 return (this.maxValue - this.minValue / 2) * this.value;
             }
         },
         rayWidth: {
             name: 'Radar Ray Width',
-            value: 6,
-            minValue: 4,
+            value: 8,
+            minValue: 1,
             maxValue: 20,
             step: 1,
             scoreWeight: function() {
@@ -92,7 +92,7 @@ var globals,
         imgResources.newGame.src = 'images/new_game.png';
        return imgResources;
     }();
-    
+
 
     direction = {
         left: {x:-1, y:0},

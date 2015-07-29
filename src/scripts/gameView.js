@@ -52,7 +52,7 @@ function gameView() {
                         container = document.createElement('div'),
                         canvasContainer = document.createElement('div');
 
-                    document.body.style.overflow = 'hiddein';
+                    document.body.style.overflow = 'hidden';
                     document.body.style.margin = 0;
 
                     //wrapper properties
@@ -348,8 +348,7 @@ function gameView() {
                     var formField = document.createElement('form'),
                         buttonNewGame = document.createElement('input'),
                         buttonPauseGame = document.createElement('input'),
-                        buttonShowScoreBoard = document.createElement('input'),
-                        buttonHideScoreBoard = document.createElement('input'),
+                        buttonScoreBoard = document.createElement('input'),
                         buttonExitGame = document.createElement('input'),
                         canvasContainer = document.getElementById('canvas-container'),
                         gameControlsHolder = document.createElement('div'),
@@ -385,33 +384,28 @@ function gameView() {
                     buttonPauseGame.type = 'button';
                     buttonPauseGame.name = 'pause-game';
                     buttonPauseGame.value = 'Pause Game';
+                    buttonPauseGame.style.display='none';
 
                     buttonExitGame.class = 'control-buttons';
                     buttonExitGame.type = 'button';
                     buttonExitGame.name = 'exit-game';
                     buttonExitGame.value = 'Exit Game';
+                    buttonExitGame.style.display='none';
 
-                    buttonShowScoreBoard.class = 'control-buttons';
-                    buttonShowScoreBoard.type = 'button';
-                    buttonShowScoreBoard.name = 'scoreboard';
-                    buttonShowScoreBoard.value = 'Scoreboard';
-
-                    buttonHideScoreBoard.class = 'control-buttons';
-                    buttonHideScoreBoard.type = 'button';
-                    buttonHideScoreBoard.name = 'scoreboard-hide';
-                    buttonHideScoreBoard.value = 'Hide Scoreboard';
+                    buttonScoreBoard.class = 'control-buttons';
+                    buttonScoreBoard.type = 'button';
+                    buttonScoreBoard.name = 'scoreboard';
+                    buttonScoreBoard.value = 'Scoreboard';
 
                     formField.appendChild(buttonNewGame);
                     formField.appendChild(buttonPauseGame);
                     formField.appendChild(buttonExitGame);
-                    formField.appendChild(buttonShowScoreBoard);
-                    formField.appendChild(buttonHideScoreBoard);
+                    formField.appendChild(buttonScoreBoard);
 
                     this.buttonNewGame = buttonNewGame;
                     this.buttonPauseGame = buttonPauseGame;
                     this.buttonExitGame = buttonExitGame;
-                    this.buttonShowScoreBoard = buttonShowScoreBoard;
-                    this.buttonHideScoreBoard = buttonHideScoreBoard;
+                    this.buttonScoreBoard = buttonScoreBoard;
 
                     document.body.appendChild(document.createElement('br'));
 
@@ -453,6 +447,26 @@ function gameView() {
                     return this;
                 }
             },
+            setPlayMode: {
+                value: function () {
+                    var sliders = document.getElementById('game-settings-sliders');
+                    sliders.style.display='none';
+                    this.buttonNewGame.style.display='none';
+                    this.buttonScoreBoard.style.display='none';
+                    this.buttonPauseGame.style.display='inline';
+                    this.buttonExitGame.style.display='inline';
+                }
+            },
+            restoreInitMode: {
+                value: function () {
+                    var sliders = document.getElementById('game-settings-sliders');
+                    sliders.style.display='inline-flex';
+                    this.buttonNewGame.style.display='inline';
+                    this.buttonScoreBoard.style.display='inline';
+                    this.buttonPauseGame.style.display='none';
+                    this.buttonExitGame.style.display='none';
+                }
+            },
             registerNewGameCallback: {
                 value: function (callback) {
                     this.buttonNewGame.addEventListener('click', callback, false);
@@ -470,12 +484,7 @@ function gameView() {
             },
             registerScoreboardCallback: {
                 value: function (callback) {
-                    this.buttonShowScoreBoard.addEventListener('click', callback, false);
-                }
-            },
-            registerScoreboardExitCallback: {
-                value: function (callback) {
-                    this.buttonHideScoreBoard.addEventListener('click', callback, false);
+                    this.buttonScoreBoard.addEventListener('click', callback, false);
                 }
             },
             toggelAcion: {

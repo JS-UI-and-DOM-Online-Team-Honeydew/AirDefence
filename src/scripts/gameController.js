@@ -13,12 +13,10 @@
         gameRadarRay,
         bomb,
         gamePlayer,
-        isScoreBoardShown,
+        isScoreBoardShown= false,
         gameScoreBoard = scoreMdl.scoreBoard().init();
 
     function clickEvent() {
-        //alert('clicked!');
-        //test lock:
         lockChecker();
     }
 
@@ -26,6 +24,8 @@
         var player = prompt("Please enter your name", "name");
         gamePlayer = scoreMdl.player(player);
         initGameObjects();
+        gameControlView.setPlayMode();
+        isScoreBoardShown = false;
     }
 
     function pauseResumeEvent() {
@@ -33,19 +33,12 @@
     }
 
     function showScoreBoardEvent(){
-        scoreMdl.scoreBoard().save(gamePlayer);
-        gameFieldView.resetView();
-        view.playersView(scoreMdl.scoreBoard().getTopPlayers());
-        isScoreBoardShown = true;
-    }
-
-    function hideScoreBoardEvent(){
-        isScoreBoardShown = false;
+        isScoreBoardShown = !isScoreBoardShown;
     }
 
     function exitGameEvent() {
-        //view.playersView(scoreMdl.getTopPlayers);
-        //initGame();
+        gameControlView.restoreInitMode();
+        initGame();
         gameRadarRay = undefined;
     }
 
@@ -54,7 +47,7 @@
             if(obj.isTarget && gameRadarRay){
                 if(obj.position.x < gameRadarRay.position.x){
                     // alert('Game over!');
-                    
+
                     bomb = gameObjectsMdl.aeroBomb(position(obj.position.x, obj.position.y),
                         size(30, 20),
                         imgResources.bomb,
@@ -77,14 +70,14 @@
                     12);
                 gameObjects.push(explosion);
             gameObjects.splice(gameObjects.indexOf(bomb) ,1);
-            bomb = undefined;           
+            bomb = undefined;
             gameObjects.splice(0, 1);
             setTimeout(function() {
                 gameOver();
             }, 500);
         }
     }
-    
+
     function laserShootingCheck() {
         if(gameRadarRay && gameRadarRay.shooting){
             if(gameRadarRay.shootingLength === 0){
@@ -92,13 +85,15 @@
             }
         }
     }
-    
+
     function gameOver(){
         alert('GAME OVER!');
+        exitGameEvent();
+        isScoreBoardShown = true;
     }
-    
+
     //implements successful lock
-    function lockChecker(){        
+    function lockChecker(){
         //case 1: target angle is not yet locked:
         if(!gameRadarRay.target){
             gameObjects.forEach(function(obj){
@@ -118,7 +113,7 @@
 		    gameRadarRay.range < trigonometry.distanceBetween(gameRadarRay, gameRadarRay.target) + (gameRadarRay.target.size.width / 2)){
                 gameRadarRay.range = 6;
                 gameRadarRay.shooting = true;
-                
+
             } else {
                 gameRadarRay.target = undefined;
                 gameRadarRay.range = 6;
@@ -136,6 +131,7 @@
             direction.left,
             0);
         gameObjects.push(initText);
+        isScoreBoardShown = false;
     }
 
     function initGameObjects() {
@@ -224,14 +220,6 @@
             0);
         gameObjects.push(alien2);
 
-        // var testTarget = gameObjectsMdl.enemy(position(globals.gameWidth, globals.gameHeight / 3),
-        //     size(100, 100),
-        //     'images/spaceship.png',
-        //     3.2, //speed
-        //     direction.left,
-        //     0);
-        // gameObjects.push(testTarget);
-
         var testTarget2 = gameObjectsMdl.enemy(position(globals.gameWidth, globals.gameHeight / 2),
             size(100, 100),
             imgResources.target,
@@ -256,7 +244,6 @@
     gameControlView.registerExitCallback(pauseResumeEvent);
     gameControlView.registerPauseGameCallback(exitGameEvent);
     gameControlView.registerScoreboardCallback(showScoreBoardEvent);
-    gameControlView.registerScoreboardExitCallback(hideScoreBoardEvent);
 
 
     function destroyTarget(ray){
@@ -287,6 +274,8 @@
     function animate(highResTimestamp) {
         requestAnimationFrame(animate);
         if (isScoreBoardShown) {
+            scoreMdl.scoreBoard().save(gamePlayer);
+            view.playersView(scoreMdl.scoreBoard().getTopPlayers());
             return;
         }
 
