@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="ab41876a-69bc-491f-a6c6-866e7ebbaba6"
   name="gameObjectsModel.js" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -7,31 +7,13 @@
     <packageHasNamedElement>
       <class
         Id="a264146e-9d0c-4d30-bb60-2c7ce16ba52d"
-        name="LaserRay"
+        name="laserRay"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
         <ownedAttributesInternal>
           <property
-            Id="53bed4f0-3541-4d4b-839a-0a58e8f9ee2c"
-            name="position"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="8877e97f-24aa-4068-a315-3572dff12ef0"
-                LastKnownName="Position"
-                LastKnownLocation="Package_1132.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="6133b91d-7aa9-4a00-b447-6433b0eb15a2"
+            Id="860a54ce-f6fb-4567-8136-9ed4d4c4430a"
             name="angle"
             isLeaf="false"
             isStatic="false"
@@ -40,70 +22,9 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="220a3521-e091-4221-bae9-3ef9018e845c"
-                LastKnownName="Integer"
-                LastKnownLocation="AirDefence.uml" />
-            </type_NamedElement>
-          </property>
+            isComposite="false" />
           <property
-            Id="7d39360a-c936-427b-a320-66b78d65ee32"
-            name="minAngle"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="220a3521-e091-4221-bae9-3ef9018e845c"
-                LastKnownName="Integer"
-                LastKnownLocation="AirDefence.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="dbd4f5cc-90cf-4231-a262-c1299b8c8617"
-            name="maxAngle"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="220a3521-e091-4221-bae9-3ef9018e845c"
-                LastKnownName="Integer"
-                LastKnownLocation="AirDefence.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="ea92a54e-b175-4f29-a141-5aa35e6d1c55"
-            name="direction"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="220a3521-e091-4221-bae9-3ef9018e845c"
-                LastKnownName="Integer"
-                LastKnownLocation="AirDefence.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="c1f6d44a-d2e7-4c33-8659-83cba9b3e5a2"
+            Id="ec73c7c1-ecdb-4183-90a4-bc90620d45e7"
             name="angleSpeed"
             isLeaf="false"
             isStatic="false"
@@ -112,16 +33,64 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="220a3521-e091-4221-bae9-3ef9018e845c"
-                LastKnownName="Integer"
-                LastKnownLocation="AirDefence.uml" />
-            </type_NamedElement>
-          </property>
+            isComposite="false" />
           <property
-            Id="66f5df3c-ab05-4f26-847f-def97134508c"
+            Id="766d3c68-6fba-41c3-96cd-28a807ea4346"
+            name="direction"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="d40e475f-aafe-4ef7-a182-99c78190926c"
+            name="maxAngle"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="f7ddbccf-4110-4d19-b446-b4e2c421e115"
+            name="minAngle"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="55d28083-df65-405e-b9ea-4d2e9260d474"
+            name="shooting"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="aa49d013-cb8d-41e3-b42f-8c89fe0a6ba6"
+            name="shootingLength"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="351bea81-0326-4b77-913f-c33b1690dbbc"
             name="rangeSpeed"
             isLeaf="false"
             isStatic="false"
@@ -130,16 +99,20 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="220a3521-e091-4221-bae9-3ef9018e845c"
-                LastKnownName="Integer"
-                LastKnownLocation="AirDefence.uml" />
-            </type_NamedElement>
-          </property>
+            isComposite="false" />
           <property
-            Id="35a219a2-ad26-4215-bbee-6c8a25f03a53"
+            Id="a0946612-909e-47f8-b28d-19e045049f3f"
+            name="range"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="95949f4e-44be-4dc5-9634-8a5f3cf42054"
             name="target"
             isLeaf="false"
             isStatic="false"
@@ -148,35 +121,50 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="455c4fc2-4b15-4058-9983-128137e8c449"
-                LastKnownName="Enemy"
-                LastKnownLocation="Package_1131.uml" />
-            </type_NamedElement>
-          </property>
+            isComposite="false" />
+          <property
+            Id="711ad129-7a3f-4288-8fad-e2b3a498e494"
+            name="radar"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="75336d0f-7133-4985-9983-52b19824ca00"
+            name="position"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="e19b6e9f-1f73-4753-9d94-1fb1d2989d98"
-            name="Init"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
             Id="915fa496-dd48-4738-90f5-65c399b693d1"
-            name="Update"
+            name="update"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="bed12249-4d7e-469f-9c09-fecedb7b3bf4"
-            name="GetCurrentData"
+            Id="2e169c31-cee7-47a5-bbe5-5262821662ab"
+            name="distanceToTarget"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c91748d4-3645-444a-93ca-443b5f1f06e4"
+            name="angleToTarget"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -188,7 +176,7 @@
     <packageHasNamedElement>
       <class
         Id="455c4fc2-4b15-4058-9983-128137e8c449"
-        name="Enemy"
+        name="enemy"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -198,7 +186,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="7a053296-57a2-4460-856f-70be70698e71"
-              LastKnownName="GameObject"
+              LastKnownName="gameObject"
               LastKnownLocation="Package_1131.uml" />
           </generalization>
         </generalsInternal>
@@ -207,7 +195,7 @@
     <packageHasNamedElement>
       <class
         Id="33804736-3c53-47eb-9fe0-fcbcce37c3fa"
-        name="Bomb"
+        name="bomb"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -217,7 +205,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="7a053296-57a2-4460-856f-70be70698e71"
-              LastKnownName="GameObject"
+              LastKnownName="gameObject"
               LastKnownLocation="Package_1131.uml" />
           </generalization>
         </generalsInternal>
@@ -226,7 +214,7 @@
     <packageHasNamedElement>
       <class
         Id="24772990-af91-4f04-afc7-6baf3a8544dd"
-        name="LandscapeItem"
+        name="landscapeItem"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -236,7 +224,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="7a053296-57a2-4460-856f-70be70698e71"
-              LastKnownName="GameObject"
+              LastKnownName="gameObject"
               LastKnownLocation="Package_1131.uml" />
           </generalization>
         </generalsInternal>
@@ -255,7 +243,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="455c4fc2-4b15-4058-9983-128137e8c449"
-              LastKnownName="Enemy"
+              LastKnownName="enemy"
               LastKnownLocation="Package_1131.uml" />
           </generalization>
         </generalsInternal>
@@ -274,7 +262,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="455c4fc2-4b15-4058-9983-128137e8c449"
-              LastKnownName="Enemy"
+              LastKnownName="enemy"
               LastKnownLocation="Package_1131.uml" />
           </generalization>
         </generalsInternal>
@@ -293,7 +281,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="24772990-af91-4f04-afc7-6baf3a8544dd"
-              LastKnownName="LandscapeItem"
+              LastKnownName="landscapeItem"
               LastKnownLocation="Package_1131.uml" />
           </generalization>
         </generalsInternal>
@@ -312,7 +300,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="24772990-af91-4f04-afc7-6baf3a8544dd"
-              LastKnownName="LandscapeItem"
+              LastKnownName="landscapeItem"
               LastKnownLocation="Package_1131.uml" />
           </generalization>
         </generalsInternal>
@@ -331,7 +319,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="24772990-af91-4f04-afc7-6baf3a8544dd"
-              LastKnownName="LandscapeItem"
+              LastKnownName="landscapeItem"
               LastKnownLocation="Package_1131.uml" />
           </generalization>
         </generalsInternal>
@@ -350,7 +338,7 @@
             isSubstitutable="false">
             <classMoniker
               Id="24772990-af91-4f04-afc7-6baf3a8544dd"
-              LastKnownName="LandscapeItem"
+              LastKnownName="landscapeItem"
               LastKnownLocation="Package_1131.uml" />
           </generalization>
         </generalsInternal>
@@ -359,67 +347,13 @@
     <packageHasNamedElement>
       <class
         Id="7a053296-57a2-4460-856f-70be70698e71"
-        name="GameObject"
+        name="gameObject"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
         <ownedAttributesInternal>
           <property
             Id="200742a6-5318-4944-b1e7-628112a24af6"
-            name="position"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="8877e97f-24aa-4068-a315-3572dff12ef0"
-                LastKnownName="Position"
-                LastKnownLocation="Package_1132.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="bc738c9f-e310-456e-a5d3-2a305a1332fb"
-            name="size"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="aa05bc60-299e-4cbf-86ec-8e4652e28e42"
-                LastKnownName="Size"
-                LastKnownLocation="Package_1132.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="0cbfb937-ef41-4a3a-89e2-ec63e974b019"
-            name="image"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="true"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                LastKnownName="String"
-                LastKnownLocation="AirDefence.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="312a491a-0364-4e1a-ba6c-c74bc877a6de"
             name="speed"
             isLeaf="false"
             isStatic="false"
@@ -428,34 +362,9 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="220a3521-e091-4221-bae9-3ef9018e845c"
-                LastKnownName="Integer"
-                LastKnownLocation="AirDefence.uml" />
-            </type_NamedElement>
-          </property>
+            isComposite="false" />
           <property
-            Id="f76e33df-4bb0-401e-8093-7d5e486ba8c8"
-            name="direction"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="8877e97f-24aa-4068-a315-3572dff12ef0"
-                LastKnownName="Position"
-                LastKnownLocation="Package_1132.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="21fd8009-3685-4338-a3cc-8d7a12023624"
+            Id="bc738c9f-e310-456e-a5d3-2a305a1332fb"
             name="zindex"
             isLeaf="false"
             isStatic="false"
@@ -464,16 +373,20 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="220a3521-e091-4221-bae9-3ef9018e845c"
-                LastKnownName="Integer"
-                LastKnownLocation="AirDefence.uml" />
-            </type_NamedElement>
-          </property>
+            isComposite="false" />
           <property
-            Id="cd14377a-0738-4595-acfe-4d199b4123fd"
+            Id="0cbfb937-ef41-4a3a-89e2-ec63e974b019"
+            name="image"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="312a491a-0364-4e1a-ba6c-c74bc877a6de"
             name="isTarget"
             isLeaf="false"
             isStatic="false"
@@ -482,72 +395,50 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <primitiveTypeMoniker
-                Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
-                LastKnownName="Boolean"
-                LastKnownLocation="AirDefence.uml" />
-            </type_NamedElement>
-          </property>
+            isComposite="false" />
+          <property
+            Id="f76e33df-4bb0-401e-8093-7d5e486ba8c8"
+            name="position"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="21fd8009-3685-4338-a3cc-8d7a12023624"
+            name="direction"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="cd14377a-0738-4595-acfe-4d199b4123fd"
+            name="size"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="6e91093b-f540-4913-b129-dc3836c6ec10"
-            name="Update"
+            name="update"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
-          <operation
-            Id="70ac8238-0897-4d52-af7f-1168cf5721ff"
-            name="Init"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="6554cf8f-ec98-4440-acd6-68bf6d2855a3"
-                  name="position"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="b9148a08-a745-4c03-be53-559a2060e165"
-                  name="size"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="ff557d42-49ca-480a-8b84-036dcd22e78d"
-            name="GetUpdatedPosition"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="95bd9c92-3fa8-4fca-a1d0-b8453adcc062"
-                  direction="Return">
-                  <type_NamedElement>
-                    <classMoniker
-                      Id="8877e97f-24aa-4068-a315-3572dff12ef0"
-                      LastKnownName="Position"
-                      LastKnownLocation="Package_1132.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -566,6 +457,35 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="02a1116b-11d0-4351-8f87-d9f7e4b4d4d8"
+        name="aeroBomb"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="016243af-b33f-40b8-b122-c18c8177b351"
+            isSubstitutable="false">
+            <classMoniker
+              Id="7a053296-57a2-4460-856f-70be70698e71"
+              LastKnownName="gameObject"
+              LastKnownLocation="Package_1131.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="bf0758d5-6586-47f2-8472-654532012532"
+            name="update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
 </package>

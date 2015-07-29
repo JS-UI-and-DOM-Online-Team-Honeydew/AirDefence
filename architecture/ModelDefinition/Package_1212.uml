@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="5e633004-2756-43ad-abd3-56ebbff3f445"
   name="configuration.js" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -13,8 +13,8 @@
         isActiveClass="false">
         <ownedAttributesInternal>
           <property
-            Id="9c330055-f42d-4e8d-a30d-538c5c5cee6f"
-            name="GameWidth"
+            Id="8919107b-4c54-4aad-928a-d504fcda0d80"
+            name="validators"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -24,8 +24,8 @@
             aggregation="None"
             isComposite="false" />
           <property
-            Id="e31da4d3-69da-4bca-a507-b12fac3684c7"
-            name="GameHeight"
+            Id="bb75843f-8c9e-47db-bb0b-47ec65fd30f4"
+            name="trigonometry"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -35,8 +35,52 @@
             aggregation="None"
             isComposite="false" />
           <property
-            Id="a0eda76e-a059-4b0d-92ca-83044b44ea1e"
-            name="NumberEnemies"
+            Id="3a771d37-3487-4460-8a97-be295f026359"
+            name="position"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="01bc5951-3b05-4352-aade-60fcb44a2bbe"
+            name="size"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="53b1e027-96ee-409b-83b6-470aaebb7ece"
+            name="direction"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="b42e948c-6662-48b0-beec-b6197fa21b76"
+            name="imgResources"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="bc304857-d238-42c4-9a9c-21b4ffa579b2"
+            name="configuration"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
