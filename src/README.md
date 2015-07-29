@@ -1,4 +1,3 @@
-***************************************************************************************
 Project
 =======
 "Air Defence" is a game where you are supposed to defence from the attack of aircrafts.
@@ -8,6 +7,7 @@ The idea
 --------
 Help us from the invade of the aircrafts. Kill them all !
 ***************************************************************************************
+
 How to play:
 -----------
 1.  Open the \src\index.html file via your browser.
@@ -18,11 +18,12 @@ How to play:
 
 **For changing the difficulty , use the slider controls.**
 ***************************************************************************************
+
 Contribute
 ----------
 - Source Code: https://github.com/JS-UI-and-DOM-Online-Team-Honeydew/AirDefence
 ***************************************************************************************
+
 License 
 ------------
 This project has no license.
-***************************************************************************************
