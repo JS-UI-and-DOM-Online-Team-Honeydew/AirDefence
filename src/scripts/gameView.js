@@ -263,7 +263,7 @@ playersFieldView = (function () {
                     '<g>' +
                     '<title>Layer 1</title>' +
                     '<path id="svg_1" d="m104.14001,503.82504l0,-435.50005l0,0c0,-18.50229 22.05193,-33.5 49.25001,-33.5l591.00006,0c27.20398,0 49.25006,14.99771 49.25006,33.5c0,18.50227 -22.04608,33.49999 -49.25006,33.49999l-49.25018,0l0,435.50008c0,18.50232 -22.05188,33.49994 -49.25,33.49994l-590.99984,0l0,0c-27.19812,0 -49.25,-14.99762 -49.25,-33.49994c0,-18.50232 22.05188,-33.50003 49.25,-33.50003zm147.74992,-469.00004l0,0c27.19814,0 49.24995,14.99771 49.24995,33.5c0,18.50227 -22.05182,33.49999 -49.24995,33.49999c-13.59906,0 -24.625,-7.49988 -24.625,-16.75c0,-9.2501 11.02594,-16.74999 24.625,-16.74999l49.24995,0m492.50015,33.49999l-541.75011,0m-98.49996,402.00005l0,0c13.59908,0 24.62508,7.49985 24.62508,16.75009c0,9.24994 -11.02601,16.74994 -24.62508,16.74994l49.25001,0m-49.25001,33.49994l0,0c27.19817,0 49.25001,-14.99762 49.25001,-33.49994l0,-33.50003" stroke-linecap="null" stroke-linejoin="null" stroke-width="5" stroke="#000000" fill="#8bb0f3" transform="scale('+ scal + ')"/>' +
-                    ' <text stroke-width="0" fill="#000000" stroke="#000000" x="380" y="152" id="svg_2" font-size="39" font-family="Cursive" text-anchor="middle" xml:space="preserve" font-weight="bold" transform="scale('+ scal + ')">Score Board</text>' +
+                    ' <text stroke-width="0" fill="#000000" stroke="#000000" x="380" y="152" id="svg_2" font-size="39" font-family="Cursive" text-anchor="middle" xml:space="preserve" font-weight="bold" transform="scale('+ scal + ')">Scoreboard</text>' +
                     '<text stroke-width="0" fill="#000000" stroke="#000000" x="220" y="200" id="svg_3" font-size="29" font-family="Cursive" text-anchor="middle" xml:space="preserve" font-weight="bold" transform="scale('+ scal + ')">Name</text>' +
                     '<text stroke-width="0" fill="#000000" stroke="#000000" x="540" y="200" id="svg_4" font-size="29" font-family="Cursive" text-anchor="middle" xml:space="preserve" font-weight="bold" transform="scale('+ scal + ')">Score</text>' +
                     '<line id="svg_5" y2="220" x2="678" y1="220" x1="130" stroke-linecap="null" stroke-linejoin="null" stroke-width="5" stroke="#000000" fill="none" transform="scale('+ scal + ')"/>';
@@ -334,12 +334,12 @@ controlFieldView = (function () {
                 buttonShowScoreBoard.class = 'control-buttons';
                 buttonShowScoreBoard.type = 'button';
                 buttonShowScoreBoard.name = 'scoreboard';
-                buttonShowScoreBoard.value = 'ScoreBoard';
+                buttonShowScoreBoard.value = 'Scoreboard';
 
                 buttonHideScoreBoard.class = 'control-buttons';
                 buttonHideScoreBoard.type = 'button';
                 buttonHideScoreBoard.name = 'scoreboard-hide';
-                buttonHideScoreBoard.value = 'Hide ScoreBoard';
+                buttonHideScoreBoard.value = 'Hide Scoreboard';
 
                 formField.appendChild(buttonNewGame);
                 formField.appendChild(buttonPauseGame);
