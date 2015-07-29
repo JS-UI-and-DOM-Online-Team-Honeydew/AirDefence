@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="fa068cf1-3665-497c-997a-777ea463848a"
   name="gameView.js" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -11,64 +11,77 @@
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="f51dff18-7450-4943-824b-b48282974206"
+            name="width"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="26ef6715-a1d8-40ed-adf9-dcae5f2c51ee"
+            name="height"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="a7a8d0bb-43af-4237-b9bf-15edd055652a"
+            name="backgroundImage"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="0590dd11-a1a3-4e1c-9430-d2b2a29f062e"
-            name="Init"
+            name="init"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="3d21781e-8f11-4dd9-90d4-056a53b87d6b"
-                  name="background"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
+            isQuery="false" />
           <operation
             Id="ec316f96-580d-49f0-97a3-c1f19d5a4bae"
-            name="Draw"
+            name="resetView"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="3a955303-120d-4c67-b945-a071144c2bb7"
-                  name="objects"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
+            isQuery="false" />
           <operation
             Id="fce4e2e2-b0de-4d91-b685-f8caba7e3a59"
-            name="Draw"
+            name="draw"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="251c241a-fca3-4081-b871-9fdbb1032197"
-                  name="beam"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
+            isQuery="false" />
           <operation
             Id="34b69c2d-be56-4891-a2dc-ed440e1300b8"
-            name="ClickCallback"
+            name="registerClickCallback"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c28867f0-c9dd-4845-80e3-a4e1bbfcb661"
+            name="registerKeyDownCallback"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -87,25 +100,15 @@
         <ownedOperationsInternal>
           <operation
             Id="367d9e5a-b3b7-4677-9f53-7ca6f3cd09df"
-            name="Init"
+            name="init"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="0460e87c-5769-4289-ba5b-60626d888d27"
-                  name="players"
-                  direction="In"
-                  isUnique="false" />
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
+            isQuery="false" />
           <operation
             Id="9726bf30-b30c-4a56-812e-d605c46ec9d7"
-            name="Update"
+            name="update"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -124,7 +127,7 @@
         <ownedOperationsInternal>
           <operation
             Id="625b203b-c4a6-48af-ac93-39a1930b5451"
-            name="NewGameCallback"
+            name="init"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -132,15 +135,7 @@
             isQuery="false" />
           <operation
             Id="ef98d8ff-e40c-4aa4-9dd0-f9c74ee16b9f"
-            name="PauseGameCallback"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="3f91c20f-93eb-490d-903a-55cd92eb778c"
-            name="Init"
+            name="restoreInitMode"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -148,7 +143,47 @@
             isQuery="false" />
           <operation
             Id="5330b4cd-0164-4176-b93c-b152aa877411"
-            name="NewPlayerCallback"
+            name="setPlayMode"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="bbd611fa-4295-439f-b510-4a1274c0665c"
+            name="registerNewGameCallback"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="58d49f7b-1c9a-4acc-881e-f2159c643b19"
+            name="registerExitCallback"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e0fd9c81-67ad-4610-8efd-7d4badc9571d"
+            name="registerPauseGameCallback"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="58d65f6e-caef-43c2-8840-fba8bac6ac73"
+            name="registerScoreboardCallback"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e2c3caef-a138-44b5-b192-21778c7ca0be"
+            name="toggelAcion"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -160,7 +195,7 @@
     <packageHasNamedElement>
       <class
         Id="7799146d-7e1b-40f8-af6f-259f79d94843"
-        name="GameView"
+        name="gameView"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -222,8 +257,16 @@
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="58c188d2-a207-4da3-ba45-499a0dc769b0"
-            name="Init"
+            Id="6aec3605-e79f-4b0c-b16d-f4ad55add593"
+            name="isMobile"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="257eebb4-f375-4f36-91fb-02cb111a5c99"
+            name="resetView"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"

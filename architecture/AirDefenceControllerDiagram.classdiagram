@@ -1,45 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="b40ac8ef-db58-4ff8-9097-e016fcc0f775" name="AirDefenceControllerDiagram" linkedPackageId="7bffa2a8-dc6d-4fd3-9bf0-f719c075a12c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="b40ac8ef-db58-4ff8-9097-e016fcc0f775" name="AirDefenceControllerDiagram" linkedPackageId="7bffa2a8-dc6d-4fd3-9bf0-f719c075a12c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasPackages>
       <package Id="c4d9128a-024c-4ed9-b852-4e389b37c0f2" name="gameController.js">
         <elementDefinition Id="9eb6b0b5-89ab-41fb-98e3-78bdbdbecbe0" />
         <packagedElements>
           <packageHasNamedElement>
-            <class Id="1714bad9-345b-4f9f-8af8-bb58c000cd43" name="Game" isAbstract="false" isLeaf="false" isActiveClass="false">
+            <class Id="1714bad9-345b-4f9f-8af8-bb58c000cd43" name="game" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="d1b385f5-4fd7-4d3b-ac1c-52163d1d68ec" />
               <ownedAttributesInternal>
-                <property Id="fb6913f6-3778-49ff-a321-a0612d986138" name="game" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="3194fc46-6bbd-45a6-8cb7-f736c138f67c" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="35af2898-b074-4d5d-bb60-b879be1a3b59" LastKnownName="GameModel" />
-                  </type_NamedElement>
-                </property>
-                <property Id="f5261732-d9c8-4cf2-a567-d75f961851b7" name="isGamePaused" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <property Id="f5261732-d9c8-4cf2-a567-d75f961851b7" name="gameObjectsMdl" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="2a1f1932-bdc0-4513-b285-6aceea1b61ae" />
                 </property>
-                <property Id="183e342f-a465-46d6-b0c4-90fb2b0c8bb0" name="view" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <property Id="183e342f-a465-46d6-b0c4-90fb2b0c8bb0" name="gameFieldView" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="9aab1dff-7826-4eb3-b632-be096ebb727f" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="0bc76707-5bc0-4ed6-bef3-c0aee5f73d7d" LastKnownName="GameView" />
-                  </type_NamedElement>
+                </property>
+                <property Id="727df24b-0f26-4f41-b9f8-a09414bbc8c2" name="scoreMdl" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f6d4a30e-bc48-4203-8f94-e08e1034e3ca" />
+                </property>
+                <property Id="541fc079-8031-4268-959b-2217c499eb9d" name="gameControlView" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ac277a09-f566-4781-b898-90c73d51d9d8" />
+                </property>
+                <property Id="73fae539-7b9a-45f7-afc8-7c8bbc08c4d3" name="gameObjects" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c4b7fb48-0560-46ba-a670-4234e251a3a9" />
+                </property>
+                <property Id="68b7df09-b2d3-43f9-9027-f287148f5218" name="gamePaused" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e332d108-9d31-46af-a41c-003fb3354f3a" />
+                </property>
+                <property Id="217a41e7-ac47-44b9-8997-a07fa778c3c0" name="gameRadarRay" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a3ac1f21-98ed-4dff-81c4-df8e65a0676d" />
+                </property>
+                <property Id="49a1f087-8b78-4d05-a7cc-4348cdcf873e" name="gamePlayer" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4cc80a53-4e03-40aa-86d8-9182416bafb7" />
+                </property>
+                <property Id="e9639c74-24bd-4572-ad2d-9514d0f08563" name="gameScoreBoard" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="66d86ac7-e4b5-43af-a516-7adea90a5025" />
                 </property>
               </ownedAttributesInternal>
               <ownedOperationsInternal>
-                <operation Id="4aa1d67c-5192-48e2-924b-8c57996268e0" name="Init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="e9d4f5d2-b253-43f0-a0a8-b592153aa83a" />
+                <operation Id="98c6a44a-f51f-41ba-9972-a4e98f38dfca" name="clickEvent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="f2e43061-b7f7-449e-bf78-415c3f6bc48a" />
                 </operation>
-                <operation Id="b53cd53f-27b7-4b08-a0fc-7bc6537dd77d" name="OnNewGameEvent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="4076ccaa-a697-43fb-91c5-c65912765fb7" />
+                <operation Id="38444f09-7431-4933-b9e3-ce2b0e74a3fa" name="newGameEvent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="00b2d3a7-4d05-4205-bcfe-8ddab85e0609" />
                 </operation>
-                <operation Id="846e968e-334c-4997-ba17-1cfdecdc6d51" name="OnPauseResumeEvent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="e2dda3ad-b736-4e66-a013-7f063f78f256" />
+                <operation Id="92de3a21-8a15-487a-ac0c-eff2cd9d522b" name="pauseResumeEvent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="f098e4fe-7899-4d69-ab74-a76f7cba583c" />
                 </operation>
-                <operation Id="d0c3c405-8fa5-490a-be22-f142eb75689b" name="Main" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="6779532e-b313-44e8-99ca-9db4d3f799b5" />
+                <operation Id="39f62d91-0f41-4292-8304-3fe1d96a4224" name="showScoreBoardEvent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="8492ad2a-f5bd-4853-8251-812e08ae292a" />
                 </operation>
-                <operation Id="a7283075-a0c2-452c-8993-803ca4223ce4" name="OnUserClickEvent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-                  <elementDefinition Id="54235fd1-90a2-4847-9fae-fbb11896b163" />
+                <operation Id="add9fdc2-da90-4f8b-afd6-756df1d681cd" name="exitGameEvent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="6d413557-c4d4-48e9-a620-cb0df66084cb" />
+                </operation>
+                <operation Id="c152d8ad-f702-41f3-b6bc-0969c3ab2260" name="gameOverCheck" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="11f6662a-7129-4cbf-9f3a-daadde864fd0" />
+                </operation>
+                <operation Id="bf576d15-8708-4d4f-b87a-7b6b83bd1485" name="laserShootingCheck" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="6b8de165-3780-44dd-8b93-a3a6a11d75be" />
+                </operation>
+                <operation Id="2ca67375-6618-4987-a7bb-5e9f13097f1d" name="gameOver" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="d855be9d-57f6-406b-ad65-a7eb38e1d59d" />
+                </operation>
+                <operation Id="1a172025-a305-480d-ad5c-c450da0a8c82" name="lockChecker" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="5dac57ea-6e8a-4931-bea1-b30a4ec27074" />
+                </operation>
+                <operation Id="c1d2e146-46d3-42a4-91fa-1cc43e73e148" name="initGame" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="1f5dc0f6-56d8-46ca-bd8f-d26396f8fa85" />
+                </operation>
+                <operation Id="3f4cbbd0-55ec-4485-b2fc-2e855d38ed78" name="initGameObjects" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="2f9c23a0-8dd9-40ac-94b0-7f760d9de9f1" />
+                </operation>
+                <operation Id="1017be7a-6825-49e2-a55f-6e437a98166c" name="destroyTarget" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="aab967dd-8f51-4a39-826e-0015e99f2704" />
+                </operation>
+                <operation Id="52cfc44d-4450-4203-a371-9185adc3d457" name="animate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="13c78d6e-9f0e-4354-b600-46437af4ff60" />
                 </operation>
               </ownedOperationsInternal>
             </class>
@@ -55,14 +91,26 @@
             <class Id="c9b37e25-befb-424f-a6d3-2ab755e6b927" name="Globals" isAbstract="false" isLeaf="false" isActiveClass="false">
               <elementDefinition Id="ae1ec256-14a2-472b-889b-3c189319c890" />
               <ownedAttributesInternal>
-                <property Id="6a56f411-2eae-4a59-a54e-02539eac8e55" name="GameWidth" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="9c330055-f42d-4e8d-a30d-538c5c5cee6f" />
+                <property Id="37a50959-cbac-40d5-a150-3b5cf4b59d3e" name="validators" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8919107b-4c54-4aad-928a-d504fcda0d80" />
                 </property>
-                <property Id="711c2513-5019-4aec-8d70-0f67e8a9a646" name="GameHeight" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="e31da4d3-69da-4bca-a507-b12fac3684c7" />
+                <property Id="a7fe4005-d120-4bb6-b924-0a2d5a721e52" name="trigonometry" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bb75843f-8c9e-47db-bb0b-47ec65fd30f4" />
                 </property>
-                <property Id="d244b654-44c7-4d58-8ee0-a103fb0ded35" name="NumberEnemies" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="a0eda76e-a059-4b0d-92ca-83044b44ea1e" />
+                <property Id="09941b11-ca7d-4665-a5b4-7134274e130b" name="position" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3a771d37-3487-4460-8a97-be295f026359" />
+                </property>
+                <property Id="bc007ccb-0ee6-4e5f-92da-35bab05d9953" name="size" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="01bc5951-3b05-4352-aade-60fcb44a2bbe" />
+                </property>
+                <property Id="d2db71c1-82a2-4809-ae13-f78e5c6beae6" name="direction" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="53b1e027-96ee-409b-83b6-470aaebb7ece" />
+                </property>
+                <property Id="1a57dd27-b71a-4e31-933b-e5b449d2bb1b" name="imgResources" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b42e948c-6662-48b0-beec-b6197fa21b76" />
+                </property>
+                <property Id="b0ed6edc-a01c-4534-9cb9-95c9dfc9c16c" name="configuration" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="bc304857-d238-42c4-9a9c-21b4ffa579b2" />
                 </property>
               </ownedAttributesInternal>
             </class>
@@ -70,16 +118,6 @@
         </packagedElements>
       </package>
     </logicalClassDesignerModelHasPackages>
-    <packageHasNamedElement>
-      <referencedType Id="35af2898-b074-4d5d-bb60-b879be1a3b59" name="GameModel" isAbstract="false" isLeaf="false" cachedFullName="GameModel">
-        <elementDefinition Id="8c11e76a-bfb5-416d-8462-315d406433dc" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="0bc76707-5bc0-4ed6-bef3-c0aee5f73d7d" name="GameView" isAbstract="false" isLeaf="false" cachedFullName="GameView">
-        <elementDefinition Id="98444f11-3fba-4ba0-8b7f-69f4108911fe" />
-      </referencedType>
-    </packageHasNamedElement>
   </packagedElements>
   <package Id="7bffa2a8-dc6d-4fd3-9bf0-f719c075a12c" name="AirDefence">
     <elementDefinition Id="b1e0155a-e965-4c8e-8e9e-0592520c6a2a" />

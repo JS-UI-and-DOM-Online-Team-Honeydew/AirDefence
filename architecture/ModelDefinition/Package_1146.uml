@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="9eb6b0b5-89ab-41fb-98e3-78bdbdbecbe0"
   name="gameController.js" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -7,32 +7,14 @@
     <packageHasNamedElement>
       <class
         Id="d1b385f5-4fd7-4d3b-ac1c-52163d1d68ec"
-        name="Game"
+        name="game"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
         <ownedAttributesInternal>
           <property
-            Id="3194fc46-6bbd-45a6-8cb7-f736c138f67c"
-            name="game"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="8c11e76a-bfb5-416d-8462-315d406433dc"
-                LastKnownName="GameModel"
-                LastKnownLocation="Package_1146.uml" />
-            </type_NamedElement>
-          </property>
-          <property
             Id="2a1f1932-bdc0-4513-b285-6aceea1b61ae"
-            name="isGamePaused"
+            name="gameObjectsMdl"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -43,7 +25,7 @@
             isComposite="false" />
           <property
             Id="9aab1dff-7826-4eb3-b632-be096ebb727f"
-            name="view"
+            name="gameFieldView"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -51,51 +33,185 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="98444f11-3fba-4ba0-8b7f-69f4108911fe"
-                LastKnownName="GameView"
-                LastKnownLocation="Package_1146.uml" />
-            </type_NamedElement>
-          </property>
+            isComposite="false" />
+          <property
+            Id="f6d4a30e-bc48-4203-8f94-e08e1034e3ca"
+            name="scoreMdl"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="ac277a09-f566-4781-b898-90c73d51d9d8"
+            name="gameControlView"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="c4b7fb48-0560-46ba-a670-4234e251a3a9"
+            name="gameObjects"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="e332d108-9d31-46af-a41c-003fb3354f3a"
+            name="gamePaused"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="a3ac1f21-98ed-4dff-81c4-df8e65a0676d"
+            name="gameRadarRay"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="4cc80a53-4e03-40aa-86d8-9182416bafb7"
+            name="gamePlayer"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="66d86ac7-e4b5-43af-a516-7adea90a5025"
+            name="gameScoreBoard"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
-            Id="e9d4f5d2-b253-43f0-a0a8-b592153aa83a"
-            name="Init"
+            Id="f2e43061-b7f7-449e-bf78-415c3f6bc48a"
+            name="clickEvent"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="4076ccaa-a697-43fb-91c5-c65912765fb7"
-            name="OnNewGameEvent"
+            Id="00b2d3a7-4d05-4205-bcfe-8ddab85e0609"
+            name="newGameEvent"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="e2dda3ad-b736-4e66-a013-7f063f78f256"
-            name="OnPauseResumeEvent"
+            Id="f098e4fe-7899-4d69-ab74-a76f7cba583c"
+            name="pauseResumeEvent"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="6779532e-b313-44e8-99ca-9db4d3f799b5"
-            name="Main"
+            Id="8492ad2a-f5bd-4853-8251-812e08ae292a"
+            name="showScoreBoardEvent"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
           <operation
-            Id="54235fd1-90a2-4847-9fae-fbb11896b163"
-            name="OnUserClickEvent"
+            Id="6d413557-c4d4-48e9-a620-cb0df66084cb"
+            name="exitGameEvent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="11f6662a-7129-4cbf-9f3a-daadde864fd0"
+            name="gameOverCheck"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="6b8de165-3780-44dd-8b93-a3a6a11d75be"
+            name="laserShootingCheck"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="d855be9d-57f6-406b-ad65-a7eb38e1d59d"
+            name="gameOver"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="5dac57ea-6e8a-4931-bea1-b30a4ec27074"
+            name="lockChecker"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="1f5dc0f6-56d8-46ca-bd8f-d26396f8fa85"
+            name="initGame"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="2f9c23a0-8dd9-40ac-94b0-7f760d9de9f1"
+            name="initGameObjects"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="aab967dd-8f51-4a39-826e-0015e99f2704"
+            name="destroyTarget"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="13c78d6e-9f0e-4354-b600-46437af4ff60"
+            name="animate"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
