@@ -356,14 +356,19 @@ function gameView() {
                     //position controls
                     gameControlsHolder.style.position = 'absolute';
                     gameControlsHolder.style.width = '100%';
-                    gameControlsHolder.style.bottom = -210+'px';
-                    gameControlsHolder.style.left = 0;
-                    gameControlsHolder.style.color = '#fff';
+                    gameControlsHolder.style.height = '100%';
+                    gameControlsHolder.style.bottom = 0;
+                    gameControlsHolder.style.top = '100%';
+                    gameControlsHolder.style.color = 'yellow';
                     gameControlsHolder.style.fontSize = '18px';
 
                     //sliders style
                     gameSettingsSlidersHolder.style.listStyle = 'none';
                     gameSettingsSlidersHolder.style.display = 'inline-flex';
+                    gameSettingsSlidersHolder.style.marginTop = '10%';
+
+                    //form style
+                    formField.style.marginLeft = '37%';
 
                     formField.id = 'control-form';
 
