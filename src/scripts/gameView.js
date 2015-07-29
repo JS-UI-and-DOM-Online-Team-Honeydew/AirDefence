@@ -369,6 +369,7 @@ function gameView() {
 
                     //form style
                     formField.style.marginLeft = '37%';
+                    formField.style.marginTop = '13%';
 
                     formField.id = 'control-form';
 

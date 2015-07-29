@@ -21,7 +21,9 @@
     }
 
     function newGameEvent() {
-        var player = prompt("Please enter your name", "name");
+        var player = prompt("Please enter your name", "name"),
+            controls = document.getElementById('control-form');
+        controls.style.marginTop = '32%';
         gamePlayer = scoreMdl.player(player);
         initGameObjects();
         gameControlView.setPlayMode();
@@ -37,6 +39,8 @@
     }
 
     function exitGameEvent() {
+        var controls = document.getElementById('control-form');
+        controls.style.marginTop = '13%';
         gameControlView.restoreInitMode();
         initGame();
         gameRadarRay = undefined;
