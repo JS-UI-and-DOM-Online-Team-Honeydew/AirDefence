@@ -1,3 +1,19 @@
+ <p align="center"><a href="http://telerikacademy.com//"><img src="https://github.com/tddold/Telerik-Academy/blob/master/Programming%20with%20C%23/1.%20C%23%20Fundamentals%20I/Presentation/Telerik.png" /></a></p>
+ 
+-<h1 align="center">Online-Team-Honeydew</h1>
+<p align="center">Атанас Георгиев</p>
+<p align="center">Никола Вушков</p>
+<p align="center">Тодор Даков</p>
+<p align="center">Димо Милковски</p>
+<p align="center">Станимира Кормева</p>
+<p align="center">Валентин Рангелов</p>
+
+
+---
+
+
+
+
 Project
 =======
 "Air Defence" is a game where you are supposed to defence from the attack of aircrafts.
