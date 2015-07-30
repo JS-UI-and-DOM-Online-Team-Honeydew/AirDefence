@@ -306,8 +306,7 @@ function gameView() {
                     } else {
                         len = players.length;
                     }
-                    
-                   // debugger;
+                                      
                     for (i = 0; i < len; i +=1) {
                         data += '<text stroke-width="0" fill="#000000" stroke="#000000" stroke-linejoin="null" stroke-linecap="null" x="200" y="' + initY + '" id="svg_6" font-size="29" font-family="Cursive" text-anchor="middle" xml:space="preserve" font-weight="bold" transform="scale(' + scal + ')">' + players[i].name + '</text>' +
                         '<text font-weight="bold" xml:space="preserve" text-anchor="middle" font-family="Cursive" font-size="29" id="svg_7" y="' + initY + '" x="541" stroke-linecap="null" stroke-linejoin="null" stroke="#000000" fill="#000000" stroke-width="0" transform="scale(' + scal + ')">' + Math.round(players[i].score) + '</text>';
