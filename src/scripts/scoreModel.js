@@ -105,7 +105,7 @@ function scoreModel() {
                         if (playersAndScores.length < 1) {
                             break;
                         }
-                        if (player.name == playersAndScores[everyPlayer].name) {
+                        if (player && player.name == playersAndScores[everyPlayer].name) {
                             // console.log(player.name +"exists!");
                             playerExists = true;
                             if (player.score > playersAndScores[everyPlayer].score) {
@@ -115,7 +115,7 @@ function scoreModel() {
                         }
                     }
                     //Addig player if it does not exists.
-                    if (!playerExists && player.score > 0) {
+                    if (player && !playerExists && player.score > 0) {
                         newPlayer = {
                             name: player.name,
                             score: player.score

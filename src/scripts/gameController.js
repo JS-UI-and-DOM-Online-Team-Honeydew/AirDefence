@@ -1,6 +1,25 @@
 (function () {
     'use strict';
-
+    
+    //TEST RESPONSIVE SECTION:
+    //initiate game height and width parameters:
+    var width = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+    var height = window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
+    if(width < globals.gameWidth){
+        globals.gameWidth = width;
+    }
+    if(height < globals.gameHeight){
+        globals.gameHeight = height;
+    }
+    if(isMobile()){
+        globals.gameWidth = width;
+        globals.gameHeight = height;
+    }
+    
     var view = gameView(),
         // register models objects
         scoreMdl = scoreModel(),
@@ -56,7 +75,7 @@
                     bomb = gameObjectsMdl.aeroBomb(position(obj.position.x, obj.position.y),
                         size(30, 20),
                         imgResources.bomb,
-                        configuration.targetSpeed.value, //speed
+                        20, //speed
                         direction.down,
                         0,
                         gameRadarRay);
@@ -92,7 +111,7 @@
     }
 
     function gameOver() {
-        alert('GAME OVER!');
+        //alert('GAME OVER!');
         exitGameEvent();
         isScoreBoardShown = true;
     }

@@ -30,15 +30,7 @@ function gameView() {
             context.drawImage(baseImage, 0, 0, width, height);
         }
 
-        function isMobile() {
-            if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/BlackBerry/i) ||
-                navigator.userAgent.match(/iPhone|iPad|iPod/i) || navigator.userAgent.match(/Opera Mini/i) ||
-                navigator.userAgent.match(/IEMobile/i)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
+        
 
         Object.defineProperties(gameFieldViewInternal, {
             init: {
@@ -59,9 +51,13 @@ function gameView() {
                     wrapper.id = 'wrapper';
                     wrapper.style.display = 'table';
                     wrapper.style.padding = 0;
-                    wrapper.style.width = '100%';
-                    wrapper.style.height = '100%';
-                    wrapper.style.position = 'absolute';
+                    wrapper.style.width = globals.gameWidth;
+                    wrapper.style.height = globals.gameHeight;
+                    if(!isMobile()){
+                        wrapper.style.margin = '0 auto';
+                    }
+                   
+                    wrapper.style.position = 'relative';
 
                     //container properties
                     container.id = 'container';
@@ -71,14 +67,14 @@ function gameView() {
                     //canvas container properties
                     canvasContainer.id = 'canvas-container';
                     canvasContainer.style.position = 'relative';
-                    canvasContainer.style.maxWidth = this.width + 'px';
-                    canvasContainer.style.maxHeight = (this.height / 2) + 'px';
-                    canvasContainer.style.margin = '0 auto';
+                    canvasContainer.style.maxWidth = globals.gameWidth + 'px';
+                    canvasContainer.style.maxHeight = (globals.gameHeight) + 'px';
+                    canvasContainer.style.margin = '0';
 
                     //canvas properties
                     mycanvas.id = "mycanvas";
-                    mycanvas.width = this.width;
-                    mycanvas.height = this.height;
+                    mycanvas.width = globals.gameWidth;
+                    mycanvas.height = globals.gameHeight;
                     document.body.appendChild(mycanvas);
 
                     //append to document
@@ -212,7 +208,12 @@ function gameView() {
             },
             registerClickCallback: {
                 value: function (callback) {
-                    this.canvas.addEventListener('mousedown', callback, false);
+                    if(isMobile()){
+                        document.addEventListener('touchstart', callback, false);
+                    } else {
+                        document.addEventListener('mousedown', callback, false);
+                    }
+                    
                 }
             },
             registerKeyDownCallback: {
@@ -280,13 +281,13 @@ function gameView() {
                     }
 
                     // For scale on different device
-                    width = mycanvas.width;
+                    width = globals.gameWidth;
                     scal = (width / globals.gameWidth) * 0.6;
 
                     canvas = document.getElementById('mycanvas');
                     ctx = canvas.getContext('2d');
 
-                    data = '<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">' +
+                    data = '<svg width="'+ globals.gameWidth +'" height="'+ globals.gameHeight +'" xmlns="http://www.w3.org/2000/svg">' +
                         '<defs>' +
                         '<filter id="svg_2_blur">' +
                         '<feGaussianBlur stdDeviation="0.2" in="SourceGraphic"/>' +
@@ -368,19 +369,25 @@ function gameView() {
                     gameControlsHolder.style.position = 'absolute';
                     gameControlsHolder.style.width = '100%';
                     gameControlsHolder.style.height = '100%';
-                    gameControlsHolder.style.bottom = 0;
-                    gameControlsHolder.style.top = '100%';
+                    gameControlsHolder.style.top = 0;
+                    //gameControlsHolder.style.top = '100%';
                     gameControlsHolder.style.color = 'yellow';
                     gameControlsHolder.style.fontSize = '18px';
 
                     //sliders style
                     gameSettingsSlidersHolder.style.listStyle = 'none';
-                    gameSettingsSlidersHolder.style.display = 'inline-flex';
-                    gameSettingsSlidersHolder.style.marginTop = '10%';
+                    gameSettingsSlidersHolder.style.display = 'block';
+                    gameSettingsSlidersHolder.style.height = '40px';
+                    gameSettingsSlidersHolder.style.width = '100%';
+                    gameSettingsSlidersHolder.style.position = 'absolute';
+                    gameSettingsSlidersHolder.style.bottom = '50px';
 
                     //form style
                     formField.style.marginLeft = '37%';
-                    formField.style.marginTop = '13%';
+                    //formField.style.marginTop = '13%';
+                    formField.style.position = 'absolute';
+                    formField.style.height = '40px';
+                    formField.style.bottom = 0;
 
                     formField.id = 'control-form';
 

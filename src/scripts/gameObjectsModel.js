@@ -63,7 +63,6 @@ function gameObjectsModel() {
                 },
                 set: function (value) {
                     validators.checkSizeAndThrow(value);
-
                     this._size = {};
                     this._size.width = value.width;
                     this._size.height = value.height;

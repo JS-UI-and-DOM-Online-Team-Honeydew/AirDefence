@@ -2,6 +2,7 @@ var globals,
     validators,
     trigonometry,
     position,
+    isMobile,
     size,
     direction,
     imgResources,
@@ -13,13 +14,14 @@ var globals,
     // any global variables in the game to be defined here
     globals = {
         gameHeight: 600,
-        gameWidth: 800,
+        gameWidth: 1000,
         gameBackground: './images/background_space.jpg',
         numberEnemies: 1,
         OTHER_CONSTANTS: 0,
         defaltImg: 'images/ivaylo_defalt.jpg'
     };
-
+    
+    
     // Game configuration data
     configuration = {
         laserSpeed: {
@@ -135,7 +137,17 @@ var globals,
             y: y
         };
     };
-
+    
+    isMobile = function() {
+            if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/BlackBerry/i) ||
+                navigator.userAgent.match(/iPhone|iPad|iPod/i) || navigator.userAgent.match(/Opera Mini/i) ||
+                navigator.userAgent.match(/IEMobile/i)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    
     size = function (width, height) {
         //Add validators
         return {
