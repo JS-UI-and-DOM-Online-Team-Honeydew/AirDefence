@@ -378,7 +378,7 @@ function gameView() {
                     gameSettingsSlidersHolder.style.listStyle = 'none';
                     gameSettingsSlidersHolder.style.display = 'block';
                     gameSettingsSlidersHolder.style.height = '40px';
-                    gameSettingsSlidersHolder.style.width = '100%';
+                    gameSettingsSlidersHolder.style.width = '50%';
                     gameSettingsSlidersHolder.style.position = 'absolute';
                     gameSettingsSlidersHolder.style.bottom = '50px';
 

@@ -119,9 +119,9 @@ function gameObjectsModel() {
                 }
             },
             update: {
-                value: function () {
-                    this.position.x += (this.direction.x * this.speed);
-                    this.position.y += (this.direction.y * this.speed);
+                value: function (fps) {
+                    this.position.x += ((this.direction.x * this.speed) / fps);
+                    this.position.y += ((this.direction.y * this.speed) / fps);
                 }
             }
         });
@@ -219,7 +219,7 @@ function gameObjectsModel() {
                 }
             },
             update: {
-                value: function () {
+                value: function (fps) {
                     if (this.shooting) {
                         this.shootingLength -= 1;
                     }
@@ -234,12 +234,12 @@ function gameObjectsModel() {
                             this.direction = 1;
                         }
                         //update angle while sweeping:
-                        this.angle = this.angle + (this.angleSpeed * this.direction);
+                        this.angle = this.angle + ((this.angleSpeed * this.direction) / fps);
                     } else {
                         //Case2: target is locked
                         this.angle = trigonometry.toDeg(Math.atan((this.position.y - this.target.position.y) /
                             (this.target.position.x - this.position.x)));
-                        this.range += this.rangeSpeed;
+                        this.range += this.rangeSpeed / fps;
                     }
                 }
             }
@@ -341,7 +341,7 @@ function gameObjectsModel() {
                     if (this.position.y > this.radar.position.y) {
                         this.boom = true;
                     }
-                    parent.update.call(this);
+                    parent.update.call(this, globals.currentFPS);
                 }
             }
         });

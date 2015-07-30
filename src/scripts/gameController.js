@@ -81,7 +81,7 @@
                     bomb = gameObjectsMdl.aeroBomb(position(obj.position.x, obj.position.y),
                         size(30, 20),
                         imgResources.bomb,
-                        20, //speed
+                        500, //speed
                         direction.down,
                         0,
                         gameRadarRay);
@@ -313,6 +313,10 @@
     // start animation with the objects defined above
     function animate(highResTimestamp) {
         requestAnimationFrame(animate);
+        globals.currentFPS = calculateFPS().toFixed(); //current fps holder
+		if (globals.currentFPS< 30 || globals.currentFPS > 60){
+			globals.currentFPS = 50
+		}
         if (isScoreBoardShown) {
             scoreMdl.scoreBoard().save(gamePlayer);
             view.playersView(scoreMdl.scoreBoard().getTopPlayers());
@@ -321,9 +325,9 @@
 
         if (!gamePaused) {
             for (var i = 0; i < gameObjects.length; i++) {
-                gameObjects[i].update();
+                gameObjects[i].update(globals.currentFPS);
                 if (gameRadarRay) {
-                    gameRadarRay.update();
+                    gameRadarRay.update(globals.currentFPS);
                 }
             }
             laserShootingCheck();

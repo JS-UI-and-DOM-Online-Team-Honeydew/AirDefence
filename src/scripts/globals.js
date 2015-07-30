@@ -5,6 +5,7 @@ var globals,
     isMobile,
     size,
     direction,
+    calculateFPS,
     imgResources,
     configuration;
 
@@ -15,6 +16,8 @@ var globals,
     globals = {
         gameHeight: 600,
         gameWidth: 1000,
+        currentFPS: 50,
+        lastFrame: 0,
         gameBackground: './images/background_space.jpg',
         numberEnemies: 1,
         OTHER_CONSTANTS: 0,
@@ -26,20 +29,20 @@ var globals,
     configuration = {
         laserSpeed: {
             name: 'Laser Speed', // Name to be displayed in HTML control
-            value: 0.1, // Init value
-            minValue: 0.05, // Minimum allowed value
-            maxValue: 0.5, // Maximum allowed value
-            step: 0.05, // Change Step
+            value: 6, // Init value degrees / second
+            minValue: 1, // Minimum allowed value
+            maxValue: 12, // Maximum allowed value
+            step: 2, // Change Step
             scoreWeight: function () { // Formula to calculate the score
                 return (this.maxValue - this.minValue / 2) * this.value;
             }
         },
         rangeSpeed: {
             name: 'Laser Range Speed',
-            value: 1,
-            minValue: 0.5,
-            maxValue: 5,
-            step: 0.5,
+            value: 100,
+            minValue: 50,
+            maxValue: 130,
+            step: 10,
             scoreWeight: function () {
                 return (this.maxValue - this.minValue / 2) * this.value;
             }
@@ -56,10 +59,10 @@ var globals,
         },
         targetSpeed: {
             name: 'Target Speed',
-            value: 2,
-            minValue: 1,
-            maxValue: 5,
-            step: 1,
+            value: 180,
+            minValue: 100,
+            maxValue: 260,
+            step: 10,
             scoreWeight: function () {
                 return (this.maxValue - this.minValue / 2) * this.value;
             }
@@ -147,6 +150,13 @@ var globals,
                 return false;
             }
         }
+    
+    calculateFPS = function(){
+        var now = (+new Date),
+		fps = 1000 / (now - globals.lastFrame);
+		globals.lastFrame = now;
+		return fps;
+    }
     
     size = function (width, height) {
         //Add validators
