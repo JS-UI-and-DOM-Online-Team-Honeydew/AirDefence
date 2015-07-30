@@ -20,6 +20,12 @@
         globals.gameHeight = height;
     }
     
+    //FOR ANDROID AND IOS PORT UNCOMMENT THE TWO LINES BELOW:
+    // globals.gameWidth = width;
+    // globals.gameHeight = height;
+    
+    
+    
     var view = gameView(),
         // register models objects
         scoreMdl = scoreModel(),

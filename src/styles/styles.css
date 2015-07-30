@@ -19,3 +19,7 @@ input[type='button'] {
     border: 0;
     margin-right: 15px;
 }
+
+body {
+    background-color: #02103b;
+}
