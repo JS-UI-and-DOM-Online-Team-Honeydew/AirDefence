@@ -280,7 +280,7 @@ function gameView() {
 
                     // For scale on different device
                     width = mycanvas.width;
-                    scal = width / globals.gameWidth;
+                    scal = (width / globals.gameWidth) * 0.6;
 
                     canvas = document.getElementById('mycanvas');
                     ctx = canvas.getContext('2d');
