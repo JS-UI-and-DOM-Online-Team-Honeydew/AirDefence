@@ -187,7 +187,7 @@ function gameView() {
                         for (var j = -6; j < 6; j += 2) {
                             context.arc(objects.position.x, objects.position.y, objects.range + j, trigonometry.toRad(360 - objects.angle - (configuration.rayWidth.value / 4)), trigonometry.toRad(360 - objects.angle + configuration.rayWidth.value / 2));
                             context.closePath();
-                            context.strokeStyle = 'rgba(20, 20, 20, 0.8)';
+                            context.strokeStyle = 'white';
                             context.stroke(); //test draw
                         }
                         // Laser Shooting:
