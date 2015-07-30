@@ -13,7 +13,7 @@
         gameRadarRay,
         bomb,
         gamePlayer,
-        isScoreBoardShown= false,
+        isScoreBoardShown = false,
         gameScoreBoard = scoreMdl.scoreBoard().init();
 
     function clickEvent() {
@@ -21,20 +21,24 @@
     }
 
     function newGameEvent() {
-        var player = prompt("Please enter your name", "name"),
-            controls = document.getElementById('control-form');
-        controls.style.marginTop = '32%';
-        gamePlayer = scoreMdl.player(player);
-        initGameObjects();
-        gameControlView.setPlayMode();
-        isScoreBoardShown = false;
+        try {
+            var player = prompt("Please enter your name.\nName must be between 3-10 letters.", "name"),
+                controls = document.getElementById('control-form');
+            controls.style.marginTop = '32%';
+            gamePlayer = scoreMdl.player(player);
+            initGameObjects();
+            gameControlView.setPlayMode();
+            isScoreBoardShown = false;
+        } catch (error) {
+            newGameEvent()
+        }
     }
 
     function pauseResumeEvent() {
         gamePaused = !gamePaused;
     }
 
-    function showScoreBoardEvent(){
+    function showScoreBoardEvent() {
         isScoreBoardShown = !isScoreBoardShown;
     }
 
@@ -46,10 +50,10 @@
         gameRadarRay = undefined;
     }
 
-    function gameOverCheck(){
-        gameObjects.forEach(function(obj){
-            if(obj.isTarget && gameRadarRay){
-                if(obj.position.x < gameRadarRay.position.x){
+    function gameOverCheck() {
+        gameObjects.forEach(function (obj) {
+            if (obj.isTarget && gameRadarRay) {
+                if (obj.position.x < gameRadarRay.position.x) {
                     // alert('Game over!');
 
                     bomb = gameObjectsMdl.aeroBomb(position(obj.position.x, obj.position.y),
@@ -64,57 +68,57 @@
                 }
             }
         });
-        if(bomb && bomb.boom){
+        if (bomb && bomb.boom) {
             var explosion = gameObjectsMdl.bomb(position(bomb.position.x, bomb.position.y),
-                    size(400, 400),
-                    imgResources.explosion,
-                    0, //speed
-                    direction.left,
-                    0,
-                    12);
-                gameObjects.push(explosion);
-            gameObjects.splice(gameObjects.indexOf(bomb) ,1);
+                size(400, 400),
+                imgResources.explosion,
+                0, //speed
+                direction.left,
+                0,
+                12);
+            gameObjects.push(explosion);
+            gameObjects.splice(gameObjects.indexOf(bomb), 1);
             bomb = undefined;
             gameObjects.splice(0, 1);
-            setTimeout(function() {
+            setTimeout(function () {
                 gameOver();
             }, 500);
         }
     }
 
     function laserShootingCheck() {
-        if(gameRadarRay && gameRadarRay.shooting){
-            if(gameRadarRay.shootingLength === 0){
+        if (gameRadarRay && gameRadarRay.shooting) {
+            if (gameRadarRay.shootingLength === 0) {
                 destroyTarget(gameRadarRay);
             }
         }
     }
 
-    function gameOver(){
+    function gameOver() {
         alert('GAME OVER!');
         exitGameEvent();
         isScoreBoardShown = true;
     }
 
     //implements successful lock
-    function lockChecker(){
+    function lockChecker() {
         //case 1: target angle is not yet locked:
-        if(!gameRadarRay.target){
-            gameObjects.forEach(function(obj){
-                if(obj.isTarget){
-                    if (gameRadarRay.angle < trigonometry.angleToTarget(gameRadarRay, obj ) + (configuration.rayWidth.value / 2) && //TODO: deltas to be moved out + linking to real ray view
-					   gameRadarRay.angle > trigonometry.angleToTarget(gameRadarRay, obj ) - (configuration.rayWidth.value / 2)){
-                           gameRadarRay.target = obj;
-                           return;
-                       }
+        if (!gameRadarRay.target) {
+            gameObjects.forEach(function (obj) {
+                if (obj.isTarget) {
+                    if (gameRadarRay.angle < trigonometry.angleToTarget(gameRadarRay, obj) + (configuration.rayWidth.value / 2) && //TODO: deltas to be moved out + linking to real ray view
+                        gameRadarRay.angle > trigonometry.angleToTarget(gameRadarRay, obj) - (configuration.rayWidth.value / 2)) {
+                        gameRadarRay.target = obj;
+                        return;
+                    }
 
                 }
             });
         }
         //case 2: target angle is locked. Attempt to lock on range
-        else{
+        else {
             if (gameRadarRay.range > trigonometry.distanceBetween(gameRadarRay, gameRadarRay.target) - (gameRadarRay.target.size.width / 2) &&
-		    gameRadarRay.range < trigonometry.distanceBetween(gameRadarRay, gameRadarRay.target) + (gameRadarRay.target.size.width / 2)){
+                gameRadarRay.range < trigonometry.distanceBetween(gameRadarRay, gameRadarRay.target) + (gameRadarRay.target.size.width / 2)) {
                 gameRadarRay.range = 6;
                 gameRadarRay.shooting = true;
 
@@ -189,7 +193,7 @@
         gameObjects.push(shatle);
 
         rand = Math.random() * 2;
-        var commet1 = gameObjectsMdl.landscapeItem(position(globals.gameWidth / rand , 0),
+        var commet1 = gameObjectsMdl.landscapeItem(position(globals.gameWidth / rand, 0),
             size(globals.gameWidth / rand / 4, globals.gameWidth / rand / 4),
             imgResources.commet,
             rand / 2, //speed
@@ -250,7 +254,7 @@
     gameControlView.registerScoreboardCallback(showScoreBoardEvent);
 
 
-    function destroyTarget(ray){
+    function destroyTarget(ray) {
         var explosion = gameObjectsMdl.bomb(position(gameRadarRay.target.position.x, gameRadarRay.target.position.y),
             size(gameRadarRay.target.size.width, gameRadarRay.target.size.width),
             imgResources.explosion,
@@ -308,4 +312,4 @@
 
     // Start the animation.
     requestAnimationFrame(animate);
-}());
+} ());

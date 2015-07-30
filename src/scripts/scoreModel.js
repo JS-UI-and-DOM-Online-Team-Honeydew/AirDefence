@@ -6,52 +6,48 @@ function scoreModel() {
 
 	// result from the function
 	scoreModelInternal = {
-		player: function(name) {
+		player: function (name) {
 			return Object.create(player).init(name);
 		},
-		scoreBoard: function() {
+		scoreBoard: function () {
 			return Object.create(scoreBoard).init();
 		}
 	};
 
 	// Player class, keeps information about player's name and score
-	player = (function() {
+	player = (function () {
 		var playerInternal = Object.create({});
 
 		Object.defineProperties(playerInternal, {
 			init: {
-				value: function(name) {
+				value: function (name) {
 					this.name = name;
 					this.score = 0;
 					return this;
 				}
 			},
 			name: {
-				get: function() {
+				get: function () {
 					return this._name;
 				},
-				set: function(value) {
+				set: function (value) {
 					if (value.length < 3) {
-						// throw new Error('The length of the name must be between 3-10 letters.');
 						alert('The length of the name must be between 3-10 letters.');
-						var len = value.length;
-						for (var i = 0; i < 3 - len; i += 1) {
-							value += '-';
-						}
+						throw new Error('The length of the name must be between 3-10 letters.');
+
 					}
 					if (value.length > 10) {
-						// throw new Error('The length of the name must be between 3-10 letters.');
 						alert('The length of the name must be between 3-10 letters.');
-						value = value.substring(0,10);
+						throw new Error('The length of the name must be between 3-10 letters.');
 					}
 					this._name = value;
 				}
 			},
 			score: {
-				get: function() {
+				get: function () {
 					return this._score;
 				},
-				set: function(value) {
+				set: function (value) {
 					//check if it is type of number
 					if (typeof value != "number") {
 						throw new Error("Score must be a number.");
@@ -65,10 +61,10 @@ function scoreModel() {
 			}
 		});
 		return playerInternal;
-	}());
+	} ());
 
 	// Scoreboard class, keeps information about all players, data can be saved in file
-	scoreBoard = (function() {
+	scoreBoard = (function () {
 		var scoreBoardInternal = Object.create({}),
 			playersAndScores = [];
 
@@ -82,14 +78,14 @@ function scoreModel() {
 
 		Object.defineProperties(scoreBoardInternal, {
 			init: {
-				value: function() {
+				value: function () {
 
 					parseCurrentPlayersAndScores();
 					return this;
 				}
 			},
 			load: {
-				value: function() {
+				value: function () {
 
 					parseCurrentPlayersAndScores();
 					return playersAndScores;
@@ -97,7 +93,7 @@ function scoreModel() {
 				}
 			},
 			save: {
-				value: function(player) {
+				value: function (player) {
 					var newPlayer,
 						playerExists = false,
 						everyPlayer;
@@ -138,7 +134,7 @@ function scoreModel() {
 				}
 			},
 			addScore: {
-				value: function(playerToAdd) {
+				value: function (playerToAdd) {
 					//Adding one score to the current score of the player.
 					var scoreToAdd = (configuration.laserSpeed.value * 5) +
 						(configuration.rangeSpeed.value / 2) -
@@ -148,12 +144,12 @@ function scoreModel() {
 				}
 			},
 			getTopPlayers: {
-				value: function() {
+				value: function () {
 					var topPlayersAndScores;
 					parseCurrentPlayersAndScores();
 
 					// Returning the players by score in ascending order.
-					topPlayersAndScores = playersAndScores.sort(function(a, b) {
+					topPlayersAndScores = playersAndScores.sort(function (a, b) {
 						return b.score - a.score;
 					});
 					return topPlayersAndScores;
@@ -161,6 +157,6 @@ function scoreModel() {
 			}
 		});
 		return scoreBoardInternal;
-	}());
+	} ());
 	return scoreModelInternal;
 }
