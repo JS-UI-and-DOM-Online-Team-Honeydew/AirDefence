@@ -289,7 +289,15 @@ function gameObjectsModel() {
         Object.defineProperties(enemyInternal, {
             init: {
                 value: function (position, size, image, speed, direction, zindex) {
-                    parent.init.call(this, position, size, image, speed, direction, zindex, true);
+                    var pos = {};
+                    if(position === 'auto') {
+                        //, 
+                        pos.x = globals.gameWidth;
+                        pos.y = Math.floor(Math.random() * globals.gameHeight / 2);
+                    } else {
+                        pos = position;
+                    }
+                    parent.init.call(this, pos, size, image, speed, direction, zindex, true);
                     if(this.image.height){
                          this.size.height = this.size.width * (this.image.height / this.image.width);
                     }

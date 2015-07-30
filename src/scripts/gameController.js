@@ -224,7 +224,7 @@
             0);
         gameObjects.push(alien2);
 
-        var testTarget2 = gameObjectsMdl.enemy(position(globals.gameWidth, globals.gameHeight / 2),
+        var testTarget2 = gameObjectsMdl.enemy('auto',
             size(100, 100),
             imgResources.target,
             configuration.targetSpeed.value, //speed
@@ -263,7 +263,7 @@
         gameObjects.splice(index, 1);
         ray.target = undefined;
         //new target to be randomized TODO:
-        gameObjects.push(gameObjectsMdl.enemy(position(globals.gameWidth, globals.gameHeight / 2),
+        gameObjects.push(gameObjectsMdl.enemy('auto',
             size(100, 100),
             imgResources.target,
             configuration.targetSpeed.value, //speed
