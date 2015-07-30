@@ -36,18 +36,18 @@ Additional requirements
 
 Participants
 =======
-1. __Atanas Georgiev__
-* global architecture creation, project organization, control view implementation
-2. __Nikola Vushkov__ 
-* proposed game idea, game laser logic and fight target implementation
-3. __Todor Dakov__
-* SVG view implementation
-4. __Stanimira Kormeva__
-* object models improvement and validation implementation, Unit Tests creation
-5. __Dimo Milkovski__
-* canvas implementation, design and game responsiveness implementation
-6. __Valentin Rangelov__
-* scoreboard and player model implementation. Documentation creation
+1. __Atanas Georgiev__ (ageorgiev)
+    * global architecture creation, project organization, control view implementation
+2. __Nikola Vushkov__ (bateshot)
+    * proposed game idea, game laser logic and fight target implementation
+3. __Todor Dakov__ (tddold)
+    * SVG view implementation
+4. __Stanimira Kormeva__ (StanimiraHK)
+    * object models improvement and validation implementation, Unit Tests creation
+5. __Dimo Milkovski__ (dmilkovski)
+    * canvas implementation, design and game responsiveness implementation
+6. __Valentin Rangelov__ (valentin.rangel)
+    * scoreboard and player model implementation. Documentation creation
 
 
 Contribute
