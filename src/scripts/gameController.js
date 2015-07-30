@@ -211,12 +211,12 @@
             0);
         gameObjects.push(galaxy);
 
-        rand = Math.random() * 2;
+        rand = 50 + ((Math.random() * 250) - 50);
         var shatle = gameObjectsMdl.landscapeItem(
             position(globals.gameWidth / rand, globals.gameHeight),
             size(globals.gameWidth / 9, globals.gameWidth / 9),
             imgResources.shatle,
-            rand / 4, //speed
+            rand, //speed
             direction.up,
             0);
         gameObjects.push(shatle);
@@ -226,7 +226,7 @@
             position(globals.gameWidth / rand, 0),
             size(globals.gameWidth / rand / 4, globals.gameWidth / rand / 4),
             imgResources.commet,
-            rand / 2, //speed
+            rand * 10, //speed
             direction.downLeft,
             0);
         gameObjects.push(commet1);
@@ -236,7 +236,7 @@
             position(globals.gameWidth / rand, 0),
             size(globals.gameWidth / rand / 4, globals.gameWidth / rand / 4),
             imgResources.commet,
-            rand / 4, //speed
+            rand * 10, //speed
             direction.downLeft,
             0);
         gameObjects.push(commet2);
@@ -246,7 +246,7 @@
             position(0, globals.gameHeight / rand),
             size(globals.gameWidth / rand / 4, globals.gameWidth / rand / 4),
             imgResources.alien,
-            rand / 4, //speed
+            rand * 15, //speed
             direction.right,
             0);
         gameObjects.push(alien1);
@@ -256,7 +256,7 @@
             position(0, globals.gameHeight / rand),
             size(globals.gameWidth / rand / 4, globals.gameWidth / rand / 4),
             imgResources.alien,
-            rand / 4, //speed
+            rand * 15, //speed
             direction.right,
             0);
         gameObjects.push(alien2);
