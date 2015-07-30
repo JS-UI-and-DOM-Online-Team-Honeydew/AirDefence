@@ -3,8 +3,7 @@ var expect = require('chai').expect;
 
 
 describe('Test for objects in the game.', function () {
-    describe('Enemy tests.', function () {
-        var CONSTS = {
+    var CONSTS = {
                 VALID: {
                     position: {x:26, y:206},
                     size: {width:400, height:400},
@@ -33,6 +32,8 @@ describe('Test for objects in the game.', function () {
                 }
             }
 
+    describe('Enemy tests.', function () {
+
         it('expect enemy to be an object', function () {
             expect(ObjectsModel.enemy).to.be.a('function');
         }),
@@ -60,9 +61,70 @@ describe('Test for objects in the game.', function () {
                     CONSTS.VALID.zIndex,
                     CONSTS.VALID.isTarget);
             }
-            expect(sizeError).to.throw()
+            expect(sizeError).to.throw();
+        }),
+
+        it('expect enemy to throw speed error', function() {
+            function speedError () {
+                Object.create(ObjectsModel.enemy).init(CONSTS.VALID.position, 
+                    CONSTS.VALID.size, 
+                    CONSTS.VALID.image,
+                    CONSTS.INVALID.speed,
+                    CONSTS.VALID.direction,
+                    CONSTS.VALID.zIndex,
+                    CONSTS.VALID.isTarget);
+            }
+            expect(speedError).to.throw();
+        }),
+
+        it('expect enemy to throw speed error', function() {
+            function directionError () {
+                Object.create(ObjectsModel.enemy).init(CONSTS.VALID.position, 
+                    CONSTS.VALID.size, 
+                    CONSTS.VALID.image,
+                    CONSTS.VALID.speed,
+                    CONSTS.INVALID.direction,
+                    CONSTS.VALID.zIndex,
+                    CONSTS.VALID.isTarget);
+            }
+            expect(directionError).to.throw();
+        }),
+
+        it('expect enemy to throw speed error', function() {
+            function zIndexError () {
+                Object.create(ObjectsModel.enemy).init(CONSTS.VALID.position, 
+                    CONSTS.VALID.size, 
+                    CONSTS.VALID.image,
+                    CONSTS.VALID.speed,
+                    CONSTS.VALID.direction,
+                    CONSTS.INVALID.zIndex,
+                    CONSTS.VALID.isTarget);
+            }
+            expect(zIndexError).to.throw();
+        }),
+
+        it('expect enemy to throw speed error', function() {
+            function isTargetError () {
+                Object.create(ObjectsModel.enemy).init(CONSTS.VALID.position, 
+                    CONSTS.VALID.size, 
+                    CONSTS.VALID.image,
+                    CONSTS.VALID.speed,
+                    CONSTS.VALID.direction,
+                    CONSTS.VALID.zIndex,
+                    CONSTS.INVALID.isTarget);
+            }
+            expect(isTargetError).to.throw();
+        }),
+
+        it('expect enemy.update to be a function', function (){
+            expect(ObjectsModel.enemy.update).to.be.a(function)
         })
+    }),
+
+    describe('Test', function(){
+      
     });
+    
 });
         
 

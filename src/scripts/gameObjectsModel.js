@@ -50,7 +50,8 @@ function gameObjectsModel() {
                     return this._position;
                 },
                 set: function (value) {
-                    // TODO: Add validators.............
+                    validators.checkPositionAndThrow(value);
+
                     this._position = {};
                     this._position.x = value.x;
                     this._position.y = value.y;
@@ -61,7 +62,8 @@ function gameObjectsModel() {
                     return this._size;
                 },
                 set: function (value) {
-                    // TODO: Add validators.............
+                    validators.checkSizeAndThrow(value);
+
                     this._size = {};
                     this._size.width = value.width;
                     this._size.height = value.height;
@@ -72,7 +74,7 @@ function gameObjectsModel() {
                     return this._image;
                 },
                 set: function (value) {
-                    this._image = value;//validators.checkImageAndChange(value);
+                    this._image = value;
                 }
             },
             speed: {
@@ -80,7 +82,8 @@ function gameObjectsModel() {
                     return this._speed;
                 },
                 set: function (value) {
-                    // TODO: Add validators.............
+                    validators.checkSpeedAndThrow(value);
+
                     this._speed = value;
                 }
             },
@@ -89,7 +92,8 @@ function gameObjectsModel() {
                     return this._direction;
                 },
                 set: function (value) {
-                    // TODO: Add validators.............
+                    validators.checkDirectionAndThrow(value);
+
                     this._direction = {};
                     this._direction.x = value.x;
                     this._direction.y = value.y;
@@ -100,7 +104,8 @@ function gameObjectsModel() {
                     return this._zindex;
                 },
                 set: function (value) {
-                    // TODO: Add validators.............
+                    validators.checkZIndexAndThrow(value);
+
                     this._zindex = value;
                 }
             },
@@ -109,8 +114,8 @@ function gameObjectsModel() {
                     return this._isTarget;
                 },
                 set: function (value) {
-                    // TODO: Add validators.............
-                    validators.isBoolean(value);
+                    validators.checkIsTargetAndThrow(value);
+                    
                     this._isTarget = value;
                 }
             },

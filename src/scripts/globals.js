@@ -192,17 +192,33 @@ var globals,
                 throw new Error (value + 'must be object');
             }
         },
-        //Image
-        checkImageAndChange: function(img_url){
-            //currently not used -
-            // var img = new Image();
-            // img.src = img_url;
-            // if (img.complete) {
-                return img_url;
-            // } else {
-            //     return globals.defaltImg;
-            // }
+        //Speed
+        checkSpeedAndThrow: function (value) {
+            if(!this.isNumber(value) || value < 0){
+                throw new Error('Speed should be positive number!');
+            }
         },
+        //Direction
+        checkDirectionAndThrow: function (value) {
+            this.checkPositionAndThrow(value);
+
+            if((value.x !== 0 && value.x !== 1 && value.x !== -1) ||
+                (value.y !== 0 && value.y !== 1 && value.y !== -1)){
+                throw new Error('Direction is invalid!')
+            }
+        },
+        //zIndex
+        checkZIndexAndThrow: function (value) {
+            if(!this.isNumber(value) || value < 0){
+                throw new Error('zIndex should be positive number or zero!');
+            }
+        }
+        //isTarget
+        checkIsTargetAndThrow: function (value) {
+            if(!this.isBoolean(value)){
+                throw new Error('isTarget sholud be boolean!')
+            }
+        }
         //Is a Function
         isFunction : function (functionToCheck) {
             var getType = {};
