@@ -1,7 +1,6 @@
 (function () {
     'use strict';
 
-    // register view object
     var view = gameView(),
         // register models objects
         scoreMdl = scoreModel(),
@@ -30,7 +29,7 @@
             gameControlView.setPlayMode();
             isScoreBoardShown = false;
         } catch (error) {
-            newGameEvent()
+            newGameEvent();
         }
     }
 
@@ -54,8 +53,6 @@
         gameObjects.forEach(function (obj) {
             if (obj.isTarget && gameRadarRay) {
                 if (obj.position.x < gameRadarRay.position.x) {
-                    // alert('Game over!');
-
                     bomb = gameObjectsMdl.aeroBomb(position(obj.position.x, obj.position.y),
                         size(30, 20),
                         imgResources.bomb,
@@ -106,19 +103,22 @@
         if (!gameRadarRay.target) {
             gameObjects.forEach(function (obj) {
                 if (obj.isTarget) {
-                    if (gameRadarRay.angle < trigonometry.angleToTarget(gameRadarRay, obj) + (configuration.rayWidth.value / 2) && //TODO: deltas to be moved out + linking to real ray view
-                        gameRadarRay.angle > trigonometry.angleToTarget(gameRadarRay, obj) - (configuration.rayWidth.value / 2)) {
+                    if (gameRadarRay.angle < trigonometry.angleToTarget(gameRadarRay, obj) +
+                        (configuration.rayWidth.value / 2) && //TODO: deltas to be moved out + linking to real ray view
+                        gameRadarRay.angle > trigonometry.angleToTarget(gameRadarRay, obj) -
+                        (configuration.rayWidth.value / 2)) {
                         gameRadarRay.target = obj;
                         return;
                     }
 
                 }
             });
-        }
-        //case 2: target angle is locked. Attempt to lock on range
-        else {
-            if (gameRadarRay.range > trigonometry.distanceBetween(gameRadarRay, gameRadarRay.target) - (gameRadarRay.target.size.width / 2) &&
-                gameRadarRay.range < trigonometry.distanceBetween(gameRadarRay, gameRadarRay.target) + (gameRadarRay.target.size.width / 2)) {
+        } else {
+            //case 2: target angle is locked. Attempt to lock on range
+            if (gameRadarRay.range > trigonometry.distanceBetween(gameRadarRay, gameRadarRay.target) -
+                (gameRadarRay.target.size.width / 2) &&
+                gameRadarRay.range < trigonometry.distanceBetween(gameRadarRay, gameRadarRay.target) +
+                (gameRadarRay.target.size.width / 2)) {
                 gameRadarRay.range = 6;
                 gameRadarRay.shooting = true;
 
@@ -155,9 +155,10 @@
             direction.left,
             0);
         gameObjects.push(testRadar);
-        // planet
+
         rand = Math.random() * 4;
-        var planet1 = gameObjectsMdl.landscapeItem(position(globals.gameWidth / rand / 3, globals.gameHeight - rand * 120),
+        var planet1 = gameObjectsMdl.landscapeItem(
+            position(globals.gameWidth / rand / 3, globals.gameHeight - rand * 120),
             size(globals.gameWidth / rand / 2, globals.gameWidth / rand / 2),
             imgResources.planet1,
             0, //speed
@@ -166,7 +167,8 @@
         gameObjects.push(planet1);
 
         rand = Math.random() * 4;
-        var planet2 = gameObjectsMdl.landscapeItem(position(globals.gameWidth / rand * 2, globals.gameHeight / rand * 2),
+        var planet2 = gameObjectsMdl.landscapeItem(
+            position(globals.gameWidth / rand * 2, globals.gameHeight / rand * 2),
             size(globals.gameWidth / rand / 2, globals.gameWidth / rand / 2),
             imgResources.planet2,
             0, //speed
@@ -175,7 +177,8 @@
         gameObjects.push(planet2);
 
         rand = Math.random() * 4;
-        var galaxy = gameObjectsMdl.landscapeItem(position(globals.gameWidth - globals.gameWidth / rand / 2, globals.gameHeight / rand / 2),
+        var galaxy = gameObjectsMdl.landscapeItem(
+            position(globals.gameWidth - globals.gameWidth / rand / 2, globals.gameHeight / rand / 2),
             size(globals.gameWidth / rand / 2, globals.gameWidth / rand / 2),
             imgResources.galaxy,
             0, //speed
@@ -184,7 +187,8 @@
         gameObjects.push(galaxy);
 
         rand = Math.random() * 2;
-        var shatle = gameObjectsMdl.landscapeItem(position(globals.gameWidth / rand, globals.gameHeight),
+        var shatle = gameObjectsMdl.landscapeItem(
+            position(globals.gameWidth / rand, globals.gameHeight),
             size(globals.gameWidth / 9, globals.gameWidth / 9),
             imgResources.shatle,
             rand / 4, //speed
@@ -193,7 +197,8 @@
         gameObjects.push(shatle);
 
         rand = Math.random() * 2;
-        var commet1 = gameObjectsMdl.landscapeItem(position(globals.gameWidth / rand, 0),
+        var commet1 = gameObjectsMdl.landscapeItem(
+            position(globals.gameWidth / rand, 0),
             size(globals.gameWidth / rand / 4, globals.gameWidth / rand / 4),
             imgResources.commet,
             rand / 2, //speed
@@ -202,7 +207,8 @@
         gameObjects.push(commet1);
 
         rand = Math.random() * 3;
-        var commet2 = gameObjectsMdl.landscapeItem(position(globals.gameWidth / rand, 0),
+        var commet2 = gameObjectsMdl.landscapeItem(
+            position(globals.gameWidth / rand, 0),
             size(globals.gameWidth / rand / 4, globals.gameWidth / rand / 4),
             imgResources.commet,
             rand / 4, //speed
@@ -211,7 +217,8 @@
         gameObjects.push(commet2);
 
         rand = Math.random() * 4;
-        var alien1 = gameObjectsMdl.landscapeItem(position(0, globals.gameHeight / rand),
+        var alien1 = gameObjectsMdl.landscapeItem(
+            position(0, globals.gameHeight / rand),
             size(globals.gameWidth / rand / 4, globals.gameWidth / rand / 4),
             imgResources.alien,
             rand / 4, //speed
@@ -220,7 +227,8 @@
         gameObjects.push(alien1);
 
         rand = Math.random() * 4;
-        var alien2 = gameObjectsMdl.landscapeItem(position(0, globals.gameHeight / rand),
+        var alien2 = gameObjectsMdl.landscapeItem(
+            position(0, globals.gameHeight / rand),
             size(globals.gameWidth / rand / 4, globals.gameWidth / rand / 4),
             imgResources.alien,
             rand / 4, //speed
@@ -253,7 +261,6 @@
     gameControlView.registerPauseGameCallback(exitGameEvent);
     gameControlView.registerScoreboardCallback(showScoreBoardEvent);
 
-
     function destroyTarget(ray) {
         var explosion = gameObjectsMdl.bomb(position(gameRadarRay.target.position.x, gameRadarRay.target.position.y),
             size(gameRadarRay.target.size.width, gameRadarRay.target.size.width),
@@ -266,7 +273,7 @@
         var index = gameObjects.indexOf(ray.target);
         gameObjects.splice(index, 1);
         ray.target = undefined;
-        //new target to be randomized TODO:
+
         gameObjects.push(gameObjectsMdl.enemy('auto',
             size(100, 100),
             imgResources.target,
@@ -312,4 +319,4 @@
 
     // Start the animation.
     requestAnimationFrame(animate);
-} ());
+}());

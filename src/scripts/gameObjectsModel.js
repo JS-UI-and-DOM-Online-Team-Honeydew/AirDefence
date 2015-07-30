@@ -115,7 +115,7 @@ function gameObjectsModel() {
                 },
                 set: function (value) {
                     validators.checkIsTargetAndThrow(value);
-                    
+
                     this._isTarget = value;
                 }
             },
@@ -146,7 +146,7 @@ function gameObjectsModel() {
                     this.rangeSpeed = configuration.rangeSpeed.value; //  px / frame
                     this.range = 6; //px
                     this.target = undefined; // receives target object on successful lock
-                    this.radar = radar;  //for linking the ray initial position with the radar
+                    this.radar = radar; //for linking the ray initial position with the radar
                     this.position = {
                         x: this.radar.position.x,
                         y: this.radar.position.y
@@ -154,25 +154,12 @@ function gameObjectsModel() {
                     return this;
                 }
             },
-            // position: {
-            //     get: function () {
-            //         return this._position;
-            //     },
-            //     set: function (value) {
-            //         // TODO: Add validators.............
-            //         if(!validators.isNumber(value.x) ||!validators.isNumber(value.y)){
-            //             throw new Error('LaserRay coordinates are NaN!');
-            //         }
-            //         this._position.x = value.x;
-            //         this._position.y = value.y;
-            //     }
-            // },
             direction: {
                 get: function () {
                     return this._direction;
                 },
                 set: function (value) {
-                    if(!validators.isAngleDirection(value)){
+                    if (!validators.isAngleDirection(value)) {
                         throw new Error('LaserRay direction must be 1 or -1');
                     }
                     this._direction = value;
@@ -223,15 +210,6 @@ function gameObjectsModel() {
                     this._rangeSpeed = value;
                 }
             },
-            // target: {
-            //     get: function () {
-            //         return this._target;
-            //     },
-            //     set: function (value) {
-            //         // TODO: Add validators.............
-            //         this._target = value;
-            //     }
-            // },
             radar: {
                 get: function () {
                     return this._target;
@@ -243,46 +221,42 @@ function gameObjectsModel() {
             },
             update: {
                 value: function () {
-                    if(this.shooting){
+                    if (this.shooting) {
                         this.shootingLength -= 1;
                     }
                     // TODO: update all coordinates and other data based on current angle, direction, ect...
                     //Case1: target is not yet locked
-                    if(this.target === undefined || this.shooting){
+                    if (this.target === undefined || this.shooting) {
                         //change of direction checker:
-                        if(this.angle > this.maxAngle && this.direction === 1){
+                        if (this.angle > this.maxAngle && this.direction === 1) {
                             this.direction = -1;
                         }
-                        if(this.angle < this.minAngle && this.direction === -1){
+                        if (this.angle < this.minAngle && this.direction === -1) {
                             this.direction = 1;
                         }
                         //update angle while sweeping:
                         this.angle = this.angle + (this.angleSpeed * this.direction);
-                    }
-                    //Case2: target is locked
-                    else {
-                        this.angle = trigonometry.toDeg(Math.atan((this.position.y - this.target.position.y) / (this.target.position.x - this.position.x)));
+                    } else {
+                        //Case2: target is locked
+                        this.angle = trigonometry.toDeg(Math.atan((this.position.y - this.target.position.y) /
+                            (this.target.position.x - this.position.x)));
                         this.range += this.rangeSpeed;
                     }
-                }
-            },
-            getUpdatedPosition: {
-                value: function () {
-                    // TODO: return new position, size, other data, ect ...
                 }
             }
         });
         //Helpers:
         // Distance to target
-    	function distanceToTarget(radar, target){
-    		var cat1 = Math.abs(target.position.x - radar.position.x),
-    		    cat2 = Math.abs(radar.position.y - target.position.y);
-    		return Math.sqrt(cat1 * cat1 + cat2 * cat2);
-    	}
-    	//calculates reverse angle from the target
-    	function angleToTarget(radar, target){
-    		return trigonometry.toDeg(Math.atan((radar.position.y - target.position.y) / (target.position.x - radar.position.x)));
-    	}
+        function distanceToTarget(radar, target) {
+            var cat1 = Math.abs(target.position.x - radar.position.x),
+                cat2 = Math.abs(radar.position.y - target.position.y);
+            return Math.sqrt(cat1 * cat1 + cat2 * cat2);
+        }
+        //calculates reverse angle from the target
+        function angleToTarget(radar, target) {
+            return trigonometry.toDeg(Math.atan((radar.position.y - target.position.y) /
+                (target.position.x - radar.position.x)));
+        }
 
         return laserRayInternal;
     }());
@@ -295,16 +269,16 @@ function gameObjectsModel() {
             init: {
                 value: function (position, size, image, speed, direction, zindex) {
                     var pos = {};
-                    if(position === 'auto') {
-                        //, 
+                    if (position === 'auto') {
+                        //,
                         pos.x = globals.gameWidth;
                         pos.y = Math.floor(Math.random() * globals.gameHeight / 2);
                     } else {
                         pos = position;
                     }
                     parent.init.call(this, pos, size, image, speed, direction, zindex, true);
-                    if(this.image.height){
-                         this.size.height = this.size.width * (this.image.height / this.image.width);
+                    if (this.image.height) {
+                        this.size.height = this.size.width * (this.image.height / this.image.width);
                     }
 
                     return this;
@@ -322,7 +296,7 @@ function gameObjectsModel() {
             init: {
                 value: function (position, size, image, speed, direction, zindex, spriteData) {
                     this.numberOfFrames = spriteData;
-                    this.frameIndex  = 0;
+                    this.frameIndex = 0;
                     // size.width = size.width * this.numberOfFrames;
                     parent.init.call(this, position, size, image, speed, direction, zindex, false);
                     return this;
@@ -363,11 +337,11 @@ function gameObjectsModel() {
                 }
             },
             update: {
-                value: function(){
+                value: function () {
 
-                    if(this.position.y > this.radar.position.y){
+                    if (this.position.y > this.radar.position.y) {
                         this.boom = true;
-                    };
+                    }
                     parent.update.call(this);
                 }
             }

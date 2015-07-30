@@ -17,7 +17,7 @@ var globals,
         gameBackground: './images/background_space.jpg',
         numberEnemies: 1,
         OTHER_CONSTANTS: 0,
-        defaltImg:'images/ivaylo_defalt.jpg'
+        defaltImg: 'images/ivaylo_defalt.jpg'
     };
 
     // Game configuration data
@@ -28,7 +28,7 @@ var globals,
             minValue: 0.05, // Minimum allowed value
             maxValue: 0.5, // Maximum allowed value
             step: 0.05, // Change Step
-            scoreWeight: function() { // Formula to calculate the score
+            scoreWeight: function () { // Formula to calculate the score
                 return (this.maxValue - this.minValue / 2) * this.value;
             }
         },
@@ -38,7 +38,7 @@ var globals,
             minValue: 0.5,
             maxValue: 5,
             step: 0.5,
-            scoreWeight: function() {
+            scoreWeight: function () {
                 return (this.maxValue - this.minValue / 2) * this.value;
             }
         },
@@ -48,7 +48,7 @@ var globals,
             minValue: 1,
             maxValue: 20,
             step: 1,
-            scoreWeight: function() {
+            scoreWeight: function () {
                 return (this.maxValue - this.minValue / 2) * this.value;
             }
         },
@@ -58,14 +58,14 @@ var globals,
             minValue: 1,
             maxValue: 5,
             step: 1,
-            scoreWeight: function() {
+            scoreWeight: function () {
                 return (this.maxValue - this.minValue / 2) * this.value;
             }
         }
-    }
+    };
 
     //Preloading img resources:
-    imgResources = function(){
+    imgResources = (function () {
         var imgResources = {
             target: new Image(),
             radar: new Image(),
@@ -82,7 +82,7 @@ var globals,
         imgResources.target.src = 'images/spaceship.png';
         imgResources.radar.src = 'images/radar.png';
         imgResources.shatle.src = 'images/shatle.png';
-        imgResources.galaxy.src = 'images/galaxy.png'
+        imgResources.galaxy.src = 'images/galaxy.png';
         imgResources.planet1.src = 'images/planet1.png';
         imgResources.planet2.src = 'images/planet2.png';
         imgResources.commet.src = 'images/commet.png';
@@ -90,22 +90,45 @@ var globals,
         imgResources.explosion.src = 'images/explosion.png';
         imgResources.bomb.src = 'images/bomb.png';
         imgResources.newGame.src = 'images/new_game.png';
-       return imgResources;
-    }();
-
+        return imgResources;
+    }());
 
     direction = {
-        left: {x:-1, y:0},
-        right: {x:+1, y:0},
-        up: {x:0, y:-1},
-        down: {x:0, y:+1},
-        upLeft: {x:-1, y:-1},
-        downLeft: {x:-1, y:+1},
-        upRight: {x:+1, y:-1},
-        downRight: {x:+1, y:+1}
+        left: {
+            x: -1,
+            y: 0
+        },
+        right: {
+            x: 1,
+            y: 0
+        },
+        up: {
+            x: 0,
+            y: -1
+        },
+        down: {
+            x: 0,
+            y: 1
+        },
+        upLeft: {
+            x: -1,
+            y: -1
+        },
+        downLeft: {
+            x: -1,
+            y: 1
+        },
+        upRight: {
+            x: 1,
+            y: -1
+        },
+        downRight: {
+            x: 1,
+            y: 1
+        }
     };
 
-    position = function (x,y){
+    position = function (x, y) {
         //Add validators
         return {
             x: x,
@@ -113,7 +136,7 @@ var globals,
         };
     };
 
-    size = function (width, height){
+    size = function (width, height) {
         //Add validators
         return {
             width: width,
@@ -165,7 +188,7 @@ var globals,
             return Array.isArray(value);
         },
         // Angle direction
-        isAngleDirection: function(value){
+        isAngleDirection: function (value) {
             this.checkUndefinedAndThrow(value);
             return (value == 1 || value == -1);
         },
@@ -175,26 +198,26 @@ var globals,
             return (typeof value === 'object');
         },
         //Position
-        checkPositionAndThrow: function(value) {
+        checkPositionAndThrow: function (value) {
             this.checkUndefinedAndThrow(value.x);
             this.checkUndefinedAndThrow(value.y);
 
-            if(!this.isObject(value)){
-                throw new Error (value + 'must be object');
+            if (!this.isObject(value)) {
+                throw new Error(value + 'must be object');
             }
         },
         //Size
-        checkSizeAndThrow: function(value) {
+        checkSizeAndThrow: function (value) {
             this.checkUndefinedAndThrow(value.width);
             this.checkUndefinedAndThrow(value.height);
 
-            if(!this.isObject(value)){
-                throw new Error (value + 'must be object');
+            if (!this.isObject(value)) {
+                throw new Error(value + 'must be object');
             }
         },
         //Speed
         checkSpeedAndThrow: function (value) {
-            if(!this.isNumber(value) || value < 0){
+            if (!this.isNumber(value) || value < 0) {
                 throw new Error('Speed should be positive number!');
             }
         },
@@ -202,47 +225,48 @@ var globals,
         checkDirectionAndThrow: function (value) {
             this.checkPositionAndThrow(value);
 
-            if((value.x !== 0 && value.x !== 1 && value.x !== -1) ||
-                (value.y !== 0 && value.y !== 1 && value.y !== -1)){
-                throw new Error('Direction is invalid!')
+            if ((value.x !== 0 && value.x !== 1 && value.x !== -1) ||
+                (value.y !== 0 && value.y !== 1 && value.y !== -1)) {
+                throw new Error('Direction is invalid!');
             }
         },
         //zIndex
         checkZIndexAndThrow: function (value) {
-            if(!this.isNumber(value) || value < 0){
+            if (!this.isNumber(value) || value < 0) {
                 throw new Error('zIndex should be positive number or zero!');
             }
-        }
+        },
         //isTarget
         checkIsTargetAndThrow: function (value) {
-            if(!this.isBoolean(value)){
-                throw new Error('isTarget sholud be boolean!')
+            if (!this.isBoolean(value)) {
+                throw new Error('isTarget sholud be boolean!');
             }
-        }
+        },
         //Is a Function
-        isFunction : function (functionToCheck) {
+        isFunction: function (functionToCheck) {
             var getType = {};
             return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
         }
     };
     trigonometry = {
         //converts degrees to radians
-    	toRad: function (degrees){
-    		return 3.14/180 * degrees;
-    	},
+        toRad: function (degrees) {
+            return 3.14 / 180 * degrees;
+        },
         //converts radians to degrees
-    	toDeg:function (radians){
-    		return 180/3.14 * radians;
-    	},
+        toDeg: function (radians) {
+            return 180 / 3.14 * radians;
+        },
         //calculates reverse angle from the target
-    	angleToTarget: function (radar, target){
-    		return this.toDeg(Math.atan((radar.position.y - target.position.y) / (target.position.x - radar.position.x)));
-    	},
+        angleToTarget: function (radar, target) {
+            return this.toDeg(Math.atan((radar.position.y - target.position.y) /
+                (target.position.x - radar.position.x)));
+        },
         // Distance between two game objects
-    	distanceBetween: function (obj1, obj2){
-    		var cat1 = Math.abs(obj2.position.x - obj1.position.x),
-        		cat2 = Math.abs(obj1.position.y - obj2.position.y);
-    		return Math.sqrt(cat1 * cat1 + cat2 * cat2);
-    	}
+        distanceBetween: function (obj1, obj2) {
+            var cat1 = Math.abs(obj2.position.x - obj1.position.x),
+                cat2 = Math.abs(obj1.position.y - obj2.position.y);
+            return Math.sqrt(cat1 * cat1 + cat2 * cat2);
+        }
     };
 }());
